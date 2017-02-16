@@ -4,7 +4,8 @@
 *For Demonstration Purposes Only*
 
 ### Teammembers
-Alex Gaesser - _CEO_  
+Alex Gaesser - _CEO_
+Gregory - _CTO_
 Robin Ma - _Newbie Employee_  
 
 
