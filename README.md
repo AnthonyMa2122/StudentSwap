@@ -7,7 +7,7 @@
 Alex Gaesser - _CEO_  
 Gregory Ruffin - _CTO_  
 Robin Ma - _Newbie Employee_  
-
+Anthony Ma - _Noob Developer_
 
 ### Project Description
 
