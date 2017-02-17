@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/stylerobin.css" type="text/css" media="all">
+		<title>Pichu's World</title>
+		<script type="text/javascript">
+			var timer, txtsize = 0, maxsize = 45;
+			function writeMsg()
+			{
+				if (txtsize<maxsize)
+				{
+					document.getElementById('msg').style.fontSize = txtsize + "px";
+					txtsize++;
+					timer = setTimeout("writeMsg()",maxsize);
+				}
+			}
+
+			function stopTimer()
+			{
+				clearTimeout(timer)
+			}
+
+			function surfto(form)
+			{
+				var myindex=form.dest.selectedIndex
+
+				location=form.dest.options[myindex].value;
+
+			}
+		</script>
+
+		<link href="css/csstxtrobin.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body onload="writeMsg()" onunload="stopTimer()">
+
+		<audio controls="" autoplay="" loop="" hidden="">
+			<source src="music/pokemon.mp3" type="audio/mpeg">
+			<source src="music/pokemon.ogg" type="audio/ogg">
+		</audio>
+		<!-- image taken online then slightly modified -->
+		<nav>
+			<p>
+				<a href="index.html">Home Page</a> | 
+				<a href="about.html">About Group</a> |
+			</p>
+		</nav>
+
+		<div class="content">
+			<fieldset>
+				<legend class="titlesmall"><span id="msg">About Me</span></legend>
+				<div class="bodycenter">
+					<hr>
+					<p><img src="img/robin.jpg" alt="Banner" width="192" height="144"></p>
+
+					<hr>
+					<p>
+						Hello everyone! My name is Robin Ma. Currently a Computer Science major in my last semester. This is my first time working in such a big group and I wish to improve every aspect of myself, not only on the coding skills, but also the people skills. 
+					</p>
+					
+					<hr>
+					<form name="myform">
+						<select name="dest" size="1">
+							<option selected="selected" value="">---Select---</option>
+							<option value="index.html">Home Page</option>
+							<option value="about.html">About Group</option>
+						</select>
+						
+						<input class="contentbutton" type="button" value="Go" onclick="surfto(this.form)">
+					</form>
+				</div>
+			</fieldset>
+		</div>
+
+		<table>
+			<tfoot>
+				<tr>
+					<td colspan="1">
+						<div class="center">
+							<p style="color:#5011A8">Copyright &copy; 2015 <a href="mailto:rma10@mail.ccsf.edu">Robin Ma</a></p>
+							<p style="color:#5011A8">
+								<script type="text/javascript">
+								var dateModified = document.lastModified;
+								mydate = dateModified.slice(0,16);
+								document.write("Last updated: " + mydate);
+								</script>
+							</p>
+						</div>
+					</td>			
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

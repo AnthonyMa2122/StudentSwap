@@ -1,0 +1,83 @@
+body
+{
+	font-family: 'courier';  
+	margin: 10px 0px; padding: 0px;
+	text-align: center;
+	background: url('../img/mlgamma.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.title
+{
+	font: italic small-caps 35px 'Akronim';
+	color: yellow;
+	text-shadow: 3px 4px 4px gold;
+	text-align: center;
+}
+
+.titlesmall
+{
+	font: italic small-caps 45px 'Akronim';
+	color: white;
+	text-shadow: 3px 4px 4px gold;
+	text-align: center;
+}
+
+fieldset
+{
+	width: 600px;
+	margin: auto;
+	margin-bottom:20px;
+	padding-left:20px;
+	font-family:Tahoma,Arial,sans-serif;
+	border-radius:15px;
+	border: blue dotted 2px;
+	text-align: center;
+}
+
+.content
+{
+	width:900px;
+	border-radius: 10px;
+	border: black solid 2px;
+	margin: 0px auto;
+}
+
+.contentbutton
+{
+	width:100px;
+	border: black dotted 2px;
+	border-radius: 10px;
+}
+
+p
+{
+	margin:10px auto;
+	max-width:500px;
+}
+
+img
+{
+	display:inline-block;
+	margin:auto;
+}
+
+a
+{
+	font: 15px 'Fredericka the Great';
+	color: yellow;
+	text-decoration:none;
+}
+
+a:hover
+{
+	text-decoration: underline; 
+	background-color: blue;
+}
+
+table
+{
+	margin:0 auto;
+	border: 3px dotted gold;
+	border-radius: 10px;
+}
