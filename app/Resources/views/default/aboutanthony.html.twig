@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Anthony | Company Banana{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{ asset('css/main.css') }} >
+    <link rel="stylesheet" href={{ asset('css/normalize.css') }} >
+    <link rel="stylesheet" href={{ asset('css/responsive.css') }} >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Noto+Sans" >
+{% endblock %}
+
+
+{% block body %}
+    <header>
+        <a href="#" id="logo">
+            <h1>Anthony</h1>
+            <h2>Programmer</h2>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#" class="selected">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <section>
+            <img alt="Photograph of Alex Gaesser" class="profile-photo" src={{ asset('img/anthony.jpg') }} >
+            <h3>About</h3>
+            <p>Hi, I'm Anthony! I outsourced this page from Alex</p>
+            <p>If you would like to follow me on twitter, my username is <a href="http://twitter.com/beyonce">@alexindeed</a>.</p>
+            <p>If you are a recruiter and would like to contact me, please leave your email address and your name below and I'll send you a copy of my resume.</p>
+        </section>
+        <footer>
+            <a href="http://twitter.com/alexindeed"><img alt="Twitter Logo" class="social-icon" src={{ asset('img/twitter-wrap.png') }}></a>
+            <a href="http://facebook.com/alex.gaesser"><img alt="Facebook Logo" class="social-icon" src={{ asset('img/facebook-wrap.png') }}></a>
+            <a href="http://github.com/omegabytes"><img alt="GitHub Logo" class="social-icon" src={{ asset('img/gitHubLogo.png') }} ></a>
+            <a href="http://linkedin.com/in/alexgaesser"><img alt="LinkedIn Logo" class="social-icon" src={{ asset('img/linkedin_grey.png') }} ></a>
+            <a href="https://angel.co/agaesser-gmail-com"><img alt="AngelList Logo" class="social-icon" src={{ asset('img/angelListLogo.png') }}></a>
+            <p>&copy; 2016 Alex Gaesser.</p>
+        </footer>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src={{ asset('jquery/3.1.1/jquery.min.js') }} ></script>
+{% endblock %}
+

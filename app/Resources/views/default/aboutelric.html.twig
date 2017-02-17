@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Elric's Page{% endblock %}
+{% block stylesheets %}
+    <style>
+        .pic {
+            max-width: 300px;
+        }
+        .wback {
+            background-color: powderblue;
+            border-radius: 2px;
+            padding: 2px;
+            margin: 20px;
+            border: solid;
+        }
+        body {
+            background-color: #F0FFFF;
+            font-family: "Arial";
+        }
+        p {
+            color: #330066;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1 class="wback">
+        Elric's Page
+    </h1>
+    <img class="pic wback" src="https://lh3.googleusercontent.com/yMUoI5XYs6vJOj2EAFHQ5YbLQPJMKcKWEfBuQyzJ_9eXnfF5Ar0TyiYhvtqfMOrXGv0rw41f=w958-h949">
+    <p class="wback">
+        Welcome Elric's page. I am a student at SF State. My hobbies include video games and basketball.
+    </p>
+    <p>
+
+    </p>
+{% endblock %}

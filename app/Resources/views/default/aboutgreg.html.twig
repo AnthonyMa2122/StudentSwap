@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href= {{ asset('bootstrap/css/bootstrap.min.css') }} >
+    <link rel="stylesheet" href= {{ asset('css/aboutgreg.css') }} >
+{% endblock %}
+
+{% block body %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Greg Ruffin</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">About</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="text-center">
+            <h1>Welcome!</h1>
+            <img id='profile_pic' src={{ asset('img/gruffin.jpg') }} >
+            <p class="lead">Hi, I'm Greg Ruffin! Welcome to my page.<br>
+                A little about myself. Im from Atlanta but now I live in San Francisco.
+                I love watching, playing, and building games.<br>
+                Feel free to check out my work.<br>
+                Contact me at gregoryaruffin@gmail.com</p>
+        </div>
+    </div><!-- /.container -->
+{% endblock %}
+

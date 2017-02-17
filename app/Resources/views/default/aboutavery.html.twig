@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About Page{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href={{ asset('css/aboutavery.css') }} >
+{% endblock %}
+
+{% block body %}
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href ="#">Current Work</a></li>
+            <li><a href ="#">About</a></li>
+            <li><a href ="#">Contact Info</a></li>
+        </ul>
+    </nav>
+
+    <div class="background">
+        <div class="transbox">
+            <h1 class="centered sansSerif">About</h1>
+            <div>
+                <p> Avery Chua is a student at San Francisco State University.</p>
+            </div>
+
+
+            <h3>Hobbies</h3>
+            <p>I have many kinds of hobbies that involve anything from cooking, watching shows, playing games, and many other things. There are always things im
+                willing to do but my focus is gaming, watching shows, and hanging out with friends.
+            </p>
+
+            <h3> Skills and Affiliations</h3>
+            <ol>
+                <li>Certified Lifeguard/Swim Instructor (American Red Cross)</li>
+                <li>Coffee Expresso Barista</li>
+                <li>Westmoore GreenHat Association</li>
+                <li>Asian American Recovery Services Member</li>
+            </ol>
+
+            <h3>Past Experience</h3>
+            <ol>
+                <li>Daly City Park and Recreation Aquatics</li>
+                <li>BestBuy Mobile Sales Representative</li>
+                <li>Coffee Barista (Joe's Catering Services)</li>
+                <li>SFSU BIS Facility Student Assistant</li>
+                <li>GameStop Guest Associate </li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
