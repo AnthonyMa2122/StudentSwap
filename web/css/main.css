@@ -194,7 +194,7 @@ PAGE: CONTACT
 }
 
 .contact-info li.twitter a {
- background-image: url('../img/twitter');
+ background-image: url('../img/twitter.png');
 }
 
 /***********************
@@ -203,42 +203,42 @@ COLORS
 
 /* site body */
 body {
-  background-color: #000;
+  background-color: white;
   /*background-image: url("../img/PlutoNorgayHillaryMountains.jpg");*/
   background-position: 100%;
   background-attachment: fixed;
   background-size: 100%;
   background-repeat: no-repeat;
-  color: #bdc3c7;
+  color: #000;
 }
 
-/* green header */
+/* header */
 header {
-  background: #0D192B;
-  border-color: #32343C;
+  background: darkgray;
+  border-color: gray;
 }
 
 /* nav background on mobile */
 nav {
-  background: #32343C;
+  background: darkgray;
 }
 
 /* logo text */
 h1,h2 {
-  color: #fff;
+  color: #000;
 }
 
 /* links */
 a {
-  color: #bdc3c7;
+  color: #2b669a;
 }
 
 /* nav link */
 nav a, nav a:visited {
-  color: #fff;
+  color: #000;
 }
 
 /* selected nav link */
 nav a.selected, nav a:hover {
-  color: #FFC107;
+  color: #000000;
 }
