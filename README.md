@@ -9,8 +9,8 @@ Gregory Ruffin - _CTO_
 Robin Ma - _Newbie Employee_  
 Anthony Ma - _Noob Developer_   
 Avery Chua (Waterboy)   
-Elric Dang - Programming Pawn   
-Leanna Pangan - TBD
+Elric Dang - Programming Pawn
+Leanna Pangan - TB
 
 ### Project Description
 
