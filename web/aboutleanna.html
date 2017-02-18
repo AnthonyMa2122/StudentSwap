@@ -1,311 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="index.js"></script>
-            <title>
-                Leanna Pangan
-            </title>
-
-        <style>
-            /*ABOUT ME*/
-            .container {
-                padding: 80px 120px;
-            }
-            .person {
-                border: 10px solid transparent;
-                margin-bottom: 25px;
-            }
-            .person:hover {
-                border-color: #f1f1f1;
-            }
-            /* toggle tabs for class schedule */
-            .nav-tabs li a {
-                color: #777;
-            }
-            .tab-content p {
-                color: black;
-                letter-spacing: 2px;
-                text-align: left;
-            }
-            .tab-content em {
-                color: gray;
-                letter-spacing: 0px;
-            }
-            /* Black buttons with extra padding and without rounded borders */
-            .btn {
-                padding: 10px 20px;
-                background-color: #333;
-                color: #f1f1f1;
-                border-radius: 0;
-                transition: .2s;
-                margin-top: 15px;
-            }
-            /* On hover, the color of .btn will transition to white with black text */
-            .btn:hover, .btn:focus {
-                border: 1px solid #333;
-                background-color: #fff;
-                color: #000;
-            }
-            /* Add a dark background color with a little bit see-through */ 
-            .navbar {
-                margin-bottom: 0;
-                background-color: #2d2d30;
-                border: 0;
-                font-size: 11px !important;
-                letter-spacing: 4px;
-                opacity:0.9;
-            }
-
-            /* Add a gray color to all navbar links */
-            .navbar li a, .navbar .navbar-brand { 
-                color: #d5d5d5 !important;
-            }
-
-            /* On hover, the links will turn white */
-            .navbar-nav li a:hover {
-                color: #fff !important;
-            }
-
-            /* The active link */
-            .navbar-nav li.active a {
-                color: #fff !important;
-                background-color:#29292c !important;
-            }
-
-            /* Remove border color from the collapsible button */
-            .navbar-default .navbar-toggle {
-                border-color: transparent;
-            }
-
-            /* Dropdown */
-            .open .dropdown-toggle {
-                color: #fff ;
-                background-color: #555 !important;
-            }
-
-            /* Dropdown links */
-            .dropdown-menu li a {
-                color: #000 !important;
-            }
-
-            /* On hover, the dropdown links will turn red */
-            .dropdown-menu li a:hover {
-                background-color: red !important;
-            }
-            /*STYLE*/
-            body {
-                font: 400 15px/1.8 Lato, sans-serif;
-                color: #777;
-            }
-
-            .navbar {
-                font-family: Montserrat, sans-serif;
-            }
-            /* Overwrite default styles of h3 and h4 */
-            h3, h4 {
-                margin: 10px 0 30px 0;
-                letter-spacing: 10px; 
-                font-size: 20px;
-                color: #111;
-            }
-
-            /* Remove rounded borders on input fields */
-            .form-control {
-                border-radius: 0;
-            }
-
-            /* Disable the ability to resize textareas */
-            textarea {
-                resize: none;
-            }
-
-            /* Slide animation */
-            .slideanim {visibility:hidden;}
-            .slide {
-                animation-name: slide;
-                -webkit-animation-name: slide;	
-                animation-duration: 1s;	
-                -webkit-animation-duration: 1s;
-                visibility: visible;			
-            }
-            @keyframes slide {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateY(70%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateY(0%);
-                }	
-            }
-            @-webkit-keyframes slide {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateY(70%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateY(0%);
-                }
-            }
-
-        </style>
-        
-    </head>
-    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-        <!--NAV BAR-->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                    <a class="navbar-brand" href="#myPage">LEANNA PANGAN</a>
-                </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#myPage">HOME<span class="glyphicon glyphicon-home"></span></a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            </div>
-        </nav>
-
-        
-        <!--About me---->
-        <div id="about" class="container text-center">
-            <h3>LEANNA PANGAN</h3>
-            <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/16684131_1448489825161177_2812893278197015135_n.jpg?oh=4e077d37fef5c13b558ec26f980eb4b5&oe=594C0156" width=170 height=250 alt="Leanna">            
-            <p><em>About Me</em></p>
-            <p>Hi, I'm Leanna Pangan! I am a CS major at SF State. You will find the courses I have completed down below.
-               Besides school, I love playing and watching sports! Go dubs!
-            </p>
-            <br>
-            <h3 class="text-center">Completed College Courses</h3> 
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">CS</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Math</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Physics</a></li>
-                    <li><a data-toggle="tab" href="#menu3">Lower GEs</a></li>
-                    <li><a data-toggle="tab" href="#menu4">Upper GEs</a></li>
-                </ul>
-
-            <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
-                    <p>CSC 210: <em>Intro to Computer Programming</em></p>
-                    <p>CSC 220: <em>Data Structures</em></p>
-                    <p>CSC 230: <em>Discrete Mathematics</em></p>
-                    <p>CSC 256: <em>Machine Structures</em></p>
-                    <p>CSC 300 GWAR: <em>Ethics, Communication, and Tools for Software Development</em></p>
-                    <p>CSC 340: <em>Programming Methodology</em></p>
-                    <p>CSC 412: <em>Advanced Software Lab</em></p>
-                    <p>CSC 413: <em>Software Development</em></p>
-                    <p>CSC 415: <em>Operating Systems</em></p>
-                    <p>CSC 510: <em>Analysis of Algorithms</em></p>
-                    <p>CSC 520: <em>Theory of Computing</em></p>
-                    <p>CSC 600: <em>Programming Languages</em></p>
-                    <p>CSC 645: <em>Computer Networks</em></p>
-                    <p>CSC 648: <em>Software Engineering</em> (in progress)</p>
-                    <p>CSC 650: <em>Secure Networked Systems</em> (in progress)</p>
-                    <p>CSC 675: <em>Intro to Database Systems</em></p>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                    <p>MATH 226: <em>Calculus I</em></p>
-                    <p>MATH 227: <em>Calculus II</em></p>
-                    <p>MATH 324: <em>Probability & Statistics w/ Computing</em></p>
-                    <p>MATH 325: <em>Linear Algebra</em></p>
-                </div>
-                <div id="menu2" class="tab-pane fade">
-                    <p>PHYS 220: <em>General Physics w/ Calculus I</em></p>
-                    <p>PHYS 222: <em>General Physics w/ Calculus I Lab</em></p>
-                    <p>PHYS 230: <em>General Physics w/ Calculus II</em></p>
-                    <p>PHYS 232: <em>General Physics w/ Calculus II Lab</em></p>
-                </div>                
-                <div id="menu3" class="tab-pane fade">
-                    <p>BIOL 100: <em>Human Biology</em></p>
-                    <p>COMM 150: <em>Fundamental Oral Communication</em></p>
-                    <p>CWL 250: <em>Fables & Tales</em></p>
-                    <p>ENG 114: <em>1st year Composition</em></p>
-                    <p>ENG 214: <em>2nd year Written Composition</em></p>
-                    <p>GEOG 101: <em>Our Physical Environment</em></p>
-                    <p>HIST 115: <em>World History since 1500</em></p>
-                    <p>PHIL 110: <em>Critical Thinking I</em></p>
-                    <p>PSY 200: <em>General Psychology</em></p>  
-                    <p>LABR 250: <em>Intro to Labor Studies</em> (in progress)</p>
-                </div>
-                <div id="menu4" class="tab-pane fade">
-                    <p>KIN 355: <em>Science, Sport, and Fitness</em></p>
-                    <p>MUS 501: <em>Music, the Listener's Art</em></p>
-                    <p>MUS 506: <em>Survey of Jazz</em></p>
-                    <p>PLSI 373: <em>Essentials of California Politics</em></p>
-                    <p>GEOG 600: <em>Environmental Problems & Solutions</em></p>
-                </div>                
-            </div>
-        </div>
-        <div id="contact" class="container">
-            <h3 class="text-center">Contact</h3>
-            <p class="text-center"><em>Feel free to submit any thoughts or feelings about my website!</em></p>
-            <div class="row test slideanim">
-                    <p class="text-center">Email: leanna.pangan@yahoo.com<span class="glyphicon glyphicon-envelope"></span></p>
-                    <p class="text-center">I'm willing to answer any questions or concerns you may have</p>
-                    <p class="text-center">Drop a note<span class="glyphicon glyphicon-pencil"></span></p>
-            </div>
-        </div>
-
-        </div>
-        <script>
-            $(document).ready(function(){
-            // Initialize Tooltip
-            $('[data-toggle="tooltip"]').tooltip(); 
-  
-            // Add smooth scrolling to all links in navbar + footer link
-            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-    
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-            scrollTop: $(hash).offset().top
-            }, 900, function(){
-   
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-            });
-            });
-            })
-            
-            // Slide animation function
-            $(window).scroll(function() {
-                $(".slideanim").each(function(){
-                    var pos = $(this).offset().top;
-
-                    var winTop = $(window).scrollTop();
-                    if (pos < winTop + 600) {
-                        $(this).addClass("slide");
-                    }
-                });
-            });
-        </script>
-    </body>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Leanna Pangan | Team Member </title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="about.html">Group 6</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="wrapper">
+    <section>
+        <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/16684131_1448489825161177_2812893278197015135_n.jpg?oh=4e077d37fef5c13b558ec26f980eb4b5&oe=594C0156" alt="Photograph of Leanna Pangan" class="profile-photo">
+        <h3>About Leanna</h3>
+        <p>Hi, I'm Leanna Pangan! I am a CS major at SF State.</p>
+        <p>Besides school, I love playing and watching sports! Go dubs!</p>
+    </section>
+    <footer>
+        <a href="http://twitter.com/"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <a href="http://github.com/"><img src="img/gitHubLogo.png" alt="GitHub Logo" class="social-icon"></a>
+        <a href="http://linkedin.com/"><img src="img/linkedin_grey.png" alt="LinkedIn Logo" class="social-icon"></a>
+        <a href="https://angel.co/"><img src="img/angelListLogo.png" alt="AngelList Logo" class="social-icon"></a>
+    </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
 </html>
