@@ -11,20 +11,23 @@
 
 {% block body %}
     <header>
-        <a href="#" id="logo">
-            <h1>Alex Gaesser</h1>
-            <h2>Programmer</h2>
-        </a>
         <nav>
             <ul>
-                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('/') }}">Group 6</a></li>
+                <li><a class="selected" href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
+                <li><a href="{{ path('anthony') }}">Anthony</a></li>
+                <li><a href="{{ path('avery') }}">Avery</a></li>
+                <li><a href="{{ path('leanna') }}">Leanna</a></li>
+                <li><a href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
             </ul>
         </nav>
     </header>
     <div id="wrapper">
         <section>
-            <img class="profile-photo" src={{ asset('img/profilePhoto2.jpg') }} >
-            <h3>About</h3>
+            <img class="profile-photo" src={{ asset('img/alex.jpg') }} >
+            <h3>About Alex</h3>
             <p>Hi, I'm Alex! When I'm not designing things, I enjoy reading, playing video games, and eating delicious food.</p>
             <p>If you would like to follow me on twitter, my username is <a href="http://twitter.com/alexindeed">@alexindeed</a>.</p>
         </section>
@@ -34,7 +37,10 @@
             <a href="http://github.com/omegabytes"><img alt="GitHub Logo" class="social-icon" src={{ asset('img/gitHubLogo.png') }} ></a>
             <a href="http://linkedin.com/in/alexgaesser"><img alt="LinkedIn Logo" class="social-icon" src={{ asset('img/linkedin_grey.png') }} ></a>
             <a href="https://angel.co/agaesser-gmail-com"><img alt="AngelList Logo" class="social-icon" src= {{ asset('img/angelListLogo.png') }} ></a>
-            <p>&copy; 2016 Alex Gaesser.</p>
         </footer>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src={{ asset('jquery/3.1.1/jquery.min.js') }} ></script>
 {% endblock %}

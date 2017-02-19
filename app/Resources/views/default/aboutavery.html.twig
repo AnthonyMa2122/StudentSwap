@@ -1,48 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}About Page{% endblock %}
+{% block title %}Anthony | Company Banana{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href={{ asset('css/aboutavery.css') }} >
+    <link rel="stylesheet" href={{ asset('css/main.css') }} >
+    <link rel="stylesheet" href={{ asset('css/normalize.css') }} >
+    <link rel="stylesheet" href={{ asset('css/responsive.css') }} >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Noto+Sans" >
 {% endblock %}
 
+
 {% block body %}
-    <nav>
-        <ul>
-            <li><a href="{{ path('homepage') }}">Home</a></li>
-            <li><a href ="{{ path ('avery')}}">About</a></li>
-        </ul>
-    </nav>
-
-    <div class="background">
-        <div class="transbox">
-            <h1 class="centered sansSerif">About</h1>
-            <div>
-                <p> Avery Chua is a student at San Francisco State University.</p>
-            </div>
-
-
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
+                <li><a href="{{ path('anthony')}}" >About</a></li>
+                <li><a class="selected" href="{{ path('avery') }}">Avery</a></li>
+                <li><a href="{{ path('leanna') }}">Leanna</a></li>
+                <li><a href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <section>
+            <img alt="Photograph of Avery Chua" class="profile-photo" src={{ asset('img/avery.jpg') }} >
+            <h3>About Avery</h3>
+            <p>Hi, I'm Anthony!</p>
+            <p>Avery Chua is a student at San Francisco State University.</p>
             <h3>Hobbies</h3>
-            <p>I have many kinds of hobbies that involve anything from cooking, watching shows, playing games, and many other things. There are always things im
-                willing to do but my focus is gaming, watching shows, and hanging out with friends.
-            </p>
-
-            <h3> Skills and Affiliations</h3>
+            <p>I have many kinds of hobbies that involve anything from cooking, watching shows,
+                playing games, and many other things. There are always things I'm willing to do but my focus is gaming, watching shows, and hanging out with friends.</p>
+            <h3>Skills and Affiliations</h3>
             <ol>
-                <li>Certified Lifeguard/Swim Instructor (American Red Cross)</li>
-                <li>Coffee Expresso Barista</li>
-                <li>Westmoore GreenHat Association</li>
-                <li>Asian American Recovery Services Member</li>
+                <li>Certified Lifeguard/Swim Instructor (American Red Cross)</li><br>
+                <li>Coffee Expresso Barista</li><br>
+                <li>Westmoore GreenHat Association</li><br>
+                <li>Asian American Recovery Services Member</li><br>
             </ol>
 
             <h3>Past Experience</h3>
             <ol>
-                <li>Daly City Park and Recreation Aquatics</li>
-                <li>BestBuy Mobile Sales Representative</li>
-                <li>Coffee Barista (Joe's Catering Services)</li>
-                <li>SFSU BIS Facility Student Assistant</li>
-                <li>GameStop Guest Associate </li>
+                <li>Daly City Park and Recreation Aquatics</li><br>
+                <li>BestBuy Mobile Sales Representative</li><br>
+                <li>Coffee Barista (Joe's Catering Services)</li><br>
+                <li>SFSU BIS Facility Student Assistant</li><br>
+                <li>GameStop Guest Associate </li><br>
             </ol>
-        </div>
+        </section>
+        <footer>
+            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src={{ asset('img/twitter-wrap.png') }}></a>
+            <a href="http://facebook.com/"><img alt="Facebook Logo" class="social-icon" src={{ asset('img/facebook-wrap.png') }}></a>
+            <a href="http://github.com/"><img alt="GitHub Logo" class="social-icon" src={{ asset('img/gitHubLogo.png') }} ></a>
+            <a href="http://linkedin.com/"><img alt="LinkedIn Logo" class="social-icon" src={{ asset('img/linkedin_grey.png') }} ></a>
+            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src={{ asset('img/angelListLogo.png') }}></a>
+        </footer>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    <script src={{ asset('jquery/3.1.1/jquery.min.js') }} ></script>
+{% endblock %}
+

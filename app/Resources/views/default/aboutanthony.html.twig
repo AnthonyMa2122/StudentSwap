@@ -12,31 +12,33 @@
 
 {% block body %}
     <header>
-        <a href="#" id="logo">
-            <h1>Anthony Ma</h1>
-            <h2>Programmer</h2>
-        </a>
         <nav>
             <ul>
                 <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
                 <li><a class="selected" href="{{ path('anthony')}}" >About</a></li>
+                <li><a href="{{ path('avery') }}">Avery</a></li>
+                <li><a href="{{ path('leanna') }}">Leanna</a></li>
+                <li><a href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
             </ul>
         </nav>
     </header>
     <div id="wrapper">
         <section>
-            <img alt="Photograph of Alex Gaesser" class="profile-photo" src={{ asset('img/anthony.jpg') }} >
-            <h3>About</h3>
-            <p>Hi, I'm Anthony! I outsourced this page from Alex</p>
+            <img alt="Photograph of Anthony Ma" class="profile-photo" src={{ asset('img/anthony.jpg') }} >
+            <h3>About Anthony</h3>
+            <p>Hi, I'm Anthony!</p>
             <p>If you would like to follow me on twitter, my username is <a href="http://twitter.com/beyonce">@alexindeed</a>.</p>
             <p>If you are a recruiter and would like to contact me, please leave your email address and your name below and I'll send you a copy of my resume.</p>
         </section>
         <footer>
-            <a href="http://twitter.com/alexindeed"><img alt="Twitter Logo" class="social-icon" src={{ asset('img/twitter-wrap.png') }}></a>
+            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src={{ asset('img/twitter-wrap.png') }}></a>
             <a href="http://facebook.com/"><img alt="Facebook Logo" class="social-icon" src={{ asset('img/facebook-wrap.png') }}></a>
-            <a href="http://github.com/anthonyma2122"><img alt="GitHub Logo" class="social-icon" src={{ asset('img/gitHubLogo.png') }} ></a>
+            <a href="http://github.com/"><img alt="GitHub Logo" class="social-icon" src={{ asset('img/gitHubLogo.png') }} ></a>
             <a href="http://linkedin.com/"><img alt="LinkedIn Logo" class="social-icon" src={{ asset('img/linkedin_grey.png') }} ></a>
-            <p>&copy; 2016 Anthony Ma.</p>
+            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src={{ asset('img/angelListLogo.png') }}></a>
         </footer>
     </div>
 {% endblock %}
