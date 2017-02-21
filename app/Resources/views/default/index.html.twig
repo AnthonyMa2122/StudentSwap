@@ -1,48 +1,34 @@
-{% extends 'base.html.twig' %}
+{% extends 'about.html.twig' %}
 
 {% block title %}Group 6{% endblock %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href={{ asset('bootstrap/css/bootstrap.min.css') }}>
-    <style>
-    body {
-        padding-top: 50px;
-        background-color: #5011A8;
-        color: #FFC107;
-    }
-    </style>
-{% endblock %}
-
 {% block body %}
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ path('homepage') }}">Team 6</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ path('alex') }}">Alex</a></li>
-                    <li><a href="{{ path('greg') }}">Greg</a></li>
-                    <li><a href="{{ path('anthony') }}">Anthony</a></li>
-                    <li><a href="{{ path('avery') }}">Avery</a></li>
-                    <li><a href="{{ path('leanna') }}">Leanna</a></li>
-                    <li><a href="{{ path('robin') }}">Robin</a></li>
-                    <li><a href="{{ path('elric') }}">Elric</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="selected" href="{{ path('homepage') }}" >Group 6</a></li>
+                <li><a href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
+                <li><a href="{{ path('anthony') }}">Anthony</a></li>
+                <li><a href="{{ path('avery') }}">Avery</a></li>
+                <li><a href="{{ path('leanna') }}">Leanna</a></li>
+                <li><a href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <section>
+            <img src="{{ asset('img/Monster.png') }}" alt="Photograph of a monster" class="other-photo">
+            <h3 align="center">Welcome to Team 6 Homepage</h3>
+            <p align="center">
+                This website is a team project for CSC648 - Software Engineering at
+                San Francisco State University. You can use the menu bar to find out
+                some more information about our team. Thanks for visiting!
+            </p>
+        </section>
+        <footer>
+            <a href="http://github.com/omegabytes/csc648group06"><img src="{{ asset('img/gitHubLogo.png') }}" alt="GitHub Logo" class="social-icon"></a>
+        </footer>
     </div>
-
-    <div class="container">
-
-        <div class="text-center">
-            <h1>Welcome to Team 6 Homepage</h1>
-        </div>
-
-    </div><!-- /.container -->
 {% endblock %}

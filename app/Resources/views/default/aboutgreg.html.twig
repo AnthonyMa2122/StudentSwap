@@ -1,23 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'about.html.twig' %}
 
 {% block title %}Greg | CTO{% endblock %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" href={{ asset('css/main.css') }} >
-    <link rel="stylesheet" href={{ asset('css/normalize.css') }} >
-    <link rel="stylesheet" href={{ asset('css/responsive.css') }} >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Noto+Sans" >
-{% endblock %}
-
 
 {% block body %}
     <header>
         <nav>
             <ul>
-                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('homepage') }}">Group 6</a></li>
                 <li><a href="{{ path('alex') }}">Alex</a></li>
                 <li><a class="selected" href="{{ path('greg') }}">Greg</a></li>
-                <li><a href="{{ path('anthony')}}" >About</a></li>
+                <li><a href="{{ path('anthony')}}" >Anthony</a></li>
                 <li><a href="{{ path('avery') }}">Avery</a></li>
                 <li><a href="{{ path('leanna') }}">Leanna</a></li>
                 <li><a href="{{ path('robin') }}">Robin</a></li>
@@ -27,28 +19,23 @@
     </header>
     <div id="wrapper">
         <section>
-            <img alt="Photograph of Anthony Ma" class="profile-photo" src={{ asset('img/anthony.jpg') }} >
+            <img alt="Photograph of Greg Ruffin" class="profile-photo" src="{{ asset('img/gruffin.jpg') }}" >
             <h3>About Greg</h3>
             <p>Hi, I'm Greg Ruffin! Welcome to my page.</p>
-            <p>
-                A little about myself. Im from Atlanta but now I live in San Francisco.
-                I love watching, playing, and building games.<br>
-                Feel free to check out my work.<br>
-                Contact me at gregoryaruffin@gmail.com
-            </p>
+
+            <p> A little about myself. Im from Atlanta but now I live in San Francisco.
+                I love watching, playing, and building games. </p>
+
+            <p> Feel free to check out my work. </p>
+
+            <p> Contact me at gregoryaruffin@gmail.com </p>
         </section>
         <footer>
-            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src={{ asset('img/twitter-wrap.png') }}></a>
-            <a href="http://facebook.com/"><img alt="Facebook Logo" class="social-icon" src={{ asset('img/facebook-wrap.png') }}></a>
-            <a href="http://github.com/"><img alt="GitHub Logo" class="social-icon" src={{ asset('img/gitHubLogo.png') }} ></a>
-            <a href="http://linkedin.com/"><img alt="LinkedIn Logo" class="social-icon" src={{ asset('img/linkedin_grey.png') }} ></a>
-            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src={{ asset('img/angelListLogo.png') }}></a>
+            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src="{{ asset('img/twitter-wrap.png') }}" ></a>
+            <a href="https://www.facebook.com/greg.d.ruffin"><img alt="Facebook Logo" class="social-icon" src="{{ asset('img/facebook-wrap.png') }}" ></a>
+            <a href="http://github.com/dreruff"><img alt="GitHub Logo" class="social-icon" src="{{ asset('img/gitHubLogo.png') }}" ></a>
+            <a href="https://www.linkedin.com/in/greg-ruffin-76a63889/"><img alt="LinkedIn Logo" class="social-icon" src="{{ asset('img/linkedin_grey.png') }}" ></a>
+            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src="{{ asset('img/angelListLogo.png') }}" ></a>
         </footer>
     </div>
 {% endblock %}
-
-{% block javascripts %}
-    <script src={{ asset('jquery/3.1.1/jquery.min.js') }} ></script>
-{% endblock %}
-
-

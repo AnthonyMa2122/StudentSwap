@@ -1,96 +1,35 @@
-{% extends 'base.html.twig' %}
-{% block title %}Pichu's World{% endblock %}
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" media="all" href={{ asset('css/stylerobin.css') }} >
-    <link rel="stylesheet" href={{ asset('css/csstxtrobin.css') }} >
-{% endblock %}
+{% extends 'about.html.twig' %}
+
+{% block title %}Robin Ma| Team Member{% endblock %}
 
 {% block body %}
-    <div onload="writeMsg()" onunload="stopTimer()">
-
-    <audio controls="" autoplay="" loop="" hidden="">
-        <source type="audio/mpeg" src={{ asset('music/pokemon.MP3') }} >
-        <source type="audio/ogg" src={{ asset('music/pokemon.ogg') }} >
-    </audio>
-    <!-- image taken online then slightly modified -->
-    <nav>
-        <p>
-            <a href="{{ path('homepage') }}">Home Page</a> |
-            <a href="#">About Group</a> |
-        </p>
-    </nav>
-
-    <div class="content">
-        <fieldset>
-            <legend class="titlesmall"><span id="msg">About Me</span></legend>
-            <div class="bodycenter">
-                <hr>
-                <p><img alt="Banner" width="192" height="144" src={{ asset('img/robin.jpg') }} ></p>
-
-                <hr>
-                <p>
-                    Hello everyone! My name is Robin Ma. Currently a Computer Science major in my last semester. This is my first time working in such a big group and I wish to improve every aspect of myself, not only on the coding skills, but also the people skills.
-                </p>
-
-                <hr>
-                <form name="myform">
-                    <select name="dest" size="1">
-                        <option selected="selected" value="">---Select---</option>
-                        <option value="index.html">Home Page</option>
-                        <option value="about.html">About Group</option>
-                    </select>
-
-                    <input class="contentbutton" type="button" value="Go" onclick="surfto(this.form)">
-                </form>
-            </div>
-        </fieldset>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ path('homepage') }}">Group 6</a></li>
+                <li><a href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
+                <li><a href="{{ path('anthony') }}">Anthony</a></li>
+                <li><a href="{{ path('avery') }}">Avery</a></li>
+                <li><a href="{{ path('leanna') }}">Leanna</a></li>
+                <li><a class="selected" href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <section>
+            <img alt="Photograph of Robin Ma" class="profile-photo" src="{{ asset('img/robin.jpg') }}">
+            <h3>About Robin</h3>
+            <p>Hello everyone! My name is Robin Ma. Currently a Computer Science major in my last semester. This is my first time working in such a big group and I wish to improve every aspect of myself,
+                not only on the coding skills, but also the people skills.</p>
+        </section>
+        <footer>
+            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src="{{ asset('img/twitter-wrap.png') }}"></a>
+            <a href="http://facebook.com/"><img alt="Facebook Logo" class="social-icon" src="{{ asset('img/facebook-wrap.png') }}" ></a>
+            <a href="http://github.com/"><img alt="GitHub Logo" class="social-icon" src="{{ asset('img/gitHubLogo.png') }}" ></a>
+            <a href="http://linkedin.com/"><img alt="LinkedIn Logo" class="social-icon" src="{{ asset('img/linkedin_grey.png') }}" ></a>
+            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src="{{ asset('img/angelListLogo.png') }}" ></a>
+        </footer>
     </div>
-
-    <table>
-        <tfoot>
-        <tr>
-            <td colspan="1">
-                <div class="center">
-                    <p style="color:#5011A8">Copyright &copy; 2015 <a href="mailto:rma10@mail.ccsf.edu">Robin Ma</a></p>
-                    <p style="color:#5011A8">
-                        <script type="text/javascript">
-                            var dateModified = document.lastModified;
-                            mydate = dateModified.slice(0,16);
-                            document.write("Last updated: " + mydate);
-                        </script>
-                    </p>
-                </div>
-            </td>
-        </tr>
-        </tfoot>
-    </table>
-    </div>
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript">
-        var timer, txtsize = 0, maxsize = 45;
-        function writeMsg()
-        {
-            if (txtsize<maxsize)
-            {
-                document.getElementById('msg').style.fontSize = txtsize + "px";
-                txtsize++;
-                timer = setTimeout("writeMsg()",maxsize);
-            }
-        }
-
-        function stopTimer()
-        {
-            clearTimeout(timer);
-        }
-
-        function surfto(form)
-        {
-            var myindex=form.dest.selectedIndex;
-
-            var location=form.dest.options[myindex].value;
-
-        }
-    </script>
 {% endblock %}
