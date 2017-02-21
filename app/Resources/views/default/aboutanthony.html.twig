@@ -1,0 +1,36 @@
+{% extends 'about.html.twig' %}
+
+{% block title %}Anthony | Company Banana{% endblock %}
+
+{% block body %}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ path('homepage') }}">Group 6</a></li>
+                <li><a href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
+                <li><a class="selected" href="{{ path('anthony')}}" >Anthony</a></li>
+                <li><a href="{{ path('avery') }}">Avery</a></li>
+                <li><a href="{{ path('leanna') }}">Leanna</a></li>
+                <li><a href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <section>
+            <img alt="Photograph of Anthony Ma" class="profile-photo" src="{{ asset('img/anthony.jpg') }}" >
+            <h3>About Anthony</h3>
+            <p>Hi, I'm Anthony!</p>
+            <p>If you would like to follow me on twitter, tough luck (I don't have twitter)</p>
+            <p>If you are a recruiter and would like to contact me, please leave your email address and your name below and I'll send you a copy of my resume.</p>
+        </section>
+        <footer>
+            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src="{{ asset('img/twitter-wrap.png') }}" ></a>
+            <a href="http://facebook.com/"><img alt="Facebook Logo" class="social-icon" src="{{ asset('img/facebook-wrap.png') }}" ></a>
+            <a href="http://github.com/"><img alt="GitHub Logo" class="social-icon" src="{{ asset('img/gitHubLogo.png') }}" ></a>
+            <a href="http://linkedin.com/"><img alt="LinkedIn Logo" class="social-icon" src="{{ asset('img/linkedin_grey.png') }}" ></a>
+            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src="{{ asset('img/angelListLogo.png') }}" ></a>
+        </footer>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'about.html.twig' %}
+
+{% block title %}Leanna Pangan | Team Member{% endblock %}
+
+{% block body %}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ path('homepage') }}">Group 6</a></li>
+                <li><a href="{{ path('alex') }}">Alex</a></li>
+                <li><a href="{{ path('greg') }}">Greg</a></li>
+                <li><a href="{{ path('anthony') }}">Anthony</a></li>
+                <li><a href="{{ path('avery') }}">Avery</a></li>
+                <li><a class="selected" href="{{ path('leanna') }}" >Leanna</a></li>
+                <li><a href="{{ path('robin') }}">Robin</a></li>
+                <li><a href="{{ path('elric') }}">Elric</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <section>
+            <img alt="Photograph of Leanna Pangan" class="profile-photo" src="{{ asset('img/leanna.jpg') }}">
+            <h3>About Leanna</h3>
+            <p>Hi, I'm Leanna Pangan! I am a CS major at SF State.</p>
+            <p>Besides school, I love playing and watching sports! Go dubs!</p>
+        </section>
+        <footer>
+            <a href="http://twitter.com/"><img alt="Twitter Logo" class="social-icon" src="{{ asset('img/twitter-wrap.png') }}" ></a>
+            <a href="http://facebook.com/"><img alt="Facebook Logo" class="social-icon" src="{{ asset('img/facebook-wrap.png') }}" ></a>
+            <a href="http://github.com/"><img alt="GitHub Logo" class="social-icon" src="{{ asset('img/gitHubLogo.png') }}" ></a>
+            <a href="http://linkedin.com/"><img alt="LinkedIn Logo" class="social-icon" src="{{ asset('img/linkedin_grey.png') }}" ></a>
+            <a href="https://angel.co/"><img alt="AngelList Logo" class="social-icon" src="{{ asset('img/angelListLogo.png') }}" ></a>
+        </footer>
+    </div>
+{% endblock %}
