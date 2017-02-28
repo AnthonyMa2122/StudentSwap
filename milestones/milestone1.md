@@ -22,7 +22,7 @@ As she shops, clicking on each of them she is able to proceed to the item’s pa
  
 
 
-3.Data Definition (Leanna)- 
+###3.Data Definition (Leanna)- 
 
 Administrators: The administrators after proper authentication can have access to the site’s database and information about the items posted. They may also browse the items posted. Admin will also check if any inappropriate items are posted by members and have the right to delete members’ posts from the site at any time and suspend members’ accounts by email indefinitely.
 Buyer: In order to buy items, buyers have to register with us as well. Buyers can contact with the seller using our site as well before they buy anything.
@@ -64,7 +64,7 @@ Wishlist: a list of desired items or services
 
 
 
-4.Initial list of functional specs (Anthony, Greg)
+###4.Initial list of functional specs (Anthony, Greg)
 
 Users shall be able to search using categories. The categories shall be easily identifiable and labeled using common keywords that are familiar with college level academia.
 Members shall be able to purchase related items based on their recent purchases on a the same page as the receipt.
@@ -88,7 +88,7 @@ Administrators shall not be able to modify posts.
 
 
 
-5.List of non-functional specs (Greg, Elric) 
+###5.List of non-functional specs (Greg, Elric) 
  
 Application shall be developed using the LAMP stack.
 Application shall be developed using pre-approved set of software development and collaborative tools.
@@ -112,7 +112,7 @@ The website shall prominently display “SFSU Software Engineering Project, Spri
 
 
 
-6.Competitive analysis: (Avery, Alex) 
+###6.Competitive analysis: (Avery, Alex) 
 
 
 Feature
@@ -168,7 +168,7 @@ Student Swap has two clear advantages over competitor sites. One is the hyper-lo
 
 
 
-7.High-level system architecture: (Elric, Robin, Greg) 
+###7.High-level system architecture: (Elric, Robin, Greg) 
  
 LAMP Stack: Web platform to run websites.
 Linux: The base layer for the operating system.
@@ -186,7 +186,7 @@ Google Analytics: Provides tools to measure and gain consumer insight.
 Supported Browsers: Chrome, Firefox, Safari, Edge
 
 
-8.Team: 
+###8.Team: 
 Alex Gaesser – Team Lead/CEO
 Gregory Ruffin – CTO
 Anthony Ma – Team Member
@@ -195,7 +195,7 @@ Leanna Pangan – Team Member
 Avery Chua – Team Member
 Elric Dang – Team Member
  
-9. Checklist: (Alex) 
+###9. Checklist: (Alex) 
  
 - [DONE]  Team decided on basic means of communications
 - [DONE]  Team found a time slot to meet  outside of the class
