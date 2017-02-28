@@ -1,0 +1,209 @@
+### 1.Executive Summary: (Robin)
+
+Student Swap is an online marketplace built specifically for San Francisco State University students. Users will be able to buy, sell, or trade goods and services that relate closely to the needs of college students. Our service takes a hyper-local approach to online commerce - users will be engaging with others that are often within walking distance of one another. They use the same textbooks year over year, have the same sized dorm rooms (meaning they need the same size couches), and have taken the same classes, allowing some users to monetize their knowledge by offering tutoring or homework help. A user will often find a textbook from someone who lives in the same building, allowing them to effortlessly pick up their purchase. A graduating senior will easily find a buyer for their now unneeded dorm furniture, since incoming freshmen will be in need of the same kinds of products. Student Swap leverages this interconnectivity as a competitive advantage over other online marketplaces (such as Amazon), where you often have to pay for shipping and charges introduced by the middleman.
+Student Swap offers a few additional features that simplifies shopping and engages users to return to the site in the future. Users can browse for items or services they are in need of, and post “wanted” ads for those things that aren’t yet available for sale. Buyers and sellers can contact each other directly tem oto communicate about the ir service, and bookmark posts to return to later while they’re waiting for a response. Since all of our users are San Francisco State University students (or faculty), they all either live close to each other or attend classes on campus - putting them close enough to engage with each other in established “meet-up spots” on or near campus.
+Student Swap’s greatest strength is the tight focus we gain by having users with similar needs and close proximity. Our product will further leverage these advantages with a simple and robust user experience, inexpensive direct marketing, and by offering a place to trade niche items and services unique to the needs of an SFSU student.
+
+
+###2. Use Cases: (Avery)
+
+####Case 1: Karen (Unregistered Guest)
+Karen is a  San Francisco State University (SFSU) student new to college life as a freshman. She is renting around an apartment at ParkMerced and is looking to find some furniture. She decides to try out the new “students only” website after seeing a marketing flyer on a local bulletin board. After going online and navigating to the site, she browses through the homepage where some featured items are displayed. She decides to narrow her search in the furniture category. She browses through the furniture, noting the date posted, seller rating, and the image of each item. 
+As she shops, clicking on each of them she is able to proceed to the item’s page to look up the details such as date posted, the description, price, and condition of the item, as well as a map to where she can pick up the item around campus.  She finds something she likes and adds it to the shopping cart. The shopping cart takes her to a page that shows any items she’s decided to buy in current or past sessions (that she has not already purchased). She decides to purchase, and is asked if she’d like to have them delivered to her for an additional fee. She decides to have it delivered to her apartment since it is too heavy for her to transport on her own. She then proceeds to checkout where she is prompted to login to her account or sign up for the first time with her SFSU email. 
+
+####Case 2: Tom (Member)
+	Tom is a registered student of the SFSU who has used Student Swap as a buyer and seller in the past. Today, Tom is looking for a used textbook for a course offered at SFSU, but is not offered at many other schools. Knowing that he will have a difficult time finding it in a store, and not finding it on Amazon, he navigates to Student Swap where he had placed a wanted post indicating he is looking for an unlisted item. He checks his notifications box to see if anyone had offered the textbook for sale since he last checked, but no one has listed anything. He needs the book for a class later, so he decides to search for an older version. He navigates to the textbook category and scrolls around where he finds a few entries for the book, listed for sale by different students.  He reviews the condition of each book via the images in each entry, takes note of the seller rating, and uses the contact feature to message one seller to inquire whether they live within the same building as Tom (making it very easy for Tom to pick up the book). He adds that and other options to his wishlist so he can quickly return to them later.
+
+####Case 3: Harry (Administrator)
+
+	Harry is an administrator for Student Swap and has come to his weekly check in to review both flags of the site and checked the notifications box and noticed a few cases. As an administrator, he cannot buy or sell, so his inbox contains only cases. He notices a case in which a user was flagged for his comment on another user’s review. Clicking the flag link, he is instantly able to review the comment and either contact the user or mark the comment for deletion. Another user has been flagged for review for suspicion of wrongful activity. He reviews the user’s history and determines that the user’s behavior is in violation of the Terms of Use. He decides to suspend the account, disabling access. The user can appeal Harry or another administrator to review the action - either confirming or reverting the account status. 
+	
+
+ 
+
+
+3.Data Definition (Leanna)- 
+
+Administrators: The administrators after proper authentication can have access to the site’s database and information about the items posted. They may also browse the items posted. Admin will also check if any inappropriate items are posted by members and have the right to delete members’ posts from the site at any time and suspend members’ accounts by email indefinitely.
+Buyer: In order to buy items, buyers have to register with us as well. Buyers can contact with the seller using our site as well before they buy anything.
+Browse: to survey items for sale
+Cases: a particular situation
+Category: a class of things having shared characteristics
+Checkout: an administrative procedure of which items will be paid for
+Condition: the state of an item in regards to its appearance, quality, and/or working order
+Contact: communicating with someone
+Date Posted: the month, day, and year of when an item has been posted on the site for users to view
+Description: a written representation of an item
+Featured Items: items made a special attraction in the site’s home page
+Flagged for Review: when an item is given special attention to the administrator to assess or examine with the possibility of instituting a change if necessary
+Flags: a symbol used as a marker
+Flag Link: the link to a flagged item
+History: a chronological record of a user’s past events made throughout the site
+Image(s): a visible representation or picture of an item displayed on the site
+Items: Items are appropriate objects posted on the site to be bought/sold by members. An item’s name, price, condition, dimensions, map of location, and image(s) are included in the item’s details.
+Mark: a symbol made as an indication of something
+Map: a diagrammatic representation of an area of land or sea showing physical features, cities, roads, etc
+Meet Up: an informal meeting or gathering
+Members: Members can browse for items and add these items to their shopping carts. A wishlist feature is provided for a member to save a list consisting of desired items. A member may post image(s) of their item to be sold as well as check out and buy item(s) listed in their shopping cart. They are able to delete and/or modify their postings and accounts. A purchase history is available for a member to view past purchases made by the member, which will include the order number, date of purchase, items bought, and total of the purchase. Members may also favorite any items he/she are interested in and rate an item in the item’s page. Members can report any spam or acts of misuse by sending a message to the site’s administrator and contact other members through the site.
+Notifications Box: an electronic folder containing notifications or alerts
+Price: the amount of money required to buy an item
+Review: an assessment or examination of something
+Seller: Sellers must have an account on our site in order to sell their items on our site. Seller may post image(s) of the items and have to choose categories like books, music, etc.
+Seller Rating: a ranking based on the assessment of the seller’s performance, quality, or standard
+Services: a system supplying a public need
+Shopping Cart: an electronic bag or basket for carrying items to be bought
+Student Swap: an online marketplace built specifically for San Francisco State University students
+Suspend: officially prohibit (a member) from their account or carrying out their usual role for a particular length of time
+Terms of Use: rules by which one must agree to abide in order to use our site
+Unlisted Items: an item not listed or posted on the site
+Unregistered Guests: Unregistered guests can browse for items and add these items to their shopping carts. An unregistered guest may also register to become a member of our site as well as log in if they are a member.
+Users: Users can browse for items, which includes both unregistered guests and members. A user must log in with a valid sfsu email in order to buy an item.
+Wanted Post: a piece of content desired by a member
+Wishlist: a list of desired items or services
+
+
+
+
+4.Initial list of functional specs (Anthony, Greg)
+
+Users shall be able to search using categories. The categories shall be easily identifiable and labeled using common keywords that are familiar with college level academia.
+Members shall be able to purchase related items based on their recent purchases on a the same page as the receipt.
+Users shall be able to search for specific items by a search bar. The search bar shall be conveniently placed at the top of most pages for quick access by any user.
+Members shall be able to indicate or click the “star” icon on  their favorite items. 
+Members shall be able to rate their transaction after a successful meet up.
+Members who are selling shall receive notifications when a buyer has confirmed purchase.
+Users shall log in before they finalize and confirm any purchase.
+Users shall not reveal any financial details (such as credit card information) at on Student Swap.
+Users shall provide their San Francisco State email as part of registration.
+Users shall be able to report false items, inappropriate images, and specific members/posts via “Report link” button.
+Members shall have their own personal wishlist and able to add their most wanted items on said personal wishlist.
+Users shall browse through the “Featured” items page on the website. The “Featured” page shall display products from sellers.
+Members shall post advertisements on products they want to buy but are not currently available. 
+Administrators shall be able to delete posts that are deemed inappropriate or are in violation of the Terms of Service.
+Administrators shall not be able to modify posts.
+ Administrators shall be able to suspend or remove accounts found to be in violation of the site’s Terms of Use
+
+
+
+
+
+
+5.List of non-functional specs (Greg, Elric) 
+ 
+Application shall be developed using the LAMP stack.
+Application shall be developed using pre-approved set of software development and collaborative tools.
+Application shall be hosted and deployed on Amazon Web Services.
+Application shall be optimized for desktop/laptop browsers.
+The application shall render correctly on the latest versions of all major browsers.
+The application shall adequately render on browsers of mobile devices.
+Data shall be stored on team MySQL database.
+Application shall be hosted on team account.
+Application shall not support more than 50 concurrent users.
+Application shall appropriately protect privacy of users and notify users appropriately.
+The language of application shall be English.
+The application shall be intuitive to use and easy to use.
+The application shall include Google Analytics.
+Messaging between users shall be done by class-approved methods.
+Pay functionality shall not be implemented on the application.
+Website security practices shall be applied.
+Modern software practices including collaboration shall be applied.
+The website shall prominently display “SFSU Software Engineering Project, Spring 2017. For Demonstration Only” on all pages.
+
+
+
+
+6.Competitive analysis: (Avery, Alex) 
+
+
+Feature
+Student Swap
+studentlistings.com
+sellstudentstuff.com
+amazon.com
+Shopping cart
++
++
++
++
+Buy/sell directly
+++
++
++
+-
+Ratings
++
++
++
++
+Wishlist
++
++
+-
++
+Price Comparison
+-
++
+-
++
+Multiple product types
++
+-
+-
+++
+
+
+
+Student Swap has two clear advantages over competitor sites. One is the hyper-local focus that allows students to quickly and easily buy and sell to other SFSU students without needing to browse and parse large lists of information, or to deal with shipping and handling. The other is the ability to offer services and other product types outside of textbooks. This facilitates the exchange of other items or services that are key to the target demographic, like tutoring or dorm furniture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.High-level system architecture: (Elric, Robin, Greg) 
+ 
+LAMP Stack: Web platform to run websites.
+Linux: The base layer for the operating system.
+Apache HTTP Server: Web server software providing a variety of extensions and modules.
+MySQL Database Management System: Relational database management system for web application development.
+PHP Programming Language: Scripting language for web development.
+Amazon Web Services: Cloud computing platform web service.
+Github: Git-based version control and source code management web service.
+Symfony: PHP framework containing various templates and libraries.
+HyperText Markup Language (HTML): Markup language for web pages and applications.
+Cascading Style Sheets (CSS): Style sheet language for presentation and design of web pages.
+Bootstrap: Front-end web framework to design web applications.
+JavaScript: Object oriented programming language. 
+Google Analytics: Provides tools to measure and gain consumer insight.
+Supported Browsers: Chrome, Firefox, Safari, Edge
+
+
+8.Team: 
+Alex Gaesser – Team Lead/CEO
+Gregory Ruffin – CTO
+Anthony Ma – Team Member
+Robin Ma – Team Member
+Leanna Pangan – Team Member
+Avery Chua – Team Member
+Elric Dang – Team Member
+ 
+9. Checklist: (Alex) 
+ 
+- [DONE]  Team decided on basic means of communications
+- [DONE]  Team found a time slot to meet  outside of the class
+- [DONE]  CTO chosen and working out well so far
+- [DONE]  Github master chosen
+- [DONE]  Team ready and able to use the chosen framework
+- [DONE]  Skills of each team member defined and known to all
+- [DONE]  Team lead ensured that all team members read the  final M1 and agree/understand it before submission
+
+
+
