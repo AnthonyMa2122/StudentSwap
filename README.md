@@ -18,9 +18,9 @@ SFSU Student Marketplace is designed to offer students a more direct way to buy 
 
 The Marketplace is built using [symfony](https://symfony.com). A primer on how to use symfony can be hound [here](https://www.sitepoint.com/symfony-beginners-tutorial/).
 
-Our [here](https://drive.google.com/drive/folders/0Bz3eS0BW4eyUZWRXSXJQM1dpZjQ?usp=sharing) is our milestones folder.
+Our milestones folder can be found [here.](https://drive.google.com/drive/folders/0Bz3eS0BW4eyUZWRXSXJQM1dpZjQ?usp=sharing)
 
-View the homepage [here](http://sfsuse.com/~sp17g06/student_swap/web/)
+View the homepage [here.](http://sfsuse.com/~sp17g06/student_swap/web/)
 
 
 
