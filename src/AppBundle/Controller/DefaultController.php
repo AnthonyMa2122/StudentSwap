@@ -80,17 +80,38 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/prototype")
+     * @Route("/prototype" , name="search")
      */
-    public function prototypeAction()
+    public function prototypeAction(Request $request)
     {
+	$item =  new Item();
 
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Item');
-        
-        $item = $repository->findAll();
-        $item = $repository->find(1);
+	$form = $this->createFormBuilder($item)
+		->add('id', IntegerType::class, array('mapped' => false))
+		->add('search', SubmitType::class, array('label' => 'Search Item'))
+		->getForm();
+	$form->handleRequest($request);
 
-        return $this->render('default/prototype.html.twig', array('item' => $item));
+	if ($form->isSubmitted() && $form->isValid()) {
+		$key = $form['id']->getData();
+
+		$item = $this->getDoctrine()
+			->getRepository('AppBundle:Item')
+                	->find($key);
+		
+		$em = $this->getDoctrine()->getManager();
+	        $em->persist($item);
+       		$em->flush();
+
+		return $this->render('default/prototype.html.twig', array('form' => $form->createView(), 'item' => $item));
+		//return $this->redirectToRoute('search');
+	}
+/*	
+        $item = $this->getDoctrine()
+		->getRepository('AppBundle:Item')
+		->find(1);
+*/
+        return $this->render('default/prototype.html.twig', array('form' => $form->createView(), 'item' => $item));
     }
 }
 
