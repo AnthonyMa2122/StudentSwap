@@ -6,6 +6,11 @@ use AppBundle\Entity\Item;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class DefaultController extends Controller
 {
@@ -77,14 +82,44 @@ class DefaultController extends Controller
     /**
      * @Route("/prototype")
      */
-    public function prototypeAction()
+    public function prototypeAction(Request $request)
     {
+        $item = new Item();
 
+        $form = $this->createFormBuilder($item)
+            ->add('id', IntegerType::class)
+            ->add('save', SubmitType::class, array('label' => 'Search Id'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $item = $form['id']->getData();
+
+            // ... perform some action, such as saving the task to the database
+            // for example, if Task is a Doctrine entity, save it!
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($item);
+            $em->flush();
+
+            return $this->render('default/prototype.html.twig', array(
+                'form' => $form->createView(), 'item' => $item
+            ));
+        }
+
+
+        return $this->render('default/prototype.html.twig', array(
+            'form' => $form->createView(), 'item' => null
+        ));
+        /*
         $item = $this->getDoctrine()
             ->getRepository('AppBundle:Item')
             ->findAll();
 
         return $this->render('default/prototype.html.twig', array('item' => $item));
+        */
     }
 }
 
