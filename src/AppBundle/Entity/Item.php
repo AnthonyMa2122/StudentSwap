@@ -29,9 +29,9 @@ class Item
     private $title;
 
     /**
-     * @var int
+     * @var decimal
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="decimal" , precision=8, scale=2)
      */
     private $price;
 
