@@ -96,13 +96,22 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
-            $item = $form['id']->getData();
+            //$item = $form['id']->getData();
+            $id = $form['id']->getData();
 
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($item);
-            $em->flush();
+            $item = $this->getDoctrine()
+                ->getRepository('AppBundle:Item')
+                ->find($id);
+
+            if (!$item) {
+                throw $this->createNotFoundException(
+                    'No product found for id '.$id
+                );
+            }
+            //$item->persist($item);
+            //$item->flush();
 
             return $this->render('default/prototype.html.twig', array(
                 'form' => $form->createView(), 'item' => $item
