@@ -85,8 +85,9 @@ class DefaultController extends Controller
     public function prototypeAction()
     {
 
-        $repository = $this->getDoctrine()->getRepository('AppBundle:Product');
-
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Item');
+        
+        $item = $repository->findAll();
         $item = $repository->find(1);
 
         return $this->render('default/prototype.html.twig', array('item' => $item));
