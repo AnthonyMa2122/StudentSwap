@@ -82,53 +82,14 @@ class DefaultController extends Controller
     /**
      * @Route("/prototype")
      */
-    public function prototypeAction(Request $request)
+    public function prototypeAction()
     {
-        $item = new Item();
 
-        $form = $this->createFormBuilder($item)
-            ->add('id', IntegerType::class)
-            ->add('save', SubmitType::class, array('label' => 'Search Id'))
-            ->getForm();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Product');
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            //$item = $form['id']->getData();
-            $id = $form['id']->getData();
-
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            $item = $this->getDoctrine()
-                ->getRepository('AppBundle:Item')
-                ->find($id);
-
-            if (!$item) {
-                throw $this->createNotFoundException(
-                    'No product found for id '.$id
-                );
-            }
-            //$item->persist($item);
-            //$item->flush();
-
-            return $this->render('default/prototype.html.twig', array(
-                'form' => $form->createView(), 'item' => $item
-            ));
-        }
-
-
-        return $this->render('default/prototype.html.twig', array(
-            'form' => $form->createView(), 'item' => null
-        ));
-        /*
-        $item = $this->getDoctrine()
-            ->getRepository('AppBundle:Item')
-            ->findAll();
+        $item = $repository->find(1);
 
         return $this->render('default/prototype.html.twig', array('item' => $item));
-        */
     }
 }
 
