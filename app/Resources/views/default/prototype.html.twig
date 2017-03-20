@@ -1,8 +1,8 @@
 {% block body %}
     {% for value in item %}
-        <p>{{ value.id }}</p>
-        <p>{{ value.title }}</p>
-        <p>{{ value.price }}</p>
-        <p>{{ value.description }}</p>
+        <div>
+            <h1>{{ value.title }}</h1>
+            <p>{{ value.id }} {{ value.price }} {{ value.description }}</p>
+        </div>
     {% endfor %}
 {% endblock %}
