@@ -1,1 +1,8 @@
-Hello World
+{% block body %}
+    {% for value in item %}
+        <p>{{ value.id }}</p>
+        <p>{{ value.title }}</p>
+        <p>{{ value.price }}</p>
+        <p>{{ value.description }}</p>
+    {% endfor %}
+{% endblock %}

@@ -74,5 +74,17 @@ class DefaultController extends Controller
         return $this->render('default/aboutelric.html.twig');
     }
 
+    /**
+     * @Route("/prototype")
+     */
+    public function prototypeAction()
+    {
+
+        $item = $this->getDoctrine()
+            ->getRepository('AppBundle:Item')
+            ->findAll();
+
+        return $this->render('default/prototype.html.twig', array('item' => $item));
+    }
 }
 
