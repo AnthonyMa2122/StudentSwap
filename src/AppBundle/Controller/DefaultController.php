@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Item;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -72,5 +73,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutelric.html.twig');
     }
+
 }
 
