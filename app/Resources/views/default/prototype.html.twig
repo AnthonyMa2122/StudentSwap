@@ -5,7 +5,9 @@
     {# {% for value in item %} #}
     <div>
         <h1>{{ item.title }}</h1>
-        <p>{{ item.id }} {{ item.price }} {{ item.description }}</p>
+        <p>ID: {{ item.id }}</p>
+	<p>PRICE: {{ item.price }}</p>
+	<p>DESCRIPTION: {{ item.description }}</p>
     </div>
     {# {% endfor %} #}
 {% endblock %}
