@@ -99,6 +99,11 @@ class DefaultController extends Controller
 			->getRepository('AppBundle:Item')
                 	->find($key);
 		
+		if (!$item) {
+        		throw $this->createNotFoundException(
+            		'No item found for id '.$key);
+		}	
+	
 		$em = $this->getDoctrine()->getManager();
 	        $em->persist($item);
        		$em->flush();
