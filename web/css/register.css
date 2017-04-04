@@ -1,0 +1,80 @@
+/* Sets parameters for the input */
+.registercontainer input[type=text], input[type=password] {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Shifts input boxes */
+.registercontainer input.box {
+    margin-left: 2%;
+}
+
+/* Set a style for all buttons */
+.registercontainer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 425px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+/* Float signup buttons and add an equal width */
+.registercontainer .signupbtn {
+    float: left;
+    width: 25%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.registercontainer .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+/* Aligns the labels */
+.registercontainer .registercontainerform {
+    margin-left: -3%;
+    padding-left: 2%;
+}
+
+.registercontainer label.phone, label.email {
+    margin-left: -30%;
+}
+
+.registercontainer label.rpsw {
+    margin-left: -24.5%;
+}
+
+.registercontainer label.psw {
+    margin-left: -28%;
+}
+
+.registercontainer label.name {
+    margin-left: 6%;
+}
+
+.registercontainer label.first, label.last {
+    margin-left: 2%;
+}
+
+.registercontainer .clearfix {
+    margin-left: 5%;
+}
