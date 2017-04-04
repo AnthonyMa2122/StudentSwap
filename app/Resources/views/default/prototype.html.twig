@@ -1,0 +1,13 @@
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    {# {% for value in item %} #}
+    <div>
+        <h1>{{ item.title }}</h1>
+        <p>ID: {{ item.id }}</p>
+	<p>PRICE: {{ item.price }}</p>
+	<p>DESCRIPTION: {{ item.description }}</p>
+    </div>
+    {# {% endfor %} #}
+{% endblock %}
