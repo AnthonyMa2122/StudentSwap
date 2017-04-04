@@ -80,6 +80,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/listings", name="listings")
+     */
+    public function listingsAction()
+    {
+        return $this->render('default/listing.html.twig');
+    }
+
+    /**
      * @Route("/prototype")
      */
     public function prototypeAction(Request $request)

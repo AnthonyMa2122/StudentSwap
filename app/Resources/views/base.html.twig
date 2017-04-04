@@ -3,11 +3,73 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+            <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href={{ asset('css/homepage.css') }} >
+        {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% block body %}
+        <header>
+            <!--NAV BAR-->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ path('homepage') }}">STUDENT SWAP</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="selected" href="{{ path('homepage') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
+                            <li><a href="#Login">LOGIN/SIGN-UP<span class="glyphicon glyphicon-user"></span></a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('alex') }}">ALEX</a></li>
+                                    <li><a href="{{ path('greg') }}">GREG</a></li>
+                                    <li><a href="{{ path('anthony') }}">ANTHONY</a></li>
+                                    <li><a href="{{ path('avery') }}">AVERY</a></li>
+                                    <li><a href="{{ path('leanna') }}">LEANNA</a></li>
+                                    <li><a href="{{ path('robin') }}">ROBIN</a></li>
+                                    <li><a href="{{ path('elric') }}">ELRIC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <form>
+                        <input type="text" name="search" placeholder="Search..">
+                        <button type="button" class="btn">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                </div>
+                <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+                    <h3 class="w3-bar-item">CATEGORIES</h3>
+                    <a href="{{ path('listings') }}" class="w3-bar-item w3-button">BOOKS</a>
+                    <a href="#" class="w3-bar-item w3-button">CLOTHES</a>
+                    <a href="#" class="w3-bar-item w3-button">TECH</a>
+                </div>
+                <div style="margin-left:15%">
+                </div>
+            </nav>
+        </header>
+        {% block carousel %}{% endblock %}
+        {% block listing %}{% endblock %}
+    {% endblock %}
+    {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="index.js"></script>
+    {% endblock %}
     </body>
 </html>
