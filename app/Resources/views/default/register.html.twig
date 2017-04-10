@@ -1,67 +1,6 @@
-{% block stylesheets %}
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href={{ asset('css/homepage.css') }} >
-    <link rel="stylesheet" href={{ asset('css/register.css') }} >
-{% endblock %}
+{% extends 'base.html.twig' %}
 
-{% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="index.js"></script>
-{% endblock %}
-
-{% block body %}
-    <header>
-        <!--NAV BAR-->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ path('homepage') }}">STUDENT SWAP</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="selected" href="{{ path('homepage') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
-                        <li><a href="{{ path('login') }}">LOGIN/REGISTER<span class="glyphicon glyphicon-user"></span></a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ path('alex') }}">ALEX</a></li>
-                                <li><a href="{{ path('greg') }}">GREG</a></li>
-                                <li><a href="{{ path('anthony') }}">ANTHONY</a></li>
-                                <li><a href="{{ path('avery') }}">AVERY</a></li>
-                                <li><a href="{{ path('leanna') }}">LEANNA</a></li>
-                                <li><a href="{{ path('robin') }}">ROBIN</a></li>
-                                <li><a href="{{ path('elric') }}">ELRIC</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <form>
-                    <input type="text" name="search" placeholder="Search..">
-                    <button type="button" class="btn">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </form>
-            </div>
-            <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
-                <h3 class="w3-bar-item">CATEGORIES</h3>
-                <a href="#" class="w3-bar-item w3-button">BOOKS</a>
-                <a href="#" class="w3-bar-item w3-button">CLOTHES</a>
-                <a href="#" class="w3-bar-item w3-button">TECH</a>
-            </div>
-            <div style="margin-left:15%">
-            </div>
-        </nav>
-    </header>
+{% block register %}
     <!--REGISTER-->
     <br>
     <br>
@@ -71,29 +10,37 @@
     <div class="registercontainer">
     <form action="/action_page.php" style="border:1px solid #ccc">
         <div class="registercontainerform">
+            <div class="name">
             <label class="name"><b>Name:</b></label>
             <label class="first"><b>First</b></label>
             <input class="box" type="text" placeholder="Enter First Name" name="email" required>
-
             <label class="last"><b>Last</b></label>
             <input class="box" type="text" placeholder="Enter Last Name" name="email" required>
+            </div>
             <br>
+            <div class="phone">
             <label class="phone"><b>Phone:</b></label>
             <input class="box" type="text" placeholder="Enter Phone #(E.g. 'xxx-xxx-xxxx')" name="email" required>
-            <br>
+            </div><br>
+            <div class="email">
             <label class="email"><b>Email:</b></label>
             <input class="box" type="text" placeholder="Enter Email" name="email" required>
-            <br>
+            </div><br>
+            <div class="psw">
             <label class="psw"><b>Password:</b></label>
             <input class="box" type="password" placeholder="Enter Password" name="psw" required>
+            </div>
             <br>
+            <div class="rpsw">
             <label class="rpsw"><b>Repeat Password:</b></label>
-            <input class="box" type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
-            <input class="text-center" type="checkbox" checked="checked"> Remember me
+                <input class="box" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            </div>
+            <br>
+            <label class="checkbox"><input class="text-center" type="checkbox" checked="checked"> Remember me</label>
             <p class="terms">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
             <div class="clearfix">
-                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="submit" class="signupbtn">Register</button>
             </div>
         </div>
     </form>
