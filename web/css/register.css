@@ -1,16 +1,12 @@
 /* Sets parameters for the input */
 .registercontainer input[type=text], input[type=password] {
     width: 25%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 12px 5px;
+    margin: 4px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-}
-
-/* Shifts input boxes */
-.registercontainer input.box {
-    margin-left: 2%;
+    text-align: center;
 }
 
 /* Set a style for all buttons */
@@ -31,7 +27,7 @@
 }
 
 /* Add padding to container elements */
-.container {
+.registercontainer .container {
     padding: 16px;
 }
 
@@ -49,32 +45,51 @@
     }
 }
 
-/* Aligns the labels */
+/* Aligns the labels and input boxes*/
 .registercontainer .registercontainerform {
-    margin-left: -3%;
-    padding-left: 2%;
+    margin-left: 20%;
 }
 
-.registercontainer label.phone, label.email {
-    margin-left: -30%;
+
+.registercontainer .clearfix {
+    margin-left: -18%;
 }
 
-.registercontainer label.rpsw {
-    margin-left: -24.5%;
-}
-
-.registercontainer label.psw {
-    margin-left: -28%;
-}
-
-.registercontainer label.name {
-    margin-left: 6%;
-}
-
-.registercontainer label.first, label.last {
+.registercontainer .name {
     margin-left: 2%;
 }
 
-.registercontainer .clearfix {
-    margin-left: 5%;
+.phone {
+    margin-left: 3.5%;
+}
+
+.registercontainer .email {
+    margin-left: 3.75%;
+}
+
+.registercontainer .psw {
+    margin-left: 2.25%;
+}
+
+.registercontainer .psw input.box, .rpsw input.box {
+    border-radius: 3px;
+}
+
+.rpsw {
+    margin-left: -0.25%;
+}
+.rpsw input.box {
+    width: 24.5%;
+}
+
+.registercontainer label.checkbox {
+    margin-left: 34%;
+}
+
+p.terms {
+    margin-left: 20%;
+}
+
+.registercontainer input.box {
+    margin-bottom: -2%;
 }
