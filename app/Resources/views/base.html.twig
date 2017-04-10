@@ -46,10 +46,20 @@
                             </li>
                         </ul>
                     </div>
-                    <form>
-                        <input type="text" name="search" placeholder="Search..">
+                    <!--DROPDOWN, SEARCH BAR, SEARCH BUTTON-->
+                    <form class="searchbar">
+                        <button type="button" class="btn btn-primary dropdown-toggle">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                            <ul class="dropdown-menu ">
+                                <li><a href="{{ path('listings') }}">BOOKS</a></li>
+                                <li><a href="{{ path('listings') }}">CLOTHES</a></li>
+                                <li><a href="{{ path('listings') }}">TECH</a></li>
+                            </ul>
+                        </button>
+                        <input class="search" type="text" name="search" placeholder="Search..">
                         <button type="button" class="btn">
-                            <span class="glyphicon glyphicon-search"></span>
+                            <span class="glyphicon glyphicon-search"></span></a>
                         </button>
                     </form>
                 </div>
