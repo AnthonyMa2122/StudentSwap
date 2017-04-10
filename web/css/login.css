@@ -1,28 +1,28 @@
 /* Adds a border to the form */
-.loginContainer form {
+form.login {
     border: 3px solid #f1f1f1;
+    text-align: center;
 }
 
 /* Sets parameters for the text boxes */
 .loginContainer input[type=text], .loginContainer input[type=password] {
-    width: 50%;
-    padding: 14px 20px;
-    margin: 20px 0;
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
 /* Aligns the labels */
-.loginContainer label.email {
-    margin-left: -7%;
-}
-.loginContainer label.psw {
-    margin-left: -11%;
+.loginContainer .email, .psw {
+    margin-left: -5%;
 }
 
-.loginContainer input.box {
-    padding-left: 2%;
+/* Edits password input box */
+.loginContainer .psw input.box {
+    width: 60%;
+    border-radius: 3px;
 }
 
 /* Styles the buttons */
@@ -48,7 +48,7 @@
 }
 
 
-.container {
+.loginContainer .container {
     padding: 19px;
     width: 50%
 }
