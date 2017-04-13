@@ -40,7 +40,7 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/register.html.twig');
     }
-
+    
     /**
      * @Route("/homeLoggedIn", name="homeLoggedIn")
      */
@@ -58,6 +58,7 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/createPost.html.twig');
     }
+
 
     /**
      * @Route("/dashboard", name="dashboard")
