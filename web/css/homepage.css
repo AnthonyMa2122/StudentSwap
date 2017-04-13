@@ -1,8 +1,10 @@
 /*CAROUSEL*/
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 70%;
+    width: 600px;
     margin: auto;
+    height: 450px;
+    max-height: 450px;
 }
 /*WELCOME*/
 .container {
@@ -17,12 +19,13 @@
 }
 /* Black buttons with extra padding and without rounded borders */
 .btn {
-    padding: 19px 20px;
-    background-color: #333;
+    padding: 18px 20px;
+    background-color: #2d2d30;
     color: #f1f1f1;
     border-radius: 4px;
     transition: .2s;
     margin-bottom: 1px;
+    border-color: #f1f1f1;
 }
 /* On hover, the color of .btn will transition to white with black text */
 .btn:hover, .btn:focus {
@@ -61,10 +64,16 @@
     border-color: transparent;
 }
 
-/* Dropdown */
 .open .dropdown-toggle {
     color: #fff ;
     background-color: #555 !important;
+}
+
+/* Drop down button for categories */
+button.btn.btn-primary.dropdown-toggle {
+    position: absolute;
+    margin-left: -4.8%;
+    border-color: #f1f1f1;
 }
 
 /* Dropdown links */
@@ -157,21 +166,22 @@ textarea {
     }
 }
 /*SEARCH BAR*/
-input[type=text] {
-    width: 130px;
+form.searchbar input[type=text] {
+    width: 200px;
     box-sizing: content-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    padding: 12px 20px 12px 40px;
+    padding: 12px 15px 12px 15px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+form.searchbar input[type=text]:focus {
     width: 50%;
 }
-form {
+
+form.searchbar {
     text-align: center;
 }

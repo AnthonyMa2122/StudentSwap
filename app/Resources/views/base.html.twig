@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -9,6 +10,10 @@
             <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link rel="stylesheet" href={{ asset('css/homepage.css') }} >
+            <link rel="stylesheet" href={{ asset('css/login.css') }} >
+            <link rel="stylesheet" href={{ asset('css/register.css') }} >
+            <link rel="stylesheet" href={{ asset('css/homepage.css') }} >
+            <link rel="stylesheet" href={{ asset('css/listing.css') }} >
         {% endblock %}
 
         <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}" />
@@ -30,9 +35,8 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="selected" href="{{ path('homepage') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
-                            <li><a href="{{ path('login') }}">LOGIN/REGISTER<span class="glyphicon glyphicon-user"></span></a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">ABOUT
                                     <span class="glyphicon glyphicon-menu-hamburger"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ path('alex') }}">ALEX</a></li>
@@ -44,20 +48,34 @@
                                     <li><a href="{{ path('elric') }}">ELRIC</a></li>
                                 </ul>
                             </li>
+                            <li><a href="{{ path('login') }}">SELL/POST<span class="glyphicon glyphicon-edit"></span></a></li>
+                            <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span class="glyphicon glyphicon-user"></span></a></li>
+                            <li><a href="#">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            <li><a href="{{ path('login') }}">LOGIN/REGISTER<span class="glyphicon glyphicon-log-in"></span></a></li>
                         </ul>
                     </div>
-                    <form>
-                        <input type="text" name="search" placeholder="Search..">
+                    <!--DROPDOWN, SEARCH BAR, SEARCH BUTTON-->
+                    <form class="searchbar">
+                        <button type="button" class="btn btn-primary dropdown-toggle">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                            <ul class="dropdown-menu ">
+                                <li><a href="{{ path('books') }}">BOOKS</a></li>
+                                <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
+                                <li><a href="{{ path('tech') }}">TECH</a></li>
+                            </ul>
+                        </button>
+                        <input class="search" type="text" name="search" placeholder="Search..">
                         <button type="button" class="btn">
-                            <span class="glyphicon glyphicon-search"></span>
+                            <span class="glyphicon glyphicon-search"></span></a>
                         </button>
                     </form>
                 </div>
                 <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
                     <h3 class="w3-bar-item">CATEGORIES</h3>
-                    <a href="{{ path('listings') }}" class="w3-bar-item w3-button">BOOKS</a>
-                    <a href="#" class="w3-bar-item w3-button">CLOTHES</a>
-                    <a href="#" class="w3-bar-item w3-button">TECH</a>
+                    <a href="{{ path('books') }}" class="w3-bar-item w3-button">BOOKS</a>
+                    <a href="{{ path('clothes') }}" class="w3-bar-item w3-button">CLOTHES</a>
+                    <a href="{{ path('tech') }}" class="w3-bar-item w3-button">TECH</a>
                 </div>
                 <div style="margin-left:15%">
                 </div>
@@ -65,6 +83,9 @@
         </header>
         {% block carousel %}{% endblock %}
         {% block listing %}{% endblock %}
+        {% block login %}{% endblock %}
+        {% block register %}{% endblock %}
+        {% block prototype %}{% endblock %}
     {% endblock %}
     {% block javascripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

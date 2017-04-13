@@ -42,6 +42,60 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/homeLoggedIn", name="homeLoggedIn")
+     */
+    public function homeLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/homeLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/createPost", name="createPost")
+     */
+    public function createPostAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/createPost.html.twig');
+    }
+
+    /**
+     * @Route("/dashboard", name="dashboard")
+     */
+    public function dashboardAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/dashboard.html.twig');
+    }
+
+    /**
+     * @Route("/books", name="books")
+     */
+    public function booksAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/books.html.twig');
+    }
+
+    /**
+     * @Route("/clothes", name="clothes")
+     */
+    public function clothesAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/clothes.html.twig');
+    }
+
+    /**
+     * @Route("/tech", name="tech")
+     */
+    public function techAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/tech.html.twig');
+    }
+
+    /**
      * @Route("/greg", name="greg")
      */
     public function gregAction()

@@ -1,0 +1,47 @@
+{% extends 'userLoggedIn.html.twig' %}
+{% block post %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="createpost">Create Post</h1>
+    <p class="info">Please fill out the form below to post an item:</p>
+    <div class="postContainer">
+        <form action="/action_page.php" style="border:1px solid #ccc">
+            <div class="postContainerform">
+                <div class="title">
+                    <label class="title"><b>Title:</b></label>
+                    <input class="box" type="text" placeholder="Enter Title" name="title" required>
+                </div><br>
+                <label class="description" for="comment">Description:</label>
+                <div class="description">
+                    <textarea class="box" rows="5" id="comment" placeholder="Enter Description"></textarea>
+                </div>
+                <br>
+                <div class="form-inline">
+                <label class="category" for="sel1">Category:</label>
+                <select class="form-control" id="sel1">
+                    <option>--Select one--</option>
+                    <option>Books</option>
+                    <option>Clothes</option>
+                    <option>Tech</option>
+                </select>
+                    <br>
+                    <br>
+                    <label class="condition" for="sel1">Condition:</label>
+                    <select class="form-control" id="sel1">
+                        <option>--Select one--</option>
+                        <option>Poor</option>
+                        <option>Good</option>
+                        <option>New</option>
+                    </select>
+                </div>
+                <br>
+                <div class="clearfix">
+                    <button type="submit" class="signupbtn">Create Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
