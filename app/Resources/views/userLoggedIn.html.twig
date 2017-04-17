@@ -27,11 +27,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('homeLoggedIn') }}">STUDENT SWAP</a>
+                    <a class="navbar-brand" href="{{ path('homeLoggedIn') }}">STUDENT<br><br>SWAP</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="selected" href="{{ path('homeLoggedIn') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
+                    <ul class="nav navbar-nav">
+                        <li><a class="selected" href="{{ path('homepage') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">ABOUT
                                 <span class="glyphicon glyphicon-menu-hamburger"></span></a>
@@ -58,9 +58,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="glyphicon glyphicon-menu-hamburger"></span></a>
                         <ul class="dropdown-menu ">
-                            <li><a href="{{ path('books') }}">BOOKS</a></li>
-                            <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
-                            <li><a href="{{ path('tech') }}">TECH</a></li>
+                            <li><a href="{{ path('booksLoggedIn') }}">BOOKS</a></li>
+                            <li><a href="{{ path('clothesLoggedIn') }}">CLOTHES</a></li>
+                            <li><a href="{{ path('techLoggedIn') }}">TECH</a></li>
                         </ul>
                     </button>
                     <input class="search" type="text" name="search" placeholder="Search..">
@@ -72,9 +72,9 @@
 
             <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
                 <h3 class="w3-bar-item">CATEGORIES</h3>
-                <a href="{{ path('books') }}" class="w3-bar-item w3-button">BOOKS</a>
-                <a href="{{ path('clothes') }}" class="w3-bar-item w3-button">CLOTHES</a>
-                <a href="{{ path('tech') }}" class="w3-bar-item w3-button">TECH</a>
+                <a href="{{ path('booksLoggedIn') }}" class="w3-bar-item w3-button">BOOKS</a>
+                <a href="{{ path('clothesLoggedIn') }}" class="w3-bar-item w3-button">CLOTHES</a>
+                <a href="{{ path('techLoggedIn') }}" class="w3-bar-item w3-button">TECH</a>
             </div>
             <div style="margin-left:15%">
             </div>
@@ -82,6 +82,9 @@
     </header>
     {% block home %} {% endblock %}
     {% block post %} {% endblock %}
+    {% block books %} {% endblock %}
+    {% block clothes %} {% endblock %}
+    {% block tech %} {% endblock %}
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
