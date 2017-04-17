@@ -28,9 +28,11 @@
         <th>Description</th>
     </tr>
     {% for item in items %}
-        <td>{{ item.title }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ item.description }}</td>
+        <tr>
+            <td>{{ item.title }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.description }}</td>
+        </tr>
     {% endfor %}
 </table>
 
