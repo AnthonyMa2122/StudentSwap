@@ -1,10 +1,38 @@
-{% extends 'base.html.twig' %}
-{% block listing %}
-    <ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Description</th>
+    </tr>
     {% for item in items %}
-        <li>Title: {{ item.title }}</li>
-        <li>Price: {{ item.price }}</li>
-        <li>Description: {{ item.description }}</li>
+        <td>{{ item.title }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.description }}</td>
     {% endfor %}
-    </ul>
-{% endblock %}
+</table>
+
+</body>
+</html>
