@@ -37,16 +37,18 @@
 .navbar {
     margin-bottom: 0;
     background-color: #2d2d30;
-    border: 0;
     font-size: 11px !important;
     letter-spacing: 4px;
     opacity:1;
 }
 
+
+
 /* Add a gray color to all navbar links */
 .navbar li a, .navbar .navbar-brand {
     color: #d5d5d5 !important;
 }
+
 
 /* On hover, the links will turn white */
 .navbar-nav li a:hover {

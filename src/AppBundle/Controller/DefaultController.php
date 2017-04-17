@@ -97,6 +97,33 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/booksLoggedIn", name="booksLoggedIn")
+     */
+    public function booksLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/booksLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/clothesLoggedIn", name="clothesLoggedIn")
+     */
+    public function clothesLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/clothesLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/techLoggedIn", name="techLoggedIn")
+     */
+    public function techLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/techLoggedIn.html.twig');
+    }
+
+    /**
      * @Route("/greg", name="greg")
      */
     public function gregAction()

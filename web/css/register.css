@@ -7,7 +7,9 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
     text-align: center;
+    border-radius: 4px;
 }
+
 
 /* Set a style for all buttons */
 .registercontainer button {
@@ -96,4 +98,8 @@ label.terms {
 
 h1.registerform {
     margin-left: 47%;
+}
+
+.requiredfield {
+    margin-left: 12%;
 }
