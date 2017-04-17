@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block listing %}
-
-
+    <ul>
+    {% for item in items %}
+        <li>Title: {{ item.title }}</li>
+        <li>Price: {{ item.price }}</li>
+        <li>Description: {{ item.description }}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}

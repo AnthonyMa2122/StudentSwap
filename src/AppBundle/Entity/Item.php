@@ -42,6 +42,12 @@ class Item
      */
     private $description;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=10)
+     */
+    private $category;
 
     /**
      * Get id
