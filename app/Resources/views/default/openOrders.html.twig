@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block openOrders %}
+    <!--Open Orders-->
+    <div class="openOrdersContainer">
+        <body>
+            <table>
+                <thead>
+                <tr>
+                    <td colspan="6" class="title">Buying</td>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <th class="category">View</th>
+                    <th class="category">Item/Service Name</th>
+                    <th class="category">Added Date</th>
+                    <th class="category">Price</th>
+                </tr>
+
+                </tbody>
+
+                <tbody>
+                <tr>
+                    <td><a href="">link to item/service</a></td>
+                    <td class="left">item and service name</td>
+                    <td class="text">4/1/17</td>
+                    <td class="text">$1.00</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <table>
+                <thead>
+                <tr>
+                    <td colspan="6" class="title">Selling</td>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <th class="category">View</th>
+                    <th class="category">Item/Service Name</th>
+                    <th class="category">Posted Date</th>
+                    <th class="category">Price</th>
+                </tr>
+
+                </tbody>
+
+                <tbody>
+                <tr>
+                    <td><a href="">link to item/service</a></td>
+                    <td class="left">item and service name</td>
+                    <td class="text">4/1/17</td>
+                    <td class="text">$1.00</td>
+                </tr>
+                </tbody>
+            </table>
+        </body>
+    </div>
+
+{% endblock %}
