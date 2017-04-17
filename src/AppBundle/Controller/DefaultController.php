@@ -70,6 +70,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/openOrders", name="openOrders")
+     */
+    public function openOrdersAction()
+    {
+        // replace this example code with whatever you need.
+        return $this->render('default/openOrders.html.twig');
+    }
+
+    /**
      * @Route("/books", name="books")
      */
     public function booksAction()

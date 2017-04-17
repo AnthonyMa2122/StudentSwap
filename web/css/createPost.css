@@ -57,6 +57,13 @@ p.info {
 .title {
     margin-left: 12%;
 }
+.fileinput{
+    margin-left: 8.5%;
+}
+.filetitle{
+    margin-left: -6%;
+}
+
 label.description {
     margin-left: 18.75%;
 }
