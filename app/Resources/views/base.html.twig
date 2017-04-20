@@ -87,16 +87,17 @@
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
+    {% block footer %}
+        <footer>
+            <p>© 2017 SFSU CSC648 Group 6. </p>
+            <p>This is a project, and not intended for full use. Please see the Terms of Use</p>
+        </footer>
+    {% endblock %}
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
-{% endblock %}
-
-{% block footer %}
-    <p class="text-center">All content and images used on this site are borrowed by students of SFSU.
-        All content is used in good faith as well as the proper distribution of all our content.</p>
 {% endblock %}
 </body>
 </html>
