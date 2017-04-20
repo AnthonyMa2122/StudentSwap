@@ -51,6 +51,33 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/terms", name="terms")
+     */
+    public function termsAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/terms.html.twig');
+    }
+
+    /**
+     * @Route("/disclaimer", name="disclaimer")
+     */
+    public function disclaimerAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/disclaimer.html.twig');
+    }
+
+    /**
+     * @Route("/infoPrivacy", name="infoPrivacy")
+     */
+    public function infoPrivacyAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/infoPrivacy.html.twig');
+    }
+
+    /**
      * @Route("/createPost", name="createPost")
      */
     public function createPostAction()

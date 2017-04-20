@@ -87,6 +87,9 @@
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
+    {% block terms %} {% endblock %}
+    {% block disclaimer %} {% endblock %}
+    {% block infoPrivacy %} {% endblock %}
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -96,7 +99,7 @@
 
 {% block footer %}
     <p class="text-center">All content and images used on this site are borrowed by students of SFSU.
-        All content is used in good faith as well as the proper distribution of all our content.</p>
+        All content is used in good faith as well as the proper <a href="{{ path('disclaimer') }}"> disclaimer </a> of all our <a href="{{ path('terms') }}"> terms and conditions</a>. </p>
 {% endblock %}
 </body>
 </html>
