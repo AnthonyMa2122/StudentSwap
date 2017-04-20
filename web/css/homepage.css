@@ -42,26 +42,16 @@
     opacity:1;
 }
 
-
-
-/* Add a gray color to all navbar links */
 .navbar li a, .navbar .navbar-brand {
     color: #d5d5d5 !important;
 }
-
-
-/* On hover, the links will turn white */
 .navbar-nav li a:hover {
     color: #fff !important;
 }
-
-/* The active link */
 .navbar-nav li.active a {
     color: #fff !important;
-    background-color:#29292c !important;
+    background-color: #29292c !important;
 }
-
-/* Remove border color from the collapsible button */
 .navbar-default .navbar-toggle {
     border-color: transparent;
 }
@@ -94,6 +84,7 @@ button.btn.btn-primary.dropdown-toggle {
     background-color: #555 !important;
 }
 
+
 /* sidebar links */
 .sidebar-menu li a {
     color: #000 !important;
@@ -101,7 +92,7 @@ button.btn.btn-primary.dropdown-toggle {
 
 /* On hover, the sidebar links will turn red */
 .sidebar-menu li a:hover {
-    background-color: red !important;
+    background-color: darkgray !important;
 }
 /*STYLE*/
 body {
