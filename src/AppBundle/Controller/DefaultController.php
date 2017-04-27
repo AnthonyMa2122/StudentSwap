@@ -70,6 +70,16 @@ class DefaultController extends Controller
 
 
     /**
+     * @Route("/openOrdersLoggedIn", name="openOrdersLoggedIn")
+     */
+    public function openOrdersLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/openOrdersLoggedIn.html.twig');
+    }
+
+
+    /**
      * @Route("/dashboard", name="dashboard")
      */
     public function dashboardAction()

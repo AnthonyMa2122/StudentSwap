@@ -12,6 +12,7 @@
         <link rel="stylesheet" href={{ asset('css/createPost.css') }} >
         <link rel="stylesheet" href={{ asset('css/dashboard.css') }} >
         <link rel="stylesheet" href={{ asset('css/listing.css') }} >
+        <link rel="stylesheet" href={{ asset('css/openOrders.css') }} >
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}" />
 </head>
@@ -48,7 +49,7 @@
                         </li>
                         <li><a href="{{ path('createPost') }}">SELL/POST<span class="glyphicon glyphicon-edit"></span></a></li>
                         <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span class="glyphicon glyphicon-user"></span></a></li>
-                        <li><a href="{{ path('openOrders') }}">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                        <li><a href="{{ path('openOrdersLoggedIn') }}">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <li><a href="{{ path('homepage') }}">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
                     </ul>
                 </div>
@@ -82,6 +83,7 @@
     </header>
     {% block home %} {% endblock %}
     {% block post %} {% endblock %}
+    {% block openOrders %}{% endblock %}
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
