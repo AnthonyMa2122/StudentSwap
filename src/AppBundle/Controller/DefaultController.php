@@ -59,6 +59,15 @@ class DefaultController extends Controller
         return $this->render('default/createPost.html.twig');
     }
 
+    /**
+     * @Route("/openOrders", name="openOrders")
+     */
+    public function openOrdersAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/openOrders.html.twig');
+    }
+
 
     /**
      * @Route("/dashboard", name="dashboard")
@@ -67,15 +76,6 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('default/dashboard.html.twig');
-    }
-
-    /**
-     * @Route("/openOrders", name="openOrders")
-     */
-    public function openOrdersAction()
-    {
-        // replace this example code with whatever you need.
-        return $this->render('default/openOrders.html.twig');
     }
 
     /**
