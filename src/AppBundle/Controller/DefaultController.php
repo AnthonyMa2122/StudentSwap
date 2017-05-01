@@ -23,23 +23,6 @@ class DefaultController extends Controller
         return $this->render('default/home.html.twig');
     }
     
-     /**
-     * @Route("/login", name="login")
-     */
-    public function loginAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/login.html.twig');
-    }
-
-    /**
-     * @Route("/register", name="register")
-     */
-    public function registerAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/register.html.twig');
-    }
     
     /**
      * @Route("/homeLoggedIn", name="homeLoggedIn")
