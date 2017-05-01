@@ -32,7 +32,8 @@ class CreatePostController extends Controller
                     'New' => "new",
                     'Good' => "good",
                     'Poor' => "poor")
-            ));
+            ))
+            ->getForm();
             //->add('Image')
 
         $form->handleRequest($request);
