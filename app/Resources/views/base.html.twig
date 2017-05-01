@@ -49,7 +49,7 @@
                                 <li><a href="{{ path('elric') }}">ELRIC</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ path('fos_user_security_login') }}">SELL/POST<span
+                        <li><a href="{{ path('createPost') }}">SELL/POST<span
                                         class="glyphicon glyphicon-edit"></span></a></li>
                         <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span
                                         class="glyphicon glyphicon-user"></span></a></li>
@@ -90,7 +90,7 @@
             </div>
         </nav>
     </header>
-    {% block carousel %}{% endblock %}
+    {% block home %}{% endblock %}
     {% block openOrders %}{% endblock %}
     {% block listing %}{% endblock %}
     {% block content %} {% endblock %}
