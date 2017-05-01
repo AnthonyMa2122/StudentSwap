@@ -3,8 +3,10 @@
     <div id="contact" class="container">
         <!--CAROUSEL-->
         <div class="container">
+
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <h1 class="text-center">Welcome {{ app.user.firstName }} </h1>
+                <!-- User Logged In -->
+                <h1 class="text-center">Welcome {{ app.user.firstName }}! </h1>
                 <br>
                 <p class="text-center"><a href="{{ path('createPost') }}" class="btn btn-info" role="button">CREATE
                         POST</a></p>
@@ -20,6 +22,7 @@
                                           role="button">REGISTER</a></p>
                 <br>
             {% endif %}
+
             <h3 class="text-center">FEATURED ITEMS</h3>
             <br>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">

@@ -34,15 +34,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/createPost", name="createPost")
-     */
-    public function createPostAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/createPost.html.twig');
-    }
-
-    /**
      * @Route("/openOrders", name="openOrders")
      */
     public function openOrdersAction()
