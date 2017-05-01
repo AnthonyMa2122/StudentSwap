@@ -12,7 +12,7 @@ class CreatePostController extends Controller
      */
     public function createPostAction()
     {
-        
+
 
         $form = $this->createFormBuilder($item)
 
