@@ -4,7 +4,7 @@
         <!--CAROUSEL-->
         <div class="container">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <h1 class="text-center">Welcome {{ app.user.username }} </h1>
+                <h1 class="text-center">Welcome {{ app.user.firstName }} </h1>
                 <br>
                 <p class="text-center"><a href="{{ path('createPost') }}" class="btn btn-info" role="button">CREATE
                         POST</a></p>
