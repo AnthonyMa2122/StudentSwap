@@ -59,7 +59,7 @@
                         <li><a href="{{ path('openOrders') }}">OPEN ORDERS<span
                                         class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li><a href="{{ path('homepage') }}">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
                         {% else %}
                             <li><a href="{{ path('fos_user_security_login') }}">LOGIN/REGISTER<span
                                             class="glyphicon glyphicon-log-in"></span></a></li>
