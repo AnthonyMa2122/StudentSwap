@@ -23,36 +23,6 @@ class DefaultController extends Controller
         return $this->render('default/home.html.twig');
     }
 
-    
-    /**
-     * @Route("/homeLoggedIn", name="homeLoggedIn")
-     */
-    public function homeLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/homeLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/openOrders", name="openOrders")
-     */
-    public function openOrdersAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/openOrders.html.twig');
-    }
-
-
-    /**
-     * @Route("/openOrdersLoggedIn", name="openOrdersLoggedIn")
-     */
-    public function openOrdersLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/openOrdersLoggedIn.html.twig');
-    }
-
-
     /**
      * @Route("/dashboard", name="dashboard")
      */
@@ -116,14 +86,6 @@ class DefaultController extends Controller
     public function elricAction()
     {
         return $this->render('default/aboutelric.html.twig');
-    }
-
-    /**
-     * @Route("/listings", name="listings")
-     */
-    public function listingsAction()
-    {
-        return $this->render('default/listing.html.twig');
     }
 
     /**

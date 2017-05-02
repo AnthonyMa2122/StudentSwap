@@ -79,6 +79,15 @@ class User extends BaseUser
         // your own logic
     }
 
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function setEmail($email)
     {

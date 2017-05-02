@@ -4,10 +4,43 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class ItemController extends Controller
 {
+
+    /**
+     * @Route("/listings", name="listings")
+     */
+    public function listingsAction()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Item');
+
+        $items = $repository->findAll();
+
+        return $this->render('default/listing.html.twig',array('items' => $items));
+    }
+
+    /**
+     * @Route("/openOrders", name="openOrders")
+     */
+    public function openOrdersAction()
+    {
+        $user = $this->getUser()->getId();
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Item');
+
+        $query = $repository->createQueryBuilder('item')
+            ->where('item.userId = :id')
+            ->setParameter('id', $user)
+            ->getQuery();
+
+        $items = $query->getResult();
+
+        return $this->render('default/openOrders.html.twig', array('items' => $items));
+    }
+
     /**
      * @Route("/books", name="books")
      */
@@ -62,5 +95,7 @@ class ItemController extends Controller
 
         return $this->render('default/tech.html.twig', array('techs' => $techs));
     }
+
+
 
 }
