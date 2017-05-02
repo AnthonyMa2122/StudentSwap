@@ -18,7 +18,7 @@ class ItemController extends Controller
 
         $items = $repository->findAll();
 
-        return $this->render('default/listing.html.twig',array('items' => $items));
+        return $this->render('default/listings.html.twig',array('items' => $items));
     }
 
     /**
@@ -26,6 +26,7 @@ class ItemController extends Controller
      */
     public function openOrdersAction()
     {
+
         $user = $this->getUser()->getId();
 
         $repository = $this->getDoctrine()
