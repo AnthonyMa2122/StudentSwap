@@ -62,14 +62,6 @@ class DefaultController extends Controller
         return $this->render('default/dashboard.html.twig');
     }
 
-    /**
-     * @Route("/books", name="books")
-     */
-    public function booksAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/books.html.twig');
-    }
 
     /**
      * @Route("/clothes", name="clothes")

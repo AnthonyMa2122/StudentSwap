@@ -1,15 +1,47 @@
 {% extends 'base.html.twig' %}
 
 {% block openOrders %}
-    <div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    <h1 style="margin-left: 35%">There are currently no open orders.</h1>
-        <br>
-        <br>
-    <p style="margin-left: 53%"><a href="{{ path('homepage') }}">Back to Home</a></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--Open Orders-->
+    <div class="w3-container">
+        <h2 class="title">Open Orders</h2>
+        <div class="w3-responsive">
+            <table class="w3-table-all">
+                <thead>
+                <tr>
+                    <th><h5>Service</h5></th>
+                    <th><h5>Image</h5></th>
+                    <th><h5>Name</h5></th>
+                    <th><h5>Posted Date</h5></th>
+                    <th><h5>Price</h5></th>
+                </tr>
+                </thead>
+                <tr class="w3-hover-grey">
+                    <td>Buying</td>
+                    <td><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="thumbnail"></td>
+                    <td>Book</td>
+                    <td>4/27/17</td>
+                    <td>$57.00</td>
+                </tr>
+                <tr class="w3-hover-grey">
+                    <td>Selling</td>
+                    <td><img src="https://s-media-cache-ak0.pinimg.com/564x/2a/63/18/2a6318292b3963368a5be80f113016f2.jpg" class="thumbnail"></td>
+                    <td>Clothes</td>
+                    <td>4/27/17</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr class="w3-hover-grey">
+                    <td>Buying</td>
+                    <td><img src="http://www.gametribute.com/wp-content/uploads/2016/03/Xbox-One.jpg" class="thumbnail"></td>
+                    <td>Xbox One</td>
+                    <td>4/27/17</td>
+                    <td>$250.00</td>
+                </tr>
+            </table>
+        </div>
     </div>
+
 {% endblock %}
