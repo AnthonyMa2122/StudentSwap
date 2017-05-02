@@ -51,9 +51,9 @@ class CreatePostController extends Controller
 
             $user = $this->getUser()->getId();
 
-            $item->setUserId(4);
+            $item->setUserId($user);
             //$item->setDateCreated(new DateTime());
-            $item->setImageUrl('this is fake');
+            $item->setImageUrl('fake');
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
