@@ -1,0 +1,106 @@
+/* Sets parameters for the input */
+.registercontainer input[type=text], input[type=password] {
+    width: 25%;
+    padding: 12px 5px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 4px;
+}
+
+
+/* Set a style for all buttons */
+.registercontainer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 100px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+/* Extra styles for the cancel button */
+.registercontainer .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float signup buttons and add an equal width */
+.registercontainer .cancelbtn, .registercontainer .signupbtn {
+    float: left;
+    width: 25%;
+}
+
+/* Add padding to container elements */
+.registercontainer .container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.registercontainer .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .registercontainer .cancelbtn, .registercontainer .signupbtn {
+        width: 100%;
+    }
+}
+
+/* Aligns the labels and input boxes*/
+.registercontainer .registercontainerform {
+    margin-left: 20%;
+}
+
+.registercontainer .name {
+    margin-left: 2%;
+}
+
+.phone {
+    margin-left: 3.5%;
+}
+
+.registercontainer .email {
+    margin-left: 3.75%;
+}
+
+.registercontainer .psw {
+    margin-left: 2.25%;
+}
+
+.registercontainer .psw input.box, .rpsw input.box {
+    border-radius: 3px;
+}
+
+.rpsw {
+    margin-left: -0.25%;
+}
+.rpsw input.box {
+    width: 24.5%;
+}
+
+.registercontainer label.checkbox {
+    margin-left: 42%;
+}
+
+label.terms {
+    margin-left: 28%;
+}
+
+.registercontainer input.box {
+    margin-bottom: -2%;
+}
+
+h1.registerform {
+    margin-left: 47%;
+}
+
+.requiredfield {
+    margin-left: 12%;
+}

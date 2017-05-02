@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block register %}
+    <!--REGISTER-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="registerform">Register Form</h1>
+    <div class="registercontainer">
+    <form action="/action_page.php" style="border:1px solid #ccc">
+        <div class="registercontainerform">
+            <p class="requiredfield"><span class="error" style="color: red">* required field.</span></p>
+            <div class="name">
+            <label class="name"><b>Name:</b></label>
+            <label class="first"><b>First</b></label>
+            <input class="box" type="text" placeholder="Enter First Name" name="email" required>
+                <span class="error" style="color: red">*</span>
+            <label class="last"><b>Last</b></label>
+            <input class="box" type="text" placeholder="Enter Last Name" name="email" required>
+                <span class="error" style="color: red">*</span>
+            </div>
+            <br>
+            <div class="phone">
+            <label class="phone"><b>Phone:</b></label>
+            <input class="box" type="text" placeholder="Enter Phone #(E.g. 'xxx-xxx-xxxx')" name="email" required>
+                <span class="error" style="color: red">*</span>
+            </div><br>
+            <div class="email">
+            <label class="email"><b>Email:</b></label>
+            <input class="box" type="text" placeholder="Enter Email" name="email" required>
+                <span class="error" style="color: red">*</span>
+            </div><br>
+            <div class="psw">
+            <label class="psw"><b>Password:</b></label>
+            <input class="box" type="password" placeholder="Enter Password" name="psw" required>
+                <span class="error" style="color: red">*</span>
+            </div>
+            <br>
+            <div class="rpsw">
+            <label class="rpsw"><b>Repeat Password:</b></label>
+                <input class="box" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                <span class="error" style="color: red">*</span>
+            </div>
+            <br>
+            <label class="checkbox"><input class="text-center" type="checkbox"> Remember me</label>
+            <label class="terms"><input class="text-center" type="checkbox">
+                By creating an account you agree to our <a href="#">Terms & Privacy</a>.</label>
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">
+                    <a href={{ path('homepage') }}>Cancel</a>
+                </button>
+                <button type="button" class="signupbtn">
+                    <a href={{ path('homeLoggedIn') }}>Register</a>
+                </button>
+            </div>
+        </div>
+    </form>
+    </div>
+{% endblock %}

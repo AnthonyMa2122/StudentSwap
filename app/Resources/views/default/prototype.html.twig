@@ -1,13 +1,19 @@
-{% block body %}
+{% extends 'base.html.twig' %}
+{% block prototype %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
     {# {% for value in item %} #}
     <div>
-        <h1>{{ item.title }}</h1>
-        <p>ID: {{ item.id }}</p>
-	<p>PRICE: {{ item.price }}</p>
-	<p>DESCRIPTION: {{ item.description }}</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="text-center">{{ item.title }}</h1>
+        <p class="text-center">ID: {{ item.id }}</p>
+	<p class="text-center">PRICE: {{ item.price }}</p>
+	<p class="text-center">DESCRIPTION: {{ item.description }}</p>
     </div>
     {# {% endfor %} #}
 {% endblock %}

@@ -1,0 +1,93 @@
+/* Sets parameters for the input */
+.postContainer input[type=text], input[type=password], textarea.box {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+
+/* Styles the buttons */
+.postContainer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 100px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+.postContainer button:hover {
+    opacity: 0.8;
+}
+
+
+/* Add padding to container elements */
+.postContainer .container {
+    padding: 16px;
+}
+
+.postContainer .clearfix {
+    margin-left: 22%;
+}
+
+/* Extra styles for the cancel button */
+.postContainer .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float signup buttons and add an equal width */
+.postContainer .cancelbtn, .postContainer .signupbtn {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats */
+.postContainer .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .postContainer .cancelbtn, .postContainer .signupbtn {
+        width: 100%;
+    }
+}
+h1.createpost {
+    margin-left: 47%;
+}
+p.info {
+    margin-left: 43%;
+}
+.title {
+    margin-left: 12%;
+}
+.fileinput{
+    margin-left: 8.5%;
+}
+.filetitle{
+    margin-left: -6%;
+}
+
+label.description {
+    margin-left: 18.75%;
+}
+.description {
+    margin-left: 25.5%;
+    width: 100%;
+}
+
+.postContainerform .form-inline {
+    margin-left: 20%;
+    width: 50%;
+}
+label.condition {
+    margin-left: -0.6%;
+}

@@ -2,20 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href={{ asset('css/homepage.css') }} >
-        <link rel="stylesheet" href={{ asset('css/login.css') }} >
-        <link rel="stylesheet" href={{ asset('css/register.css') }} >
+        <link rel="stylesheet" href={{ asset('css/createPost.css') }} >
+        <link rel="stylesheet" href={{ asset('css/dashboard.css') }} >
         <link rel="stylesheet" href={{ asset('css/listing.css') }} >
+        <link rel="stylesheet" href={{ asset('css/openOrders.css') }} >
     {% endblock %}
-
     <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}" />
 </head>
 <body>
@@ -30,14 +28,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('homepage') }}">STUDENT SWAP</a>
+                    <a class="navbar-brand" href="{{ path('homeLoggedIn') }}">STUDENT SWAP</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="selected" href="{{ path('homepage') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
+                        <li><a class="selected" href="{{ path('homeLoggedIn') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">ABOUT
                                 <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                        <li class="dropdown">
                             <ul class="dropdown-menu">
                                 <li><a href="{{ path('alex') }}">ALEX</a></li>
                                 <li><a href="{{ path('greg') }}">GREG</a></li>
@@ -48,10 +47,10 @@
                                 <li><a href="{{ path('elric') }}">ELRIC</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ path('login') }}">SELL/POST<span class="glyphicon glyphicon-edit"></span></a></li>
+                        <li><a href="{{ path('createPost') }}">SELL/POST<span class="glyphicon glyphicon-edit"></span></a></li>
                         <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span class="glyphicon glyphicon-user"></span></a></li>
-                        <li><a href="{{ path('openOrders') }}">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                        <li><a href="{{ path('login') }}">LOGIN/REGISTER<span class="glyphicon glyphicon-log-in"></span></a></li>
+                        <li><a href="{{ path('openOrdersLoggedIn') }}">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                        <li><a href="{{ path('homepage') }}">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
                     </ul>
                 </div>
                 <!--DROPDOWN, SEARCH BAR, SEARCH BUTTON-->
@@ -60,9 +59,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="glyphicon glyphicon-menu-hamburger"></span></a>
                         <ul class="dropdown-menu ">
-                            <li><a href="{{ path('books') }}">BOOKS</a></li>
-                            <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
-                            <li><a href="{{ path('tech') }}">TECH</a></li>
+                            <li><a href="{{ path('booksLoggedIn') }}">BOOKS</a></li>
+                            <li><a href="{{ path('clothesLoggedIn') }}">CLOTHES</a></li>
+                            <li><a href="{{ path('techLoggedIn') }}">TECH</a></li>
                         </ul>
                     </button>
                     <input class="search" type="text" name="search" placeholder="Search..">
@@ -71,30 +70,23 @@
                     </button>
                 </form>
             </div>
+
             <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
                 <h3 class="w3-bar-item">CATEGORIES</h3>
-                <a href="{{ path('books') }}" class="w3-bar-item w3-button">BOOKS</a>
-                <a href="{{ path('clothes') }}" class="w3-bar-item w3-button">CLOTHES</a>
-                <a href="{{ path('tech') }}" class="w3-bar-item w3-button">TECH</a>
+                <a href="{{ path('booksLoggedIn') }}" class="w3-bar-item w3-button">BOOKS</a>
+                <a href="{{ path('clothesLoggedIn') }}" class="w3-bar-item w3-button">CLOTHES</a>
+                <a href="{{ path('techLoggedIn') }}" class="w3-bar-item w3-button">TECH</a>
             </div>
             <div style="margin-left:15%">
             </div>
         </nav>
     </header>
-    {% block carousel %}{% endblock %}
+    {% block home %} {% endblock %}
+    {% block post %} {% endblock %}
     {% block openOrders %}{% endblock %}
-    {% block listing %}{% endblock %}
-    {% block login %}{% endblock %}
-    {% block register %}{% endblock %}
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
-    {% block footer %}
-        <footer>
-            <p>© 2017 SFSU CSC648 Group 6. </p>
-            <p>This is a project, and not intended for full use. Please see the Terms of Use</p>
-        </footer>
-    {% endblock %}
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

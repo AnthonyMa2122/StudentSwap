@@ -22,6 +22,125 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/home.html.twig');
     }
+    
+     /**
+     * @Route("/login", name="login")
+     */
+    public function loginAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/login.html.twig');
+    }
+
+    /**
+     * @Route("/register", name="register")
+     */
+    public function registerAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/register.html.twig');
+    }
+    
+    /**
+     * @Route("/homeLoggedIn", name="homeLoggedIn")
+     */
+    public function homeLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/homeLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/createPost", name="createPost")
+     */
+    public function createPostAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/createPost.html.twig');
+    }
+
+    /**
+     * @Route("/openOrders", name="openOrders")
+     */
+    public function openOrdersAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/openOrders.html.twig');
+    }
+
+
+    /**
+     * @Route("/openOrdersLoggedIn", name="openOrdersLoggedIn")
+     */
+    public function openOrdersLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/openOrdersLoggedIn.html.twig');
+    }
+
+
+    /**
+     * @Route("/dashboard", name="dashboard")
+     */
+    public function dashboardAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/dashboard.html.twig');
+    }
+
+    /**
+     * @Route("/books", name="books")
+     */
+    public function booksAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/books.html.twig');
+    }
+
+    /**
+     * @Route("/clothes", name="clothes")
+     */
+    public function clothesAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/clothes.html.twig');
+    }
+
+    /**
+     * @Route("/tech", name="tech")
+     */
+    public function techAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/tech.html.twig');
+    }
+
+    /**
+     * @Route("/booksLoggedIn", name="booksLoggedIn")
+     */
+    public function booksLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/booksLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/clothesLoggedIn", name="clothesLoggedIn")
+     */
+    public function clothesLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/clothesLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/techLoggedIn", name="techLoggedIn")
+     */
+    public function techLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/techLoggedIn.html.twig');
+    }
 
     /**
      * @Route("/greg", name="greg")
@@ -77,6 +196,14 @@ class DefaultController extends Controller
     public function elricAction()
     {
         return $this->render('default/aboutelric.html.twig');
+    }
+
+    /**
+     * @Route("/listings", name="listings")
+     */
+    public function listingsAction()
+    {
+        return $this->render('default/listing.html.twig');
     }
 
     /**

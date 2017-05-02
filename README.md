@@ -1,5 +1,7 @@
 # SFSU Student Marketplace
 ## CSC648 Group 06
+### Github
+Current control branch is  Origin "Dev".
 ### Spring 2017
 *For Demonstration Purposes Only*
 
@@ -9,7 +11,7 @@ Gregory Ruffin - _CTO_
 Robin Ma - _Newbie Employee_  
 Anthony Ma - _Noob Developer_   
 Avery Chua (Waterboy)   
-Elric Dang - Programming Pawn
+Elric Dang - Programming Pawn   
 Leanna Pangan - TB
 
 ### Project Description
