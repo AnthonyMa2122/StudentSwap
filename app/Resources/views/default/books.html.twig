@@ -8,19 +8,17 @@
     <br>
     <!-- Left-aligned media object -->
     {% for item in books %}
-        <div class="media">
-            <div class="media-left">
-                <a href="#"><h3 class="media-heading">{{ item.title }}</h3></a>
-                <a href="#"><img src={{ item.imageUrl }}  class="media-object"
-                                 style="width:157px"></a>
-            </div>
-            <div class="media-body">
-                <p><b>Description:</b> {{ item.description }}</p>
-                <p>Price: {{ item.price }}</p>
-                <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a>
-                </p>
-            </div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#"><h3 class="media-heading">{{ item.title }}</h3></a>
+            <a href="#"><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="media-object" style="width:157px"></a>
         </div>
-        <hr>
+        <div class="media-body">
+            <p><b>Description:</b> {{ item.description }}</p>
+            <p>Price: {{ item.price }}</p>
+            <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a></p>
+        </div>
+    </div>
+    <hr>
     {% endfor %}
 {% endblock %}
