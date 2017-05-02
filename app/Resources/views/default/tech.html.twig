@@ -11,8 +11,10 @@
         <div class="media">
             <div class="media-left">
                 <a href="#"><h3 class="media-heading"> {{ item.title }}</h3></a>
-                <a href="#"><img src="http://www.gametribute.com/wp-content/uploads/2016/03/Xbox-One.jpg"
-                                 class="media-object" style="width:178px"></a>
+                <a href="#"><img src= {{ asset( item.imageUrl ) }}
+                                 class="media-object"
+                                 style="width:178px"
+                                 alt="http://www.gametribute.com/wp-content/uploads/2016/03/Xbox-One.jpg"></a>
             </div>
             <div class="media-body">
                 <p><b>Description:</b> {{ item.description }}</p>

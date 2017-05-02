@@ -21,25 +21,6 @@ class ItemController extends Controller
         return $this->render('default/listing.html.twig',array('items' => $items));
     }
 
-    /**
-     * @Route("/openOrders", name="openOrders")
-     */
-    public function openOrdersAction()
-    {
-        $user = $this->getUser()->getId();
-
-        $repository = $this->getDoctrine()
-            ->getRepository('AppBundle:Item');
-
-        $query = $repository->createQueryBuilder('item')
-            ->where('item.userId = :id')
-            ->setParameter('id', $user)
-            ->getQuery();
-
-        $items = $query->getResult();
-
-        return $this->render('default/openOrders.html.twig', array('items' => $items));
-    }
 
     /**
      * @Route("/books", name="books")
