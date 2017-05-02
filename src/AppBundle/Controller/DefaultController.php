@@ -62,52 +62,6 @@ class DefaultController extends Controller
         return $this->render('default/dashboard.html.twig');
     }
 
-
-    /**
-     * @Route("/clothes", name="clothes")
-     */
-    public function clothesAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/clothes.html.twig');
-    }
-
-    /**
-     * @Route("/tech", name="tech")
-     */
-    public function techAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/tech.html.twig');
-    }
-
-    /**
-     * @Route("/booksLoggedIn", name="booksLoggedIn")
-     */
-    public function booksLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/booksLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/clothesLoggedIn", name="clothesLoggedIn")
-     */
-    public function clothesLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/clothesLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/techLoggedIn", name="techLoggedIn")
-     */
-    public function techLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/techLoggedIn.html.twig');
-    }
-
     /**
      * @Route("/greg", name="greg")
      */

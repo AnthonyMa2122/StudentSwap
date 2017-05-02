@@ -7,18 +7,20 @@
     <h1 class="text-center">Books</h1>
     <br>
     <!-- Left-aligned media object -->
-    {% for book in books %}
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><h3 class="media-heading">{{ book.title }}</h3></a>
-            <a href="#"><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="media-object" style="width:157px"></a>
+    {% for item in books %}
+        <div class="media">
+            <div class="media-left">
+                <a href="#"><h3 class="media-heading">{{ item.title }}</h3></a>
+                <a href="#"><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="media-object"
+                                 style="width:157px"></a>
+            </div>
+            <div class="media-body">
+                <p><b>Description:</b> {{ item.description }}</p>
+                <p>Price: {{ item.price }}</p>
+                <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a>
+                </p>
+            </div>
         </div>
-        <div class="media-body">
-            <p><b>Description:</b> {{ book.description }}</p>
-            <p>Price: {{ book.price }}</p>
-            <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a></p>
-        </div>
-    </div>
-    <hr>
+        <hr>
     {% endfor %}
 {% endblock %}
