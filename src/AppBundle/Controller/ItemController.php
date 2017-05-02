@@ -2,8 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class ItemController extends Controller
 {
