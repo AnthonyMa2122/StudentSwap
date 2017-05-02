@@ -58,13 +58,6 @@ class Item
     protected $userId;
 
     /**
-     * @Assert\DateTime()
-     *
-     * @ORM\Column(name="dateCreated", type="datetime")
-     */
-    protected $dateCreated;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="condition", type="string")
@@ -206,30 +199,6 @@ class Item
     public function getUserId()
     {
         return $this->userId;
-    }
-
-    /**
-     * Set dateCreated
-     *
-     * @param \DateTime $dateCreated
-     *
-     * @return Item
-     */
-    public function setDateCreated($dateCreated)
-    {
-        $this->dateCreated = $dateCreated;
-
-        return $this;
-    }
-
-    /**
-     * Get dateCreated
-     *
-     * @return \DateTime
-     */
-    public function getDateCreated()
-    {
-        return $this->dateCreated;
     }
 
     /**
