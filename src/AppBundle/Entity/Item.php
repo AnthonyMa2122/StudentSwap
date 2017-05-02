@@ -30,9 +30,9 @@ class Item
     protected $title;
 
     /**
-     * @var decimal
+     * @var string
      *
-     * @ORM\Column(name="price", type="decimal" , precision=8, scale=2)
+     * @ORM\Column(name="price", type="string")
      */
     protected $price;
 
