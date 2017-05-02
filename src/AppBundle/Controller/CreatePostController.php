@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Item;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,6 +34,7 @@ class CreatePostController extends Controller
                     'Good' => "good",
                     'Poor' => "poor")
             ))
+            ->add('submit', SubmitType::class, array('label' => 'Submit'))
             ->getForm();
             //->add('Image')
 
