@@ -5,10 +5,12 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Item;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class CreatePostController extends Controller
 {
@@ -22,6 +24,7 @@ class CreatePostController extends Controller
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
             ->add('description', TextType::class)
+            ->add('price', MoneyType::class, array('divisor' => 100))
             ->add('category', ChoiceType::class, array(
                 'choices'  => array(
                     'Book' => "book",
@@ -44,6 +47,12 @@ class CreatePostController extends Controller
 
             // $form->getData() holds the submitted values
             $item = $form->getData();
+
+            $user = $this->getUser()->getId();
+
+            $item->setUserId($item);
+            $item->setDateCreated(new DateTime('now'));
+            $item->setImageUrl('this is fake');
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
