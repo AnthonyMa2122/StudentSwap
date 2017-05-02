@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Item;
+use Doctrine\DBAL\Types\IntegerType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -24,7 +25,7 @@ class CreatePostController extends Controller
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
             ->add('description', TextType::class)
-            ->add('price', MoneyType::class, array('divisor' => 100))
+            ->add('price', IntegerType::class)
             ->add('category', ChoiceType::class, array(
                 'choices'  => array(
                     'Book' => "book",

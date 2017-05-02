@@ -30,9 +30,9 @@ class Item
     protected $title;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="price", type="string")
+     * @ORM\Column(name="price", type="integer")
      */
     protected $price;
 
