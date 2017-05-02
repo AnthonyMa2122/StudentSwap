@@ -18,7 +18,8 @@ class ItemController extends Controller
             ->getRepository('AppBundle:Item');
 
         $query = $repository->createQueryBuilder('b')
-            ->where('b.category = book')
+            ->where('b.category = :book')
+            ->setParameter('book', 'book')
             ->getQuery();
 
         $books = $query->getResult();
@@ -26,4 +27,5 @@ class ItemController extends Controller
 
         return $this->render('default/books.html.twig', array('books' => $books));
     }
+
 }
