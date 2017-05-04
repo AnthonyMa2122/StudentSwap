@@ -1,58 +1,8 @@
-{% extends 'base.html.twig' %}
-
-
-{% block post %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 class="createpost">Create Post</h1>
-    <p class="info">Please fill out the form below to post an item:</p>
-    <div class="postContainer">
-        {{ form_start(form) }}
-        <!--<form action="/action_page.php" style="border:1px solid #ccc">-->
-            <div class="postContainerform">
-                <br>
-                <br>
-                <div class="title">
-                    <label class="title"><b>Title:</b></label>
-                    {{ form_widget(form.title) }}
-                    <!--<input class="box" type="text" placeholder="Enter Title" name="title" required>-->
-                </div><br>
-                <label class="description" for="comment">Description:</label>
-                {{ form_widget(form.description) }}
-                <!--<div class="description">
-                    <textarea class="box" rows="5" id="comment" placeholder="Enter Description"></textarea>
-                </div>-->
-                <br>
-                <div class="form-inline">
-                    {{ form_widget(form.price) }}
-                <label class="category" for="sel1">Category:</label>
-                    {{ form_widget(form.category) }}
-                    <br>
-                    <br>
-                    <label class="condition" for="sel1">Condition:</label>
-                    {{ form_widget(form.condition) }}
-                    <br>
-                    <br>
-                    <div class="fileinput">
-                        <label class="filetitle"><b>Image:</b></label>
-                        <input type="file" name="pic" accept="image/*" >
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">
-                        <a href={{ path('homepage') }}>Cancel</a>
-                    </button>
-                    <button type="submit" class="signupbtn">Create Post</button>
-                </div>
-                {{ form_end(form) }}
-            </div>
-        <!--</form>-->
-    </div>
-
-    {{ form_end(form) }}
-
-{% endblock %}
+{{ form_start(form) }}
+{{ form_widget(form.title) }}
+{{ form_widget(form.description) }}
+{{ form_widget(form.price) }}
+{{ form_widget(form.category) }}
+{{ form_widget(form.condition) }}
+<a href={{ path('homepage') }}>Cancel</a>
+{{ form_end(form) }}

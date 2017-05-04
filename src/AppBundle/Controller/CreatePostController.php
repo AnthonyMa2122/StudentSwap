@@ -8,6 +8,7 @@ use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -33,7 +34,7 @@ class CreatePostController extends Controller
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
             ->add('description', TextType::class)
-            ->add('price', IntegerType::class)
+            ->add('price', NumberType::class)
             ->add('category', ChoiceType::class, array(
                 'choices'  => array(
                     'Book' => "book",
