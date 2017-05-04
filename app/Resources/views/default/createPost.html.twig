@@ -10,20 +10,20 @@
     <p class="info">Please fill out the form below to post an item:</p>
     <div class="postContainer">
         {{ form_start(form) }}
-        <form action="/action_page.php" style="border:1px solid #ccc">
+        <!--<form action="/action_page.php" style="border:1px solid #ccc">-->
             <div class="postContainerform">
                 <br>
                 <br>
                 <div class="title">
                     <label class="title"><b>Title:</b></label>
                     {{ form_widget(form.title) }}
-                    <input class="box" type="text" placeholder="Enter Title" name="title" required>
+                    <!--<input class="box" type="text" placeholder="Enter Title" name="title" required>-->
                 </div><br>
                 <label class="description" for="comment">Description:</label>
                 {{ form_widget(form.description) }}
-                <div class="description">
+                <!--<div class="description">
                     <textarea class="box" rows="5" id="comment" placeholder="Enter Description"></textarea>
-                </div>
+                </div>-->
                 <br>
                 <div class="form-inline">
                     {{ form_widget(form.price) }}
@@ -50,7 +50,7 @@
                 </div>
                 {{ form_end(form) }}
             </div>
-        </form>
+        <!--</form>-->
     </div>
 
     {{ form_end(form) }}
