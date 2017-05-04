@@ -1,8 +1,18 @@
 {{ form_start(form) }}
+{{ form_label(form.title) }}
 {{ form_widget(form.title) }}
+<br>
+{{ form_label(form.description) }}
 {{ form_widget(form.description) }}
+<br>
+{{ form_label(form.price) }}
 {{ form_widget(form.price) }}
+<br>
+{{ form_label(form.category) }}
 {{ form_widget(form.category) }}
+<br>
+{{ form_label(form.condition) }}
 {{ form_widget(form.condition) }}
+<br>
 <a href={{ path('homepage') }}>Cancel</a>
 {{ form_end(form) }}
