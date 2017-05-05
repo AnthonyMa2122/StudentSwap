@@ -68,17 +68,13 @@
                 </div>
                 <!--DROPDOWN, SEARCH BAR, SEARCH BUTTON-->
                 <form class="searchbar">
-                    <button type="button" class="btn btn-primary dropdown-toggle">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                        <ul class="dropdown-menu ">
-                            <li><a href="{{ path('listings') }}">All</a></li>
-                            <li><a href="{{ path('books') }}">BOOKS</a></li>
-                            <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
-                            <li><a href="{{ path('tech') }}">TECH</a></li>
-                        </ul>
-                    </button>
-                    <input class="search" type="text" name="search" placeholder="Search..">
+                    <select class="form-control" id="categoryFilter" onchange="getCategory(this)">
+                        <option value="all">All</option>
+                        <option value="books">Books</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="tech">Tech</option>
+                    </select>
+                    <input class="search" type="text" name="search" placeholder="Search">
                     <button type="button" class="btn">
                         <span class="glyphicon glyphicon-search"></span></a>
                     </button>
@@ -111,9 +107,12 @@
     {% endblock %}
 {% endblock %}
 {% block javascripts %}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="index.js"></script>
+    {#<script src="index.js"></script>#}
+    <script src={{ asset("js/scripts.js") }}></script>
+
 {% endblock %}
 </body>
 </html>

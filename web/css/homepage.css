@@ -122,6 +122,8 @@ h3.w3-bar-item {
 /* Remove rounded borders on input fields */
 .form-control {
     border-radius: 0;
+    width: auto;
+    position: absolute;
 }
 
 /* Disable the ability to resize textareas */
