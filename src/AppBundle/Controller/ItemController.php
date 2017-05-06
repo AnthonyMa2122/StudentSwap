@@ -112,14 +112,13 @@ class ItemController extends Controller
         $repository = $this->getDoctrine()
             ->getRepository('AppBundle:Item');
 
-        $searchValue = 'keyboard';
-        $query = $repository->createQueryBuilder('item')
-            ->where('item.title = :title')
-            ->setParameter('title', $searchValue)
-            ->getQuery();
+        $searchValue = 'wind';
 
-
-        $search = $query->getResult();
+        $search = $repository->createQueryBuilder('item')
+            ->where('item.title LIKE :title')
+            ->setParameter('title', '%'.$searchValue.'%')
+            ->getQuery()
+            ->getResult();
 
         return $this->render('default/search.html.twig', array('search' => $search));
     }
