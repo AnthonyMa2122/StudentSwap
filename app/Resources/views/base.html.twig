@@ -75,7 +75,7 @@
                         <option value="tech">Tech</option>
                     </select>
                     <input class="search" type="text" name="search" placeholder="Search">
-                    <button type="button" class="btn">
+                    <button type="button" class="btn" onclick="location.href = {{ path('search') }};">
                         <span class="glyphicon glyphicon-search"></span></a>
                     </button>
                 </form>
@@ -99,6 +99,7 @@
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
+    {% block search %} {% endblock %}
     {% block footer %}
         <footer>
             <p>© 2017 SFSU CSC648 Group 6. </p>
