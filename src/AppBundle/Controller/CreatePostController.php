@@ -43,9 +43,9 @@ class CreatePostController extends Controller
             ))
             ->add('condition', ChoiceType::class, array(
                 'choices'  => array(
-                    'New' => "new",
-                    'Good' => "good",
-                    'Poor' => "poor")
+                    'New' => 'new',
+                    'Good' => 'good',
+                    'Poor' => 'poor')
             ))
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
             ->getForm();
