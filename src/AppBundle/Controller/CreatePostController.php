@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Images;
 use AppBundle\Entity\Item;
 
 use AppBundle\Form\ImagesType;
@@ -31,7 +32,7 @@ class CreatePostController extends Controller
 
 
         $item = new Item();
-        $image = new Images ();
+        $image = new Images();
 
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
@@ -65,7 +66,7 @@ class CreatePostController extends Controller
 
             $item->setUserId($user);
             //$item->setDateCreated(new DateTime());
-            $item->setImageUrl("/img/items/computer.jpg");
+            $item->setImageUrl($image->getImageFile());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
