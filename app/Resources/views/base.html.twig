@@ -14,9 +14,9 @@
         <link rel="stylesheet" href={{ asset('css/login.css') }}>
         <link rel="stylesheet" href={{ asset('css/register.css') }}>
         <link rel="stylesheet" href={{ asset('css/listing.css') }}>
-        <link rel="stylesheet" href={{ asset('css/createPost.css') }} >
-        <link rel="stylesheet" href={{ asset('css/dashboard.css') }} >
-        <link rel="stylesheet" href={{ asset('css/openOrders.css') }} >
+        <link rel="stylesheet" href={{ asset('css/createPost.css') }}>
+        <link rel="stylesheet" href={{ asset('css/dashboard.css') }}>
+        <link rel="stylesheet" href={{ asset('css/openOrders.css') }}>
     {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}"/>
@@ -59,7 +59,8 @@
                         <li><a href="{{ path('openOrders') }}">OPEN ORDERS<span
                                         class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li><a href="{{ path('fos_user_security_logout') }}">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">LOGOUT<span
+                                            class="glyphicon glyphicon-log-out"></span></a></li>
                         {% else %}
                             <li><a href="{{ path('fos_user_security_login') }}">LOGIN/REGISTER<span
                                             class="glyphicon glyphicon-log-in"></span></a></li>
@@ -67,14 +68,21 @@
                     </ul>
                 </div>
                 <!--DROPDOWN, SEARCH BAR, SEARCH BUTTON-->
-                <form class="searchbar">
-                    <select class="form-control" id="categoryFilter" onchange="getCategory(this)">
-                        <option value="all">All</option>
-                        <option value="books">Books</option>
-                        <option value="clothes">Clothes</option>
-                        <option value="tech">Tech</option>
-                    </select>
-                    <input class="search" type="text" name="search" placeholder="Search">
+
+                <form class="searchbar" role="search" id="nav-search-form" method="get"
+                      action="{{ path('search') }}">
+
+                    <button type="button" class="btn btn-primary dropdown-toggle">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                        <ul class="dropdown-menu ">
+                            <li><a href="{{ path('listings') }}">All</a></li>
+                            <li><a href="{{ path('books') }}">BOOKS</a></li>
+                            <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
+                            <li><a href="{{ path('tech') }}">TECH</a></li>
+                        </ul>
+                    </button>
+                    <input class="search" type="text" placeholder="Search.." name="searchTerm">
                     <button type="button" class="btn">
                         <span class="glyphicon glyphicon-search"></span></a>
                     </button>

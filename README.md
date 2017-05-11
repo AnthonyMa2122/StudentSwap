@@ -11,8 +11,9 @@ Gregory Ruffin - _CTO_
 Robin Ma - _Newbie Employee_  
 Anthony Ma - _Noob Developer_   
 Avery Chua - (Waterboy)   
-Elric Dang - Programming Worker   
-Leanna Pangan - TB   
+Elric Dang - Programmer Worker   
+Leanna Pangan - TB
+>>>>>>> FOSUserBundle
 
 ### Project Description
 

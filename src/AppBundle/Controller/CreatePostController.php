@@ -2,12 +2,15 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Images;
 use AppBundle\Entity\Item;
 
+use AppBundle\Form\ImagesType;
 use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -27,13 +30,12 @@ class CreatePostController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-
         $item = new Item();
 
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
             ->add('description', TextType::class)
-            ->add('price', IntegerType::class)
+            ->add('price', NumberType::class)
             ->add('category', ChoiceType::class, array(
                 'choices'  => array(
                     'Book' => "book",
@@ -42,13 +44,15 @@ class CreatePostController extends Controller
             ))
             ->add('condition', ChoiceType::class, array(
                 'choices'  => array(
-                    'New' => "new",
-                    'Good' => "good",
-                    'Poor' => "poor")
+                    'New' => 'new',
+                    'Good' => 'good',
+                    'Poor' => 'poor')
             ))
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
             ->getForm();
-            //->add('Image')
+
+
+
 
         $form->handleRequest($request);
 

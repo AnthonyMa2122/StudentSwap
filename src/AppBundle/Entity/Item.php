@@ -60,7 +60,7 @@ class Item
     /**
      * @var string
      *
-     * @ORM\Column(name="condition", type="string")
+     * @ORM\Column(name="`condition`", type="string")
      */
     protected $condition;
 
@@ -228,13 +228,11 @@ class Item
     /**
      * Set imageUrl
      *
-     * @param string $imageUrl
-     *
      * @return Item
      */
     public function setImageUrl($imageUrl)
     {
-        $this->imageUrl = $imageUrl;
+        $this->imageUrl = $image;
 
         return $this;
     }

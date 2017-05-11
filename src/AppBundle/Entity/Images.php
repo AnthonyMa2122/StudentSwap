@@ -99,5 +99,4 @@ class Images
 	{
 		$this->postId = $postId;
 	}
-
 }
