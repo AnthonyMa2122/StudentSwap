@@ -114,7 +114,7 @@ class ItemController extends Controller
         $repository = $this->getDoctrine()
             ->getRepository('AppBundle:Item');
 
-        $searchTerm = 'gone';
+        $searchTerm = $_GET['searchTerm'];
 
         $search = $repository->createQueryBuilder('item')
             ->where('item.title LIKE :title')
