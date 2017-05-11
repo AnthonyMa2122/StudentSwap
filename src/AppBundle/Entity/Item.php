@@ -230,7 +230,7 @@ class Item
      *
      * @return Item
      */
-    public function setImageUrl(File $image = null)
+    public function setImageUrl($imageUrl)
     {
         $this->imageUrl = $image;
 

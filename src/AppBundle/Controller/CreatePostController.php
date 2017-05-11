@@ -30,9 +30,7 @@ class CreatePostController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-
         $item = new Item();
-        $image = new Images();
 
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
@@ -50,7 +48,6 @@ class CreatePostController extends Controller
                     'Good' => 'good',
                     'Poor' => 'poor')
             ))
-            ->add('imageUrl', ImagesType::class)
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
             ->getForm();
 
@@ -68,7 +65,7 @@ class CreatePostController extends Controller
 
             $item->setUserId($user);
             //$item->setDateCreated(new DateTime());
-            //$item->setImageUrl($image->getImageFile());
+            $item->setImageUrl('fake');
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);

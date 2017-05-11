@@ -104,6 +104,25 @@ class ItemController extends Controller
         return $this->render('default/tech.html.twig', array('techs' => $techs));
     }
 
+    /**
+     * @Route("/search", name="search")
+     */
+    public function searchAction()
+    {
+        
+        //get items from items table
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Item');
 
+        $searchTerm = 'gone';
+
+        $search = $repository->createQueryBuilder('item')
+            ->where('item.title LIKE :title')
+            ->setParameter('title', '%'.$searchTerm.'%')
+            ->getQuery()
+            ->getResult();
+
+        return $this->render('default/search.html.twig', array('search' => $search));
+    }
 
 }
