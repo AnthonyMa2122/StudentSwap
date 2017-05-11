@@ -60,7 +60,7 @@ class Item
     /**
      * @var string
      *
-     * @ORM\Column(name="condition", type="string")
+     * @ORM\Column(name="'condition'", type="string")
      */
     protected $condition;
 
