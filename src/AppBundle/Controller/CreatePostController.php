@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Item;
 
+use AppBundle\Form\ImagesType;
 use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -30,6 +31,7 @@ class CreatePostController extends Controller
 
 
         $item = new Item();
+        $image = new Images ();
 
         $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
@@ -48,6 +50,7 @@ class CreatePostController extends Controller
                     'Poor' => 'poor')
             ))
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
+            ->add('image', ImagesType::class, $image)
             ->getForm();
             //->add('Image')
 
