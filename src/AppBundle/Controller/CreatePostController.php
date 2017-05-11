@@ -50,10 +50,12 @@ class CreatePostController extends Controller
                     'Good' => 'good',
                     'Poor' => 'poor')
             ))
+            ->add('imageUrl', ImagesType::class)
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
-            ->add('image', ImagesType::class, $image)
             ->getForm();
-            //->add('Image')
+
+
+
 
         $form->handleRequest($request);
 
@@ -66,7 +68,7 @@ class CreatePostController extends Controller
 
             $item->setUserId($user);
             //$item->setDateCreated(new DateTime());
-            $item->setImageUrl($image->getImageFile());
+            //$item->setImageUrl($image->getImageFile());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);

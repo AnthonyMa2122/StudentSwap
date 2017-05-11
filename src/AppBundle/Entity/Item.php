@@ -228,13 +228,11 @@ class Item
     /**
      * Set imageUrl
      *
-     * @param string $imageUrl
-     *
      * @return Item
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl(File $image = null)
     {
-        $this->imageUrl = $imageUrl;
+        $this->imageUrl = $image;
 
         return $this;
     }
