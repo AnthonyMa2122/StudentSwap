@@ -122,7 +122,7 @@ class ItemController extends Controller
             ->getQuery()
             ->getResult();
 
-        return $this->render('default/search.html.twig', array('search' => $search));
+        return $this->render('default/listings.html.twig', array('item' => $search));
     }
 
 }
