@@ -2164,7 +2164,6 @@
             "keywords": [
                 "templating"
             ],
-<<<<<<< HEAD
             "time": "2017-03-22T15:41:51+00:00"
         },
         {
@@ -2212,9 +2211,6 @@
                 "twilio"
             ],
             "time": "2017-04-27T10:16:26+00:00"
-=======
-            "time": "2017-04-21T00:13:02+00:00"
->>>>>>> FOSUserBundle
         },
         {
             "name": "vich/uploader-bundle",
