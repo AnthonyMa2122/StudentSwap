@@ -109,7 +109,7 @@ class ItemController extends Controller
      */
     public function searchAction()
     {
-        
+
         //get items from items table
         $repository = $this->getDoctrine()
             ->getRepository('AppBundle:Item');
