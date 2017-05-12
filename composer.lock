@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "716e4894649ec35b70cf507ae823cee2",
+    "content-hash": "c82aa12fda077d106f4eb69cf9891a8a",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2164,7 +2164,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-03-22T15:41:51+00:00"
+            "time": "2017-04-21T00:13:02+00:00"
         },
         {
             "name": "twilio/sdk",
