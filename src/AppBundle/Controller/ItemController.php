@@ -103,13 +103,48 @@ class ItemController extends Controller
 
         return $this->render('default/tech.html.twig', array('techs' => $techs));
     }
+    
+    /**
+     * @Route("/service", name="service")
+     */
+    public function serviceAction()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Item');
+
+        $query = $repository->createQueryBuilder('item')
+            ->where('item.category = :category')
+            ->setParameter('category', 'service')
+            ->getQuery();
+
+        $service = $query->getResult();
+
+        return $this->render('default/service.html.twig', array('service' => $service));
+    }
+
+    /**
+     * @Route("/other", name="other")
+     */
+    public function otherAction()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Item');
+
+        $query = $repository->createQueryBuilder('item')
+            ->where('item.category = :category')
+            ->setParameter('category', 'other')
+            ->getQuery();
+
+        $other = $query->getResult();
+
+        return $this->render('default/other.html.twig', array('other' => $other));
+    }
 
     /**
      * @Route("/search", name="search")
      */
     public function searchAction()
     {
-
         //get items from items table
         $repository = $this->getDoctrine()
             ->getRepository('AppBundle:Item');
