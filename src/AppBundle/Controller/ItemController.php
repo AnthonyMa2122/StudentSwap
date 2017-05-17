@@ -45,7 +45,10 @@ class ItemController extends Controller
             ->getQuery();
 
         $items = $query->getResult();
-
+				foreach ($items as $item) 
+				{
+					$item->getImage()->setUpdatedAt( date_format($item->getImage()->getUpdatedAt(), 'm-d-Y') );
+				}
         return $this->render('default/openOrders.html.twig', array('items' => $items));
     }
 

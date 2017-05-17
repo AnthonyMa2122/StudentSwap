@@ -9,6 +9,7 @@ use AppBundle\Form\ImagesType;
 use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -26,7 +27,8 @@ class CreatePostController extends Controller
     public function createPostAction(Request $request)
     {
         $user = $this->getUser();
-        if (!is_object($user) || !$user instanceof UserInterface) {
+        if (!is_object($user) || !$user instanceof UserInterface) 
+				{
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
@@ -48,15 +50,14 @@ class CreatePostController extends Controller
                     'Good' => 'good',
                     'Poor' => 'poor')
             ))
+            ->add('image', ImagesType::class, array('label' => 'Upload Image'))
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
             ->getForm();
 
-
-
-
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) 
+				{
 
             // $form->getData() holds the submitted values
             $item = $form->getData();
@@ -69,7 +70,20 @@ class CreatePostController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
-            $em->flush();
+						$item->setImageUrl($this->container->get('vich_uploader.templating.helper.uploader_helper')->asset($item->getImage(), "imageFile"));
+            $em->persist($item);
+
+						try 
+						{
+							$em->flush();
+							$item->getImage()->setPostId($item->getId());
+							$em->persist($item);
+							$em->flush();
+						} 
+						catch (\Exception $e)
+						{
+							return $this->render('default/createPost.html.twig', array('form' => $form->createView()));
+						}
 
             return $this->render('default/home.html.twig');
         }

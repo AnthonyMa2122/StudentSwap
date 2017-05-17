@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Images;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -32,7 +33,7 @@ class Item
     /**
      * @var decimal
      *
-     * @ORM\Column(name="price", type="decimal" , precision=8, scale=2)
+     * @ORM\Column(name="price", type="decimal" , precision=8, scale=2, options={"unsigned"=true})
      */
     protected $price;
 
@@ -71,6 +72,18 @@ class Item
      */
     protected $imageUrl;
     
+    /** 
+		 * @ORM\OneToOne(targetEntity="Images", cascade={"persist"})
+		 *
+		 *
+		 */
+		protected $image;
+
+    public function __construct()
+    {
+			$image = new Images();
+		}
+
     /**
      * Get id
      *
@@ -247,5 +260,29 @@ class Item
     public function getImageUrl()
     {
         return $this->imageUrl;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\Images $image
+     *
+     * @return Item
+     */
+    public function setImage(\AppBundle\Entity\Images $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\Images
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

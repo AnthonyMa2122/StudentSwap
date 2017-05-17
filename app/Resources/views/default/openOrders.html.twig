@@ -25,7 +25,7 @@
                         <td><img src={{ asset( item.imageUrl ) }} class="thumbnail"
                                  alt="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg"></td>
                         <td>{{ item.title }}</td>
-                        <td>4/27/17</td>
+                        <td>{{ item.image.updatedAt }}</td>
                         <td>{{ item.price }}</td>
                     </tr>
                 {% endfor %}
