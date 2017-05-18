@@ -8,41 +8,46 @@
     <p class="info">Please fill out the form below to post an item:</p>
     <div class="postContainer">
         {{ form_start(form) }}
-            <div class="postContainerform">
-                <br>
-                <br>
-                <div class="title">
-                    <label class="title"><b>Title:</b></label>
-                    {{ form_widget(form.title) }}
-                    {#<input class="box" type="text" placeholder="Enter Title" name="title" required>#}
-                </div><br>
-                <label class="description" for="comment">Description:</label>
-                <div class="description">
-                    {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
-                </div>
-                <br>
-                <div class="form-inline">
-                    <label class="category" for="sel1">Category:</label>
-                    {{ form_widget(form.category) }}
-                    <br>
-                    <br>
-                    <label class="condition" for="sel1">Condition:</label>
-                    {{ form_widget(form.condition) }}
-                    <br>
-                    <br>
-                    <div class="fileinput">
-                        <label class="filetitle"><b>Image:</b></label>
-                        <input type="file" name="pic" accept="image/*" >
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <div class="clearfix">
-                    <button type="button" class="cancelbtn">
-                        <a href={{ path('homepage') }}>Cancel</a>
-                    </button>
-                </div>
+        <div class="postContainerform">
+            <br>
+            <br>
+            <div class="title">
+                <label class="title"><b>Title:</b></label>
+                {{ form_widget(form.title) }}
+                {#<input class="box" type="text" placeholder="Enter Title" name="title" required>#}
             </div>
+            <br>
+            <label class="description" for="comment">Description:</label>
+            <div class="description">
+                {{ form_widget(form.description) }}
+                {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
+            </div>
+            <br>
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price) }}
+            <br>
+            <div class="form-inline">
+                <label class="category" for="sel1">Category:</label>
+                {{ form_widget(form.category) }}
+                <br>
+                <br>
+                <label class="condition" for="sel1">Condition:</label>
+                {{ form_widget(form.condition) }}
+                <br>
+                <br>
+                <div class="fileinput">
+                    <label class="filetitle"><b>Image:</b></label>
+                    <input type="file" name="pic" accept="image/*">
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">
+                    <a href={{ path('homepage') }}>Cancel</a>
+                </button>
+            </div>
+        </div>
         {{ form_end(form) }}
     </div>
 
@@ -57,10 +62,9 @@
 {#{{ form_widget(form.title) }}#}
 {#<br>#}
 {#{{ form_label(form.description) }}#}
-{#{{ form_widget(form.description) }}#}
+{##}
 {#<br>#}
-{#{{ form_label(form.price) }}#}
-{#{{ form_widget(form.price) }}#}
+
 {#<br>#}
 {#{{ form_label(form.category) }}#}
 
