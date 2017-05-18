@@ -12,14 +12,22 @@
             <br>
             <br>
             <div class="title">
-                <label class="title"><b>Title:</b></label>
-                {{ form_widget(form.title) }}
+                {{ form_label(form.title, 'Title: ', {'label_attr': {'class': 'title'}}) }}
+                {{ form_widget(form.title,
+                {'attr': {'class': 'box'}, {'type': 'text'},{'placeholder': "Enter Title"} },
+                {'required': 'true'}) }}
+                {#<label class="title"><b>Title:</b></label>#}
+                {#{{ form_widget(form.title) }}#}
                 {#<input class="box" type="text" placeholder="Enter Title" name="title" required>#}
             </div>
             <br>
-            <label class="description" for="comment">Description:</label>
+            {#<label class="description" for="comment">Description:</label>#}
+            {{ form_label(form.description, 'Description: ',
+            {'label_attr': {'class': 'description'}, {'for': 'comment'}}) }}
             <div class="description">
-                {{ form_widget(form.description) }}
+                {{ form_widget(form.description,
+                {'attr': {'class': 'box'}, {'rows': '5'},{'placeholder': "Enter Description"} },
+                {'required': 'true'}) }}
                 {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
             </div>
             <br>
@@ -27,12 +35,14 @@
                 {{ form_label(form.price) }}
                 {{ form_widget(form.price) }}
                 <br>
-                <label class="category" for="sel1">Category:</label>
-                {{ form_widget(form.category) }}
+                {#<label class="category" for="sel1">Category:</label>#}
+                {{ form_label(form.category, 'Category: ', {'label_attr': {'class': 'category'}}) }}
+                {{ form_widget(form.category, {'attr': {'class': 'form-control'}} ) }}
                 <br>
                 <br>
-                <label class="condition" for="sel1">Condition:</label>
-                {{ form_widget(form.condition) }}
+                {#<label class="condition" for="sel1">Condition:</label>#}
+                {{ form_label(form.condition, 'Price: ', {'label_attr': {'class': 'condition'}}) }}
+                {{ form_widget(form.condition, {'attr': {'class': 'form-control'}} ) }}
                 <br>
                 <br>
                 <div class="fileinput">
@@ -47,11 +57,10 @@
                     <a href={{ path('homepage') }}>Cancel</a>
                 </button>
             </div>
-            {{ form_widget(form.submit) }}
+            {{ form_widget(form.submit, 'Submit', {'label_attr': {'class': 'signupbtn'}}) }}
         </div>
         {{ form_end(form) }}
     </div>
-
 {% endblock %}
 
 
