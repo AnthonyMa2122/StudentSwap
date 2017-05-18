@@ -97,69 +97,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/openOrders", name="openOrders")
-     */
-    public function openOrdersAction()
-    {
-        // replace this example code with whatever you need.
-        return $this->render('default/openOrders.html.twig');
-    }
-
-    /**
-     * @Route("/books", name="books")
-     */
-    public function booksAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/books.html.twig');
-    }
-
-    /**
-     * @Route("/clothes", name="clothes")
-     */
-    public function clothesAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/clothes.html.twig');
-    }
-
-    /**
-     * @Route("/tech", name="tech")
-     */
-    public function techAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/tech.html.twig');
-    }
-
-    /**
-     * @Route("/booksLoggedIn", name="booksLoggedIn")
-     */
-    public function booksLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/booksLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/clothesLoggedIn", name="clothesLoggedIn")
-     */
-    public function clothesLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/clothesLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/techLoggedIn", name="techLoggedIn")
-     */
-    public function techLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/techLoggedIn.html.twig');
-    }
-
-    /**
      * @Route("/greg", name="greg")
      */
     public function gregAction()
@@ -213,14 +150,6 @@ class DefaultController extends Controller
     public function elricAction()
     {
         return $this->render('default/aboutelric.html.twig');
-    }
-
-    /**
-     * @Route("/listings", name="listings")
-     */
-    public function listingsAction()
-    {
-        return $this->render('default/listing.html.twig');
     }
 
     /**

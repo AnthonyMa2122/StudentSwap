@@ -16,14 +16,20 @@
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 20px 425px;
+    margin: 8px 100px;
     border: none;
     cursor: pointer;
     width: 25%;
 }
 
+/* Extra styles for the cancel button */
+.registercontainer .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
 /* Float signup buttons and add an equal width */
-.registercontainer .signupbtn {
+.registercontainer .cancelbtn, .registercontainer .signupbtn {
     float: left;
     width: 25%;
 }
@@ -42,7 +48,7 @@
 
 /* Change styles for signup button on extra small screens */
 @media screen and (max-width: 300px) {
-    .signupbtn {
+    .registercontainer .cancelbtn, .registercontainer .signupbtn {
         width: 100%;
     }
 }
@@ -50,11 +56,6 @@
 /* Aligns the labels and input boxes*/
 .registercontainer .registercontainerform {
     margin-left: 20%;
-}
-
-
-.registercontainer .clearfix {
-    margin-left: -9%;
 }
 
 .registercontainer .name {

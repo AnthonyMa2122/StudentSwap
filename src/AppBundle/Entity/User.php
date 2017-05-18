@@ -2,81 +2,82 @@
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Entity
  */
-class User
+class User extends BaseUser
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @var string
+     * @ORM\Column(type="string", length=35)
      *
-     * @ORM\Column(name="password", type="string", length=20)
+     * @Assert\NotBlank(message="Please enter first name.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=2,
+     *     max=35,
+     *     minMessage="The first name is too short.",
+     *     maxMessage="The first name is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
-    private $password;
+    protected $firstName;
 
     /**
-     * @var string
+     * @ORM\Column(type="string", length=35)
      *
-     * @ORM\Column(name="email", type="string", length=50)
+     * @Assert\NotBlank(message="Please enter last name.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=2,
+     *     max=35,
+     *     minMessage="The last name is too short.",
+     *     maxMessage="The last name is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
      */
-    private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="firstname", type="string", length=50)
-     */
-    private $firstname;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="lastname", type="string", length=50)
-     */
-    private $lastname;
+    protected $lastName;
 
     /**
      * @var string
      *
      * @ORM\Column(name="phoneNumber", type="string", length=20)
      */
-    private $phoneNumber;
+    protected $phoneNumber;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="userGroupId", type="integer")
+     * @ORM\Column(name="openOrderId", type="integer", nullable=true)
      */
-    private $userGroupId;
+    protected $openOrderId;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="openOrderId", type="integer")
+     * @ORM\Column(name="flagCount", type="integer", nullable=true)
      */
-    private $openOrderId;
+    protected $flagCount;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="flagCount", type="integer")
-     */
-    private $flagCount;
 
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * Get id
@@ -88,100 +89,62 @@ class User
         return $this->id;
     }
 
-    /**
-     * Set password
-     *
-     * @param string $password
-     *
-     * @return User
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return User
-     */
     public function setEmail($email)
     {
-        $this->email = $email;
+        $email = is_null($email) ? '' : $email;
+        parent::setEmail($email);
+        $this->setUsername($email);
 
         return $this;
     }
 
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
 
     /**
-     * Set firstname
+     * Set firstName
      *
-     * @param string $firstname
+     * @param string $firstName
      *
      * @return User
      */
-    public function setFirstname($firstname)
+    public function setFirstName($firstName)
     {
-        $this->firstname = $firstname;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     /**
-     * Get firstname
+     * Get firstName
      *
      * @return string
      */
-    public function getFirstname()
+    public function getFirstName()
     {
-        return $this->firstname;
+        return $this->firstName;
     }
 
     /**
-     * Set lastname
+     * Set lastName
      *
-     * @param string $lastname
+     * @param string $lastName
      *
      * @return User
      */
-    public function setLastname($lastname)
+    public function setLastName($lastName)
     {
-        $this->lastname = $lastname;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
     /**
-     * Get lastname
+     * Get lastName
      *
      * @return string
      */
-    public function getLastname()
+    public function getLastName()
     {
-        return $this->lastname;
+        return $this->lastName;
     }
 
     /**
@@ -209,30 +172,6 @@ class User
     }
 
     /**
-     * Set userGroupId
-     *
-     * @param integer $userGroupId
-     *
-     * @return User
-     */
-    public function setUserGroupId($userGroupId)
-    {
-        $this->userGroupId = $userGroupId;
-
-        return $this;
-    }
-
-    /**
-     * Get userGroupId
-     *
-     * @return int
-     */
-    public function getUserGroupId()
-    {
-        return $this->userGroupId;
-    }
-
-    /**
      * Set openOrderId
      *
      * @param integer $openOrderId
@@ -249,7 +188,7 @@ class User
     /**
      * Get openOrderId
      *
-     * @return int
+     * @return integer
      */
     public function getOpenOrderId()
     {
@@ -273,7 +212,7 @@ class User
     /**
      * Get flagCount
      *
-     * @return int
+     * @return integer
      */
     public function getFlagCount()
     {

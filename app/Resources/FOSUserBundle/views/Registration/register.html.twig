@@ -1,0 +1,60 @@
+{% extends 'FOSUserBundle::layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Register{% endblock %}
+
+{% block fos_user_content %}
+    <!--REGISTER-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="registerform">Register Form</h1>
+    <div class="registercontainer">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        <div class="registercontainerform">
+            <p class="requiredfield"><span class="error" style="color: red">* required field.</span></p>
+            <div class="name">
+                <label class="name"><b>Name:</b></label>
+                {{ form_label(form.firstName, 'First') }}
+                {{ form_widget(form.firstName, {'attr': {'class': 'box'}}) }}
+                {{ form_errors(form.firstName) }}
+                {{ form_label(form.firstName, 'Last') }}
+                {{ form_widget(form.lastName, {'attr': {'class': 'box'}}) }}
+                {{ form_errors(form.lastName) }}
+            </div>
+            <br>
+            <div class="phone">
+                {{ form_label(form.phoneNumber, 'Phone:') }}
+                {{ form_widget(form.phoneNumber, {'attr': {'class': 'box'}}) }}
+                {{ form_errors(form.phoneNumber) }}
+            </div>
+            <br>
+            <div class="email">
+                {{ form_label(form.email, 'Email:') }}
+                {{ form_widget(form.email, {'attr': {'class': 'box'}}) }}
+                {{ form_errors(form.email) }}
+            </div>
+            <br>
+            <div class="psw">
+                {{ form_label(form.plainPassword, 'Password:') }}
+                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'box'}}) }}
+                {{ form_errors(form.plainPassword) }}
+            </div>
+            <br>
+            <div class="rpsw">
+                {{ form_label(form.plainPassword, 'Repeat Password:') }}
+                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'box'}}) }}
+            </div>
+            <br>
+            <label class="checkbox"><input class="text-center" type="checkbox" checked="checked"> Remember me</label>
+            <p class="terms">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn" value="{{ 'registration.submit'|trans }}">Register</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

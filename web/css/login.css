@@ -18,8 +18,12 @@ form.login {
 h1.loginform {
     margin-left: 16%;
 }
-.loginContainer .email, .psw {
+.loginContainer .email {
     margin-left: -5%;
+}
+
+.loginContainer .psw {
+    margin-left: -7%;
 }
 
 /* Edits password input box */

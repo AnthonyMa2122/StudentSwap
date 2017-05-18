@@ -2,7 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Images;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Item
@@ -19,29 +21,68 @@ class Item
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
      */
-    private $title;
+    protected $title;
 
     /**
      * @var decimal
      *
-     * @ORM\Column(name="price", type="decimal" , precision=8, scale=2)
+     * @ORM\Column(name="price", type="decimal" , precision=8, scale=2, options={"unsigned"=true})
      */
-    private $price;
+    protected $price;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
      */
-    private $description;
+    protected $description;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="category", type="string", length=10)
+     */
+    protected $category;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="userId", type="integer")
+     */
+    protected $userId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="`condition`", type="string")
+     */
+    protected $condition;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageUrl", type="string")
+     */
+    protected $imageUrl;
+    
+    /** 
+     * @ORM\OneToOne(targetEntity="Images", cascade={"persist"})
+     *
+     *
+     */
+    protected $image;
+
+    public function __construct()
+    {
+        $image = new Images();
+    }
 
     /**
      * Get id
@@ -80,7 +121,7 @@ class Item
     /**
      * Set price
      *
-     * @param integer $price
+     * @param string $price
      *
      * @return Item
      */
@@ -94,7 +135,7 @@ class Item
     /**
      * Get price
      *
-     * @return int
+     * @return string
      */
     public function getPrice()
     {
@@ -123,5 +164,125 @@ class Item
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Item
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     *
+     * @return Item
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set condition
+     *
+     * @param string $condition
+     *
+     * @return Item
+     */
+    public function setCondition($condition)
+    {
+        $this->condition = $condition;
+
+        return $this;
+    }
+
+    /**
+     * Get condition
+     *
+     * @return string
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * Set imageUrl
+     *
+     * @param string $imageUrl
+     *
+     * @return Item
+     */
+    public function setImageUrl($imageUrl)
+    {
+        $this->imageUrl = $imageUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get imageUrl
+     *
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->imageUrl;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\Images $image
+     *
+     * @return Item
+     */
+    public function setImage(\AppBundle\Entity\Images $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\Images
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

@@ -13,26 +13,38 @@
 
 /* Styles the buttons */
 .postContainer button {
-    background-color: #333;
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px 100px;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 25%;
 }
 .postContainer button:hover {
     opacity: 0.8;
 }
-.postContainer .clearfix {
-    float: left;
-    width: 25%;
-    margin-left: 48%;
-}
+
 
 /* Add padding to container elements */
-.postContainer {
+.postContainer .container {
+    padding: 16px;
+}
 
+.postContainer .clearfix {
+    margin-left: 22%;
+}
+
+/* Extra styles for the cancel button */
+.postContainer .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float signup buttons and add an equal width */
+.postContainer .cancelbtn, .postContainer .signupbtn {
+    float: left;
+    width: 25%;
 }
 
 /* Clear floats */
@@ -44,7 +56,7 @@
 
 /* Change styles for signup button on extra small screens */
 @media screen and (max-width: 300px) {
-    .signupbtn {
+    .postContainer .cancelbtn, .postContainer .signupbtn {
         width: 100%;
     }
 }

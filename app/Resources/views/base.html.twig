@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href={{ asset('css/homepage.css') }} >
-        <link rel="stylesheet" href={{ asset('css/login.css') }} >
-        <link rel="stylesheet" href={{ asset('css/register.css') }} >
-        <link rel="stylesheet" href={{ asset('css/listing.css') }} >
+        <link rel="stylesheet" href={{ asset('css/homepage.css') }}>
+        <link rel="stylesheet" href={{ asset('css/login.css') }}>
+        <link rel="stylesheet" href={{ asset('css/register.css') }}>
+        <link rel="stylesheet" href={{ asset('css/listing.css') }}>
+        <link rel="stylesheet" href={{ asset('css/createPost.css') }}>
+        <link rel="stylesheet" href={{ asset('css/dashboard.css') }}>
+        <link rel="stylesheet" href={{ asset('css/openOrders.css') }}>
     {% endblock %}
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}"/>
 </head>
 <body>
 {% block body %}
@@ -33,7 +36,6 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="selected" href="{{ path('homepage') }}" >HOME<span class="glyphicon glyphicon-home"></span></a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">ABOUT
                                 <span class="glyphicon glyphicon-menu-hamburger"></span></a>
@@ -47,59 +49,120 @@
                                 <li><a href="{{ path('elric') }}">ELRIC</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ path('login') }}">SELL/POST<span class="glyphicon glyphicon-edit"></span></a></li>
-                        <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span class="glyphicon glyphicon-user"></span></a></li>
-                        <li><a href="#">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                        <li><a href="{{ path('login') }}">LOGIN/REGISTER<span class="glyphicon glyphicon-log-in"></span></a></li>
+                        <li><a href="{{ path('createPost') }}">SELL/POST<span
+                                        class="glyphicon glyphicon-edit"></span></a></li>
+                        <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span
+                                        class="glyphicon glyphicon-user"></span></a></li>
+                        <li><a href="{{ path('openOrders') }}">OPEN ORDERS<span
+                                        class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li><a href="{{ path('fos_user_security_logout') }}">LOGOUT<span
+                                            class="glyphicon glyphicon-log-out"></span></a></li>
+                        {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">LOGIN/REGISTER<span
+                                            class="glyphicon glyphicon-log-in"></span></a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!--DROPDOWN, SEARCH BAR, SEARCH BUTTON-->
-                <form class="searchbar">
-                    <button type="button" class="btn btn-primary dropdown-toggle">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                        <ul class="dropdown-menu ">
-                            <li><a href="{{ path('books') }}">BOOKS</a></li>
-                            <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
-                            <li><a href="{{ path('tech') }}">TECH</a></li>
-                        </ul>
-                    </button>
-                    <input class="search" type="text" name="search" placeholder="Search..">
+                <a class="navbar-brand" href="{{ path('homepage') }}">HOME<span
+                            class="glyphicon glyphicon-home"></span></a>
+                <form class="searchbar" role="search" id="nav-search-form" method="get"
+                      action="{{ path('search') }}">
+
+                    {#<div class ="dropdown">#}
+                        {#<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">All#}
+                            {#<span class="glyphicon glyphicon-menu-hamburger"></span></button>#}
+                        {#<ul class="dropdown-menu">#}
+                            {#<li><a href="{{ path('listings') }}">All</a></li>#}
+                            {#<li><a href="{{ path('books') }}">BOOKS</a></li>#}
+                            {#<li><a href="{{ path('clothes') }}">CLOTHES</a></li>#}
+                            {#<li><a href="{{ path('tech') }}">TECH</a></li>#}
+                        {#</ul>#}
+                    {#</div>#}
+                    {#todo: css formatting is all f'd up, i can't figure out why the bootstrap styles aren't working#}
+
+                    <select class="selectpicker form-control" name="categoryFilter">
+                        <option value="all">ALL</option>
+                        <option value="books">BOOKS</option>
+                        <option value="clothes">CLOTHES</option>
+                        <option value="tech">TECH</option>
+                        <option value="service">SERVICE</option>
+                        <option value="other">OTHER</option>
+                    </select>
+
+
+
+                    <input class="search" type="text" placeholder="Search..." name="searchTerm">
                     <button type="button" class="btn">
                         <span class="glyphicon glyphicon-search"></span></a>
                     </button>
                 </form>
             </div>
-            <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+            <div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-left" style="width:200px;" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
                 <h3 class="w3-bar-item">CATEGORIES</h3>
+                <a href="{{ path('listings') }}" class="w3-bar-item w3-button">ALL</a>
                 <a href="{{ path('books') }}" class="w3-bar-item w3-button">BOOKS</a>
                 <a href="{{ path('clothes') }}" class="w3-bar-item w3-button">CLOTHES</a>
                 <a href="{{ path('tech') }}" class="w3-bar-item w3-button">TECH</a>
+                <a href="{{ path('service') }}" class="w3-bar-item w3-button">SERVICE</a>
+                <a href="{{ path('other') }}" class="w3-bar-item w3-button">OTHER</a>
             </div>
+            <script>
+                function w3_open() {
+                    document.getElementById("mySidebar").style.display = "block";
+                }
+                function w3_close() {
+                    document.getElementById("mySidebar").style.display = "none";
+                }
+            </script>
+            <div class="w3-main" style="margin-left:200px">
             <div style="margin-left:15%">
             </div>
+                <button class="w3-button w3-white w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
         </nav>
     </header>
-    {% block carousel %}{% endblock %}
-    {% block listing %}{% endblock %}
-    {% block login %}{% endblock %}
-    {% block register %}{% endblock %}
+    {% block home %}{% endblock %}
+    {% block post %}{% endblock %}
+    {% block openOrders %}{% endblock %}
+    {% block listings %}{% endblock %}
+    {% block content %} {% endblock %}
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
     {% block terms %} {% endblock %}
     {% block disclaimer %} {% endblock %}
     {% block infoPrivacy %} {% endblock %}
+    {% block services %} {% endblock %}
+    {% block other %} {% endblock %}
+    {% block footer %}
+        <footer>
+            <p>© 2017 SFSU CSC648 Group 6. </p>
+            <p>This is a project, and not intended for full use. Please see the Terms of Use</p>
+        </footer>
+    {% endblock %}
 {% endblock %}
 {% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="index.js"></script>
-{% endblock %}
+
 
 {% block footer %}
     <p class="text-center">All content and images used on this site are borrowed by students of SFSU.
         All content is used in good faith as well as the proper <a href="{{ path('disclaimer') }}"> disclaimer </a> of all our <a href="{{ path('terms') }}"> terms and conditions</a>. </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {#<script src="index.js"></script>#}
+    <script src={{ asset("js/scripts.js") }}></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-99025771-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 {% endblock %}
+
 </body>
 </html>
