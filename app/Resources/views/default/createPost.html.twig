@@ -23,10 +23,9 @@
                 {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
             </div>
             <br>
-            {{ form_label(form.price) }}
-            {{ form_widget(form.price) }}
-            <br>
             <div class="form-inline">
+                {{ form_label(form.price) }}
+                {{ form_widget(form.price) }}
                 <label class="category" for="sel1">Category:</label>
                 {{ form_widget(form.category) }}
                 <br>
@@ -47,8 +46,8 @@
                     <a href={{ path('homepage') }}>Cancel</a>
                 </button>
             </div>
+            {{ form_end(form) }}
         </div>
-        {{ form_end(form) }}
     </div>
 
 {% endblock %}
