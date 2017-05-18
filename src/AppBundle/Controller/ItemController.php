@@ -20,7 +20,7 @@ class ItemController extends Controller
 
         $items = $repository->findAll();
 
-        return $this->render('default/listings.html.twig',array('items' => $items));
+        return $this->render('default/listings.html.twig', array('items' => $items));
     }
 
     /**
@@ -45,10 +45,9 @@ class ItemController extends Controller
             ->getQuery();
 
         $items = $query->getResult();
-				foreach ($items as $item) 
-				{
-					$item->getImage()->setUpdatedAt( date_format($item->getImage()->getUpdatedAt(), 'm-d-Y') );
-				}
+        foreach ($items as $item) {
+            $item->getImage()->setUpdatedAt(date_format($item->getImage()->getUpdatedAt(), 'm-d-Y'));
+        }
         return $this->render('default/openOrders.html.twig', array('items' => $items));
     }
 
@@ -84,7 +83,7 @@ class ItemController extends Controller
             ->setParameter('category', 'clothes')
             ->getQuery();
 
-        $clothes= $query->getResult();
+        $clothes = $query->getResult();
 
         return $this->render('default/clothes.html.twig', array('clothes' => $clothes));
     }
@@ -102,11 +101,11 @@ class ItemController extends Controller
             ->setParameter('category', 'tech')
             ->getQuery();
 
-        $techs= $query->getResult();
+        $techs = $query->getResult();
 
         return $this->render('default/tech.html.twig', array('techs' => $techs));
     }
-    
+
     /**
      * @Route("/service", name="service")
      */
@@ -172,7 +171,7 @@ class ItemController extends Controller
         } else if ($category == null || $category == 'All') {
             $search = $repository->createQueryBuilder('item')
                 ->where('item.title LIKE :title')
-                ->setParameter('title', '%'.$searchTerm.'%')
+                ->setParameter('title', '%' . $searchTerm . '%')
                 ->getQuery()
                 ->getResult();
             //if search category is defined and search term is defined
