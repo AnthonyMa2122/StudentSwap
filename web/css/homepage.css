@@ -169,16 +169,21 @@ form.searchbar input[type=text] {
     font-size: 16px;
     background-color: white;
     padding: 12px 15px 12px 15px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
 }
 
-form.searchbar input[type=text]:focus {
-    width: 50%;
+form.searchbar select, form.searchbar input, form.searchbar button {
+    float:left;
 }
 
-form.searchbar {
-    text-align: center;
+form.searchbar select {
+    margin-left: 35%;
+    margin-top: 1%;
+}
+form.searchbar input {
+    margin-left: 35%;
+}
+form.searchbar button {
+    margin-left: 0.7%;
 }
 
 footer {
@@ -188,4 +193,8 @@ footer {
     clear: both;
     padding-top: 90px;
     color: #ccc;
+}
+
+.w3-sidebar {
+    background-color: whitesmoke;
 }
