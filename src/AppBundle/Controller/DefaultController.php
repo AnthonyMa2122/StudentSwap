@@ -22,6 +22,70 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/home.html.twig');
     }
+    
+     /**
+     * @Route("/login", name="login")
+     */
+    public function loginAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/login.html.twig');
+    }
+
+    /**
+     * @Route("/register", name="register")
+     */
+    public function registerAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/register.html.twig');
+    }
+    
+    /**
+     * @Route("/homeLoggedIn", name="homeLoggedIn")
+     */
+    public function homeLoggedInAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/homeLoggedIn.html.twig');
+    }
+
+    /**
+     * @Route("/terms", name="terms")
+     */
+    public function termsAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/terms.html.twig');
+    }
+
+    /**
+     * @Route("/disclaimer", name="disclaimer")
+     */
+    public function disclaimerAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/disclaimer.html.twig');
+    }
+
+    /**
+     * @Route("/infoPrivacy", name="infoPrivacy")
+     */
+    public function infoPrivacyAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/infoPrivacy.html.twig');
+    }
+
+    /**
+     * @Route("/createPost", name="createPost")
+     */
+    public function createPostAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/createPost.html.twig');
+    }
+
 
     /**
      * @Route("/dashboard", name="dashboard")
