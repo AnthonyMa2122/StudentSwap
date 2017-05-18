@@ -42,13 +42,16 @@ class CreatePostController extends Controller
                 'choices'  => array(
                     'Book' => "book",
                     'Tech' => "tech",
-                    'Clothes' => "clothes")
+                    'Clothes' => "clothes",
+                    'Services' => "services",
+                    'Other' => "other")
             ))
             ->add('condition', ChoiceType::class, array(
                 'choices'  => array(
                     'New' => 'new',
                     'Good' => 'good',
-                    'Poor' => 'poor')
+                    'Poor' => 'poor',
+                    'N/A' => 'n/a')
             ))
             ->add('image', ImagesType::class, array('label' => 'Upload Image'))
             ->add('submit', SubmitType::class, array('label' => 'Submit'))
