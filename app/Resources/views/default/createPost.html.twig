@@ -23,10 +23,10 @@
             <br>
             {#<label class="description" for="comment">Description:</label>#}
             {{ form_label(form.description, 'Description: ',
-            {'label_attr': {'class': 'description'}, {'for': 'comment'}}) }}
+            {'label_attr': {'class': 'description'}}) }}
             <div class="description">
                 {{ form_widget(form.description,
-                {'attr': {'class': 'box'}, {'rows': '5'},{'placeholder': "Enter Description"} },
+                {'attr': {'class': 'box','rows': '5','placeholder': "Enter Description"} },
                 {'required': 'true'}) }}
                 {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
             </div>
