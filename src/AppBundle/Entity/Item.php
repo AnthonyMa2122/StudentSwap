@@ -73,16 +73,16 @@ class Item
     protected $imageUrl;
     
     /** 
-		 * @ORM\OneToOne(targetEntity="Images", cascade={"persist"})
-		 *
-		 *
-		 */
-		protected $image;
+     * @ORM\OneToOne(targetEntity="Images", cascade={"persist"})
+     *
+     *
+     */
+    protected $image;
 
     public function __construct()
     {
-			$image = new Images();
-		}
+        $image = new Images();
+    }
 
     /**
      * Get id
