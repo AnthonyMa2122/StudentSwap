@@ -139,16 +139,13 @@
     {% block footer %}
         <footer>
             <p>© 2017 SFSU CSC648 Group 6. </p>
-            <p>This is a project, and not intended for full use. Please see the Terms of Use</p>
+            <p class="text-center">All content and images used on this site are borrowed by students of SFSU.
+                All content is used in good faith as well as the proper <a href="{{ path('disclaimer') }}"> disclaimer </a> of all our <a href="{{ path('terms') }}"> terms and conditions</a>. </p>
         </footer>
     {% endblock %}
 {% endblock %}
 {% block javascripts %}
 
-
-{% block footer %}
-    <p class="text-center">All content and images used on this site are borrowed by students of SFSU.
-        All content is used in good faith as well as the proper <a href="{{ path('disclaimer') }}"> disclaimer </a> of all our <a href="{{ path('terms') }}"> terms and conditions</a>. </p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {#<script src="index.js"></script>#}
