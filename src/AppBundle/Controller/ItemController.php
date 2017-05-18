@@ -153,12 +153,38 @@ class ItemController extends Controller
             ->getRepository('AppBundle:Item');
 
         $searchTerm = $_GET['searchTerm'];
+        $category = $_GET('categoryFilter');
 
-        $search = $repository->createQueryBuilder('item')
-            ->where('item.title LIKE :title')
-            ->setParameter('title', '%'.$searchTerm.'%')
-            ->getQuery()
-            ->getResult();
+//        $search = $repository->createQueryBuilder('item')
+//            ->where('item.title LIKE :title')
+//            ->setParameter('title', '%'.$searchTerm.'%')
+//            ->getQuery()
+//            ->getResult();
+
+        if ($searchTerm == null && $category != 'All') {
+            //Run query to find that is matching with given category field
+            $search = $repository->createQueryBuilder('item')
+                ->where('item.category = :category')
+                ->setParameter('category', $category)
+                ->getQuery()
+                ->getResult();
+            //if search category is 'All' or is not defined and search term is defined
+        } else if ($category == null || $category == 'All') {
+            $search = $repository->createQueryBuilder('item')
+                ->where('item.title LIKE :title')
+                ->setParameter('title', '%'.$searchTerm.'%')
+                ->getQuery()
+                ->getResult();
+            //if search category is defined and search term is defined
+        } else {
+            $search = $repository->createQueryBuilder('item')
+                ->where('item.category = :category')
+                ->andWhere('item.title LIKE :search_term')
+                ->setParameter('category', $category)
+                ->setParameter('searchTerm', "%" . $searchTerm . "%")
+                ->getQuery()
+                ->getResult();
+        }
 
         return $this->render('default/listings.html.twig', array('items' => $search));
     }

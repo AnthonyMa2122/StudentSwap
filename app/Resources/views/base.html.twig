@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href={{ asset('css/homepage.css') }}>
         <link rel="stylesheet" href={{ asset('css/login.css') }}>
         <link rel="stylesheet" href={{ asset('css/register.css') }}>
@@ -71,17 +70,30 @@
                 <form class="searchbar" role="search" id="nav-search-form" method="get"
                       action="{{ path('search') }}">
 
-                    <button type="button" class="btn btn-primary dropdown-toggle">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                        <ul class="dropdown-menu ">
-                            <li><a href="{{ path('listings') }}">All</a></li>
-                            <li><a href="{{ path('books') }}">BOOKS</a></li>
-                            <li><a href="{{ path('clothes') }}">CLOTHES</a></li>
-                            <li><a href="{{ path('tech') }}">TECH</a></li>
-                        </ul>
-                    </button>
-                    <input class="search" type="text" placeholder="Search.." name="searchTerm">
+                    {#<div class ="dropdown">#}
+                        {#<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">All#}
+                            {#<span class="glyphicon glyphicon-menu-hamburger"></span></button>#}
+                        {#<ul class="dropdown-menu">#}
+                            {#<li><a href="{{ path('listings') }}">All</a></li>#}
+                            {#<li><a href="{{ path('books') }}">BOOKS</a></li>#}
+                            {#<li><a href="{{ path('clothes') }}">CLOTHES</a></li>#}
+                            {#<li><a href="{{ path('tech') }}">TECH</a></li>#}
+                        {#</ul>#}
+                    {#</div>#}
+                    {#todo: css formatting is all f'd up, i can't figure out why the bootstrap styles aren't working#}
+
+                    <select class="selectpicker form-control" name="categoryFilter">
+                        <option value="all">ALL</option>
+                        <option value="books">BOOKS</option>
+                        <option value="clothes">CLOTHES</option>
+                        <option value="tech">TECH</option>
+                        <option value="service">SERVICE</option>
+                        <option value="other">OTHER</option>
+                    </select>
+
+
+
+                    <input class="search" type="text" placeholder="Search..." name="searchTerm">
                     <button type="button" class="btn">
                         <span class="glyphicon glyphicon-search"></span></a>
                     </button>
@@ -143,5 +155,6 @@
     </script>
 
 {% endblock %}
+
 </body>
 </html>
