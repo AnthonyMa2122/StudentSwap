@@ -26,6 +26,7 @@
             <div class="form-inline">
                 {{ form_label(form.price) }}
                 {{ form_widget(form.price) }}
+                <br>
                 <label class="category" for="sel1">Category:</label>
                 {{ form_widget(form.category) }}
                 <br>
@@ -46,8 +47,9 @@
                     <a href={{ path('homepage') }}>Cancel</a>
                 </button>
             </div>
-            {{ form_end(form) }}
+            {{ form_widget(form.submit) }}
         </div>
+        {{ form_end(form) }}
     </div>
 
 {% endblock %}
