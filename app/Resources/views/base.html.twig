@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -87,7 +87,8 @@
                     </button>
                 </form>
             </div>
-            <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+            <div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-left" style="width:200px;" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
                 <h3 class="w3-bar-item">CATEGORIES</h3>
                 <a href="{{ path('listings') }}" class="w3-bar-item w3-button">ALL</a>
                 <a href="{{ path('books') }}" class="w3-bar-item w3-button">BOOKS</a>
@@ -96,8 +97,18 @@
                 <a href="{{ path('service') }}" class="w3-bar-item w3-button">SERVICE</a>
                 <a href="{{ path('other') }}" class="w3-bar-item w3-button">OTHER</a>
             </div>
+            <script>
+                function w3_open() {
+                    document.getElementById("mySidebar").style.display = "block";
+                }
+                function w3_close() {
+                    document.getElementById("mySidebar").style.display = "none";
+                }
+            </script>
+            <div class="w3-main" style="margin-left:200px">
             <div style="margin-left:15%">
             </div>
+                <button class="w3-button w3-white w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
         </nav>
     </header>
     {% block home %}{% endblock %}
@@ -117,8 +128,8 @@
 {% endblock %}
 {% block javascripts %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {#<script src="index.js"></script>#}
     <script src={{ asset("js/scripts.js") }}></script>
     <script>
