@@ -24,7 +24,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/signin", name="signin")
      */
     public function loginAction()
     {
@@ -33,7 +33,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/signup", name="signup")
      */
     public function registerAction()
     {
@@ -76,16 +76,6 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/infoPrivacy.html.twig');
     }
-
-    /**
-     * @Route("/createPost", name="createPost")
-     */
-    public function createPostAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/createPost.html.twig');
-    }
-
 
     /**
      * @Route("/dashboard", name="dashboard")
