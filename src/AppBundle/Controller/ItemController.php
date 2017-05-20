@@ -122,7 +122,7 @@ class ItemController extends Controller
 
         $service = $query->getResult();
 
-        return $this->render('default/service.html.twig', array('service' => $service));
+        return $this->render('default/services.html.twig', array('service' => $service));
     }
 
     /**
