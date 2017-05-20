@@ -153,7 +153,7 @@ class ItemController extends Controller
             ->getRepository('AppBundle:Item');
 
         $searchTerm = $_GET['searchTerm'];
-        $category = $_GET('categoryFilter');
+        $category = $_GET['categoryFilter'];
 
 //        $search = $repository->createQueryBuilder('item')
 //            ->where('item.title LIKE :title')
