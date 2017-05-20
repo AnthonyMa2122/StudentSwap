@@ -88,47 +88,6 @@ class DefaultController extends Controller
         return $this->render('default/aboutelric.html.twig');
     }
 
-    /**
-     * @Route("/prototype")
-     */
-    public function prototypeAction(Request $request)
-    {
-        $item = new Item();
 
-        //Creates the form
-        $form = $this->createFormBuilder($item)
-            ->add('id', IntegerType::class, array('mapped' => false))
-            ->add('search', SubmitType::class, array('label' => 'Search Item'))
-            ->getForm();
-
-        $form->handleRequest($request);
-
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            // $form->getData() holds the submitted values
-            $id = $form['id']->getData();
-
-            $item = $this->getDoctrine()
-                ->getRepository('AppBundle:Item')
-                ->find($id);
-
-            //Handles bounds. Not Completed. Needs validation or better handling action
-            if (!$item) {
-                throw $this->createNotFoundException(
-                    'No item found for id ' . $id);
-            }
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($item);
-            $em->flush();
-
-            return $this->render('default/prototype.html.twig',
-                array('form' => $form->createView(), 'item' => $item));
-        }
-
-        return $this->render('default/prototype.html.twig',
-            array('form' => $form->createView(), 'item' => $item));
-    }
 }
 
