@@ -121,6 +121,7 @@
             <div style="margin-left:15%">
             </div>
                 <button class="w3-button w3-white w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+            </div>
         </nav>
     </header>
     {% block home %}{% endblock %}
@@ -133,10 +134,15 @@
     {% block tech %} {% endblock %}
     {% block services %} {% endblock %}
     {% block other %} {% endblock %}
+    {% block terms %} {% endblock %}
+    {% block disclaimer %} {% endblock %}
+    {% block infoPrivacy %} {% endblock %}
     {% block footer %}
         <footer>
             <p>© 2017 SFSU CSC648 Group 6. </p>
-            <p>This is a project, and not intended for full use. Please see the Terms of Use</p>
+            <p class="text-center">All content and images used on this site are borrowed by students of SFSU.
+                All content is used in good faith as well as the proper <a href="{{ path('disclaimer') }}">
+                    disclaimer </a> of all our <a href="{{ path('terms') }}"> terms and conditions</a>. </p>
         </footer>
     {% endblock %}
 {% endblock %}
