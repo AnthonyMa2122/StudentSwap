@@ -27,8 +27,7 @@ class CreatePostController extends Controller
     public function createPostAction(Request $request)
     {
         $user = $this->getUser();
-        if (!is_object($user) || !$user instanceof UserInterface) 
-				{
+        if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
@@ -39,15 +38,15 @@ class CreatePostController extends Controller
             ->add('description', TextType::class)
             ->add('price', NumberType::class)
             ->add('category', ChoiceType::class, array(
-                'choices'  => array(
+                'choices' => array(
                     'Book' => "book",
                     'Tech' => "tech",
                     'Clothes' => "clothes",
-                    'Services' => "services",
+                    'Service' => "service",
                     'Other' => "other")
             ))
             ->add('condition', ChoiceType::class, array(
-                'choices'  => array(
+                'choices' => array(
                     'New' => 'new',
                     'Good' => 'good',
                     'Poor' => 'poor',
@@ -59,8 +58,7 @@ class CreatePostController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) 
-				{
+        if ($form->isSubmitted() && $form->isValid()) {
 
             // $form->getData() holds the submitted values
             $item = $form->getData();
@@ -73,20 +71,17 @@ class CreatePostController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
-						$item->setImageUrl($this->container->get('vich_uploader.templating.helper.uploader_helper')->asset($item->getImage(), "imageFile"));
+            $item->setImageUrl($this->container->get('vich_uploader.templating.helper.uploader_helper')->asset($item->getImage(), "imageFile"));
             $em->persist($item);
 
-						try 
-						{
-							$em->flush();
-							$item->getImage()->setPostId($item->getId());
-							$em->persist($item);
-							$em->flush();
-						} 
-						catch (\Exception $e)
-						{
-							return $this->render('default/createPost.html.twig', array('form' => $form->createView()));
-						}
+            try {
+                $em->flush();
+                $item->getImage()->setPostId($item->getId());
+                $em->persist($item);
+                $em->flush();
+            } catch (\Exception $e) {
+                return $this->render('default/createPost.html.twig', array('form' => $form->createView()));
+            }
 
             return $this->render('default/home.html.twig');
         }
