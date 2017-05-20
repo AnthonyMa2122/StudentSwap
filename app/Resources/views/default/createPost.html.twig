@@ -46,8 +46,8 @@
                 <br>
                 <br>
                 <div class="fileinput">
-                    <label class="filetitle"><b>Image:</b></label>
-                    <input type="file" name="pic" accept="image/*">
+                    {{ form_label(form.image, "Image: ", {'label_attr': {'class': 'filetitle'}}) }}
+                    {{ form_widget(form.image, {'attr': {'type': 'file', 'name': 'pic', 'accept': 'image/*' }}) }}
                 </div>
                 <br>
                 <br>
