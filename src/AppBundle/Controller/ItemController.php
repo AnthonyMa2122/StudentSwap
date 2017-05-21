@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Item;
+use AppBundle\Entity\Orders;
 use AppBundle\Entity\Posts;
 use AppBundle\Form\ItemType;
 use AppBundle\Form\PostsType;
@@ -218,14 +219,57 @@ class ItemController extends Controller
 		if ($form->isSubmitted () && $form->isValid ())
 		{
 			
-			$a = $form->getData ()->getItem ();
-			$i = 0;
-			foreach ( $a as $b )
+			$user = $this->getUser();
+			if (!is_object($user) || !$user instanceof UserInterface) 
 			{
-				if ($a->get ( $i ) == null)
-					$i ++;
+					throw new AccessDeniedException('This user does not have access to this section.');
 			}
-			
+
+			$order = new Orders();
+			$em = $this->getDoctrine()->getManager();
+			$returned = $form->getData ()->getItem ();
+			$find;
+			$found = false;
+			$compare;
+			foreach ($items as $it)
+			{
+				$userId = $user->getId();
+				foreach ($returned as $re)
+				{
+					$compare = $re->getId();
+					if ($request->request->get($compare) !== null && $compare === $it->getId()) 
+					{
+						$find = $items;
+						$found = true;
+						break;
+					}
+				}
+			}
+
+			/*
+			if ($find !== null)
+			{
+				$order->setUser($find->getId());
+				$userItem = null;
+				foreach ($items as $it)
+				{
+					if ($it->getId() == $request->request->get($i))
+					{
+						$userItem = $possibleItems;
+						break;
+					}
+				}
+				if ($userItem != null)
+				{
+					$order->setItem($userItem);
+					$em->persist($order);
+				}
+				break;
+			}
+
+			$em->flush ();
+			*/
+
 			$txt = new TextController ();
 			// $txt->textAction('14156598475','hello');
 			

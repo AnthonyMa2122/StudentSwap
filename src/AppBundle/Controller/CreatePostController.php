@@ -71,7 +71,7 @@ class CreatePostController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
-            $item->setImageUrl("../web/" . $this->container->get('vich_uploader.templating.helper.uploader_helper')->asset($item->getImage(), "imageFile"));
+            $item->setImageUrl("../web" . $this->container->get('vich_uploader.templating.helper.uploader_helper')->asset($item->getImage(), "imageFile"));
             $em->persist($item);
 
             try {

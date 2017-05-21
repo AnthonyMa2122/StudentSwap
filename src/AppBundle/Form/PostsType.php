@@ -11,20 +11,18 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class PostsType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        //$builder->add('description');
-
-        $builder->add('item', CollectionType::class, array(
+		public function buildForm(FormBuilderInterface $builder, array $options)
+		{
+				$builder->add('item', CollectionType::class, array(
 						'label' => false,
-            'entry_type' => ItemType::class
-        ));
-    }
+						'entry_type' => ItemType::class
+				));
+		}
 
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => Posts::class,
-        ));
-    }
+		public function configureOptions(OptionsResolver $resolver)
+		{
+				$resolver->setDefaults(array(
+						'data_class' => Posts::class,
+				));
+		}
 }
