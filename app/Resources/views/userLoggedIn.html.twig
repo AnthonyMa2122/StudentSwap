@@ -12,7 +12,6 @@
         <link rel="stylesheet" href={{ asset('css/createPost.css') }} >
         <link rel="stylesheet" href={{ asset('css/dashboard.css') }} >
         <link rel="stylesheet" href={{ asset('css/listing.css') }} >
-        <link rel="stylesheet" href={{ asset('css/openOrders.css') }} >
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('img/sfsu.jpg') }}" />
 </head>
@@ -49,7 +48,7 @@
                         </li>
                         <li><a href="{{ path('createPost') }}">SELL/POST<span class="glyphicon glyphicon-edit"></span></a></li>
                         <li><a href="{{ path('dashboard') }}">MY ACCOUNT<span class="glyphicon glyphicon-user"></span></a></li>
-                        <li><a href="{{ path('openOrdersLoggedIn') }}">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                        <li><a href="{{ path('openOrders') }}">OPEN ORDERS<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <li><a href="{{ path('homepage') }}">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
                     </ul>
                 </div>
@@ -57,7 +56,7 @@
                 <form class="searchbar">
                     <button type="button" class="btn btn-primary dropdown-toggle">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                            <span class="glyphicon glyphicon-filter"></span></a>
                         <ul class="dropdown-menu ">
                             <li><a href="{{ path('booksLoggedIn') }}">BOOKS</a></li>
                             <li><a href="{{ path('clothesLoggedIn') }}">CLOTHES</a></li>
@@ -83,10 +82,11 @@
     </header>
     {% block home %} {% endblock %}
     {% block post %} {% endblock %}
-    {% block openOrders %}{% endblock %}
     {% block books %} {% endblock %}
     {% block clothes %} {% endblock %}
     {% block tech %} {% endblock %}
+    {% block services %} {% endblock %}
+    {% block other %} {% endblock %}
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

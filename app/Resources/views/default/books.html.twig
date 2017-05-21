@@ -7,39 +7,21 @@
     <h1 class="text-center">Books</h1>
     <br>
     <!-- Left-aligned media object -->
+    {% for item in books %}
     <div class="media">
         <div class="media-left">
-            <a href="#"><h3 class="media-heading">Book</h3></a>
-            <a href="#"><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="media-object" style="width:157px"></a>
+            <a href="#"><h3 class="media-heading">{{ item.title }}</h3></a>
+            <a href="#"><img src={{ asset( item.imageUrl ) }}
+                             class="media-object" style="width:157px"
+                             alt="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg">
+            </a>
         </div>
         <div class="media-body">
-            <p><b>Description:</b> Very good conditon</p>
-            <p>Price: $57.00</p>
+            <p><b>Description:</b> {{ item.description }}</p>
+            <p>Price: {{ item.price }}</p>
             <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a></p>
         </div>
     </div>
     <hr>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><h3 class="media-heading">Book</h3></a>
-            <a href="#"><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="media-object" style="width:157px"></a>
-        </div>
-        <div class="media-body">
-            <p><b>Description:</b> Very good conditon</p>
-            <p>Price: $57.00</p>
-            <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a></p>
-        </div>
-    </div>
-    <hr>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><h3 class="media-heading">Book</h3></a>
-            <a href="#"><img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" class="media-object" style="width:157px"></a>
-        </div>
-        <div class="media-body">
-            <p><b>Description:</b> Very good conditon</p>
-            <p>Price: $57.00</p>
-            <p><a href="#" class="btn btn-info" role="button">BUY ITEM<span class="glyphicon glyphicon-book"></span></a></p>
-        </div>
-    </div>
+    {% endfor %}
 {% endblock %}

@@ -22,25 +22,25 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/home.html.twig');
     }
-    
-     /**
-     * @Route("/login", name="login")
+
+    /**
+     * @Route("/signin", name="signin")
      */
     public function loginAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/login.html.twig');
+        return $this->render('default/signin.html.twig');
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/signup", name="signup")
      */
     public function registerAction()
     {
         // replace this example code with whatever you need
         return $this->render('default/register.html.twig');
     }
-    
+
     /**
      * @Route("/homeLoggedIn", name="homeLoggedIn")
      */
@@ -51,33 +51,31 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/createPost", name="createPost")
+     * @Route("/terms", name="terms")
      */
-    public function createPostAction()
+    public function termsAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/createPost.html.twig');
+        return $this->render('default/terms.html.twig');
     }
 
     /**
-     * @Route("/openOrders", name="openOrders")
+     * @Route("/disclaimer", name="disclaimer")
      */
-    public function openOrdersAction()
+    public function disclaimerAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/openOrders.html.twig');
+        return $this->render('default/disclaimer.html.twig');
     }
-
 
     /**
-     * @Route("/openOrdersLoggedIn", name="openOrdersLoggedIn")
+     * @Route("/infoPrivacy", name="infoPrivacy")
      */
-    public function openOrdersLoggedInAction()
+    public function infoPrivacyAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/openOrdersLoggedIn.html.twig');
+        return $this->render('default/infoPrivacy.html.twig');
     }
-
 
     /**
      * @Route("/dashboard", name="dashboard")
@@ -86,60 +84,6 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('default/dashboard.html.twig');
-    }
-
-    /**
-     * @Route("/books", name="books")
-     */
-    public function booksAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/books.html.twig');
-    }
-
-    /**
-     * @Route("/clothes", name="clothes")
-     */
-    public function clothesAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/clothes.html.twig');
-    }
-
-    /**
-     * @Route("/tech", name="tech")
-     */
-    public function techAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/tech.html.twig');
-    }
-
-    /**
-     * @Route("/booksLoggedIn", name="booksLoggedIn")
-     */
-    public function booksLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/booksLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/clothesLoggedIn", name="clothesLoggedIn")
-     */
-    public function clothesLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/clothesLoggedIn.html.twig');
-    }
-
-    /**
-     * @Route("/techLoggedIn", name="techLoggedIn")
-     */
-    public function techLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/techLoggedIn.html.twig');
     }
 
     /**
@@ -196,57 +140,6 @@ class DefaultController extends Controller
     public function elricAction()
     {
         return $this->render('default/aboutelric.html.twig');
-    }
-
-    /**
-     * @Route("/listings", name="listings")
-     */
-    public function listingsAction()
-    {
-        return $this->render('default/listing.html.twig');
-    }
-
-    /**
-     * @Route("/prototype")
-     */
-    public function prototypeAction(Request $request)
-    {
-        $item = new Item();
-
-        //Creates the form
-        $form = $this->createFormBuilder($item)
-            ->add('id', IntegerType::class, array('mapped' => false))
-            ->add('search', SubmitType::class, array('label' => 'Search Item'))
-            ->getForm();
-
-        $form->handleRequest($request);
-
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            // $form->getData() holds the submitted values
-            $id = $form['id']->getData();
-
-            $item = $this->getDoctrine()
-                ->getRepository('AppBundle:Item')
-                ->find($id);
-
-            //Handles bounds. Not Completed. Needs validation or better handling action
-            if (!$item) {
-                throw $this->createNotFoundException(
-                    'No item found for id ' . $id);
-            }
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($item);
-            $em->flush();
-
-            return $this->render('default/prototype.html.twig',
-                array('form' => $form->createView(), 'item' => $item));
-        }
-
-        return $this->render('default/prototype.html.twig',
-            array('form' => $form->createView(), 'item' => $item));
     }
 }
 
