@@ -18,38 +18,46 @@
             <div class="name">
                 <label class="name"><b>Name:</b></label>
                 {{ form_label(form.firstName, 'First') }}
-                {{ form_widget(form.firstName, {'attr': {'class': 'box'}}) }}
+                {{ form_widget(form.firstName, {'attr': {'class': 'box', 'placeholder': 'Enter First Name'}}) }}
+                <span class="error" style="color: red">*</span>
                 {{ form_errors(form.firstName) }}
+                <br>
+                <br>
                 {{ form_label(form.firstName, 'Last') }}
-                {{ form_widget(form.lastName, {'attr': {'class': 'box'}}) }}
+                {{ form_widget(form.lastName, {'attr': {'class': 'box', 'placeholder': 'Enter Last Name'}}) }}
+                <span class="error" style="color: red">*</span>
                 {{ form_errors(form.lastName) }}
             </div>
             <br>
             <div class="phone">
                 {{ form_label(form.phoneNumber, 'Phone:') }}
-                {{ form_widget(form.phoneNumber, {'attr': {'class': 'box'}}) }}
+                {{ form_widget(form.phoneNumber, {'attr': {'class': 'box', 'placeholder': 'Enter Phone #xxx-xxx-xxxx'}}) }}
+                <span class="error" style="color: red">*</span>
                 {{ form_errors(form.phoneNumber) }}
             </div>
             <br>
             <div class="email">
                 {{ form_label(form.email, 'Email:') }}
-                {{ form_widget(form.email, {'attr': {'class': 'box'}}) }}
+                {{ form_widget(form.email, {'attr': {'class': 'box', 'placeholder': 'Enter Email' }}) }}
+                <span class="error" style="color: red">*</span>
                 {{ form_errors(form.email) }}
             </div>
             <br>
             <div class="psw">
                 {{ form_label(form.plainPassword, 'Password:') }}
                 {{ form_widget(form.plainPassword.first, {'attr': {'class': 'box'}}) }}
+                <span class="error" style="color: red">*</span>
                 {{ form_errors(form.plainPassword) }}
             </div>
             <br>
             <div class="rpsw">
                 {{ form_label(form.plainPassword, 'Repeat Password:') }}
                 {{ form_widget(form.plainPassword.second, {'attr': {'class': 'box'}}) }}
+                <span class="error" style="color: red">*</span>
             </div>
             <br>
             <label class="checkbox"><input class="text-center" type="checkbox" checked="checked"> Remember me</label>
-            <p class="terms">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            <p class="terms">By creating an account you agree to our <a href={{ path('terms') }}>Terms & Privacy</a>.</p>
 
             <div class="clearfix">
                 <button type="submit" class="signupbtn" value="{{ 'registration.submit'|trans }}">Register</button>
