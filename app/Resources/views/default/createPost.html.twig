@@ -10,7 +10,6 @@
     <div class="postContainer">
         {{ form_start(form) }}
         <div class="postContainerform">
-
             <div class="form-group">
             <div class="title">
                 {{ form_label(form.title, 'Title: ', {'label_attr': {'class': 'title'}}) }}
@@ -36,7 +35,6 @@
             </div>
             </div>
             </div>
-            <br>
                 <br>
                 <div class="form-group">
                 <div class="price">
@@ -47,7 +45,7 @@
                 {'required': 'true'}) }}
                 </div>
                 </div>
-                <br>
+
                 <br>
                 <div class="form-group">
                 <div class="category">
@@ -75,15 +73,15 @@
                 <br>
                 <br>
             </div>
-
-            <div class="clearfix">
-                <button type="button" class="cancelbtn">
-                    <a href={{ path('homepage') }}>Cancel</a>
-                </button>
-
-            </div>
+        {#{{ form_widget(form.submit, 'Submit', {'label_attr': {'class': 'signupbtn'}}) }}#}
+        <div class="clearfix">
+            <button type="button" class="cancelbtn">
+                <a href={{ path('homepage') }}>Cancel</a>
+            </button>
         </div>
+
         {{ form_end(form) }}
+    </div>
     </div>
 {% endblock %}
 
