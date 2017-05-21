@@ -6,11 +6,12 @@
     <br>
     <h1 class="createpost">Create Post</h1>
     <p class="info">Please fill out the form below to post an item:</p>
+    <div class="container">
     <div class="postContainer">
         {{ form_start(form) }}
         <div class="postContainerform">
-            <br>
-            <br>
+
+            <div class="form-group">
             <div class="title">
                 {{ form_label(form.title, 'Title: ', {'label_attr': {'class': 'title'}}) }}
                 {{ form_widget(form.title,
@@ -20,7 +21,10 @@
                 {#{{ form_widget(form.title) }}#}
                 {#<input class="box" type="text" placeholder="Enter Title" name="title" required>#}
             </div>
+            </div>
             <br>
+            <div class="form-group">
+            <div class="form-inline">
             {#<label class="description" for="comment">Description:</label>#}
             {{ form_label(form.description, 'Description: ',
             {'label_attr': {'class': 'description'}}) }}
@@ -30,34 +34,53 @@
                 {'required': 'true'}) }}
                 {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
             </div>
+            </div>
+            </div>
             <br>
-            <div class="form-inline">
-                {{ form_label(form.price) }}
-                {{ form_widget(form.price) }}
                 <br>
+                <div class="form-group">
+                <div class="price">
+                {{ form_label(form.description, 'Price: ',
+                {'label_attr': {'class': 'price'}}) }}
+                {{ form_widget(form.price,
+                {'attr': {'class': 'box', 'type': 'text','placeholder': "Enter Price"} },
+                {'required': 'true'}) }}
+                </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                <div class="category">
                 {#<label class="category" for="sel1">Category:</label>#}
                 {{ form_label(form.category, 'Category: ', {'label_attr': {'class': 'category'}}) }}
                 {{ form_widget(form.category, {'attr': {'class': 'form-control'}} ) }}
+                </div>
+                </div>
                 <br>
                 <br>
+                <div class="form-group">
+                <div class="condition">
                 {#<label class="condition" for="sel1">Condition:</label>#}
-                {{ form_label(form.condition, 'Price: ', {'label_attr': {'class': 'condition'}}) }}
+                {{ form_label(form.condition, 'Condition: ', {'label_attr': {'class': 'condition'}}) }}
                 {{ form_widget(form.condition, {'attr': {'class': 'form-control'}} ) }}
+                </div>
+                </div>
                 <br>
                 <br>
                 <div class="fileinput">
-                    {{ form_label(form.image) }}
+                    {{ form_label(form.image, 'Upload Image: ', {'label_attr': {'class': 'fileinput'}}) }}
                     <br>
                     {{ form_widget(form.image) }}
                 </div>
                 <br>
                 <br>
             </div>
-            {#{{ form_widget(form.submit, 'Submit', {'label_attr': {'class': 'signupbtn'}}) }}#}
+
             <div class="clearfix">
                 <button type="button" class="cancelbtn">
                     <a href={{ path('homepage') }}>Cancel</a>
                 </button>
+
             </div>
         </div>
         {{ form_end(form) }}
