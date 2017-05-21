@@ -22,10 +22,11 @@
             </div>
             <br>
             {#<label class="description" for="comment">Description:</label>#}
-            {{ form_label(form.description, 'Description: ',{'label_attr': {'class': 'description'}})}}
+            {{ form_label(form.description, 'Description: ',
+            {'label_attr': {'class': 'description'}}) }}
             <div class="description">
                 {{ form_widget(form.description,
-                {'attr': {'class': 'box','rows': '5' ,'placeholder': 'Enter Description'} },
+                {'attr': {'class': 'box','rows': '5','placeholder': "Enter Description"} },
                 {'required': 'true'}) }}
                 {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
             </div>
@@ -44,22 +45,20 @@
                 {{ form_widget(form.condition, {'attr': {'class': 'form-control'}} ) }}
                 <br>
                 <br>
-                {{ form_label(form.image) }}
-                {{ form_widget(form.image) }}
-                <br>
-                {#<div class="fileinput">#}
-                    {#<label class="filetitle"><b>Image:</b></label>#}
-                    {#<input type="file" name="pic" accept="image/*">#}
-                {#</div>#}
+                <div class="fileinput">
+                    {{ form_label(form.image) }}
+                    <br>
+                    {{ form_widget(form.image) }}
+                </div>
                 <br>
                 <br>
             </div>
+            {#{{ form_widget(form.submit, 'Submit', {'label_attr': {'class': 'signupbtn'}}) }}#}
             <div class="clearfix">
                 <button type="button" class="cancelbtn">
                     <a href={{ path('homepage') }}>Cancel</a>
                 </button>
             </div>
-            {#{{ form_widget(form.submit, 'Submit', {'label_attr': {'class': 'signupbtn'}}) }}#}
         </div>
         {{ form_end(form) }}
     </div>

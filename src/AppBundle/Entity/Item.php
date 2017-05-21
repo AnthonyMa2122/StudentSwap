@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use AppBundle\Entity\Images;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Item
@@ -72,17 +73,26 @@ class Item
      */
     protected $imageUrl;
     
-    /** 
-     * @ORM\OneToOne(targetEntity="Images", cascade={"persist"})
-     *
-     *
+    /**
+     * @ORM\OneToOne(targetEntity="Orders", cascade={"persist"})
      */
-    protected $image;
+    private $orders;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Posts", mappedBy="item")
+     */
+		private $posts;
+
+    /** 
+		 * @ORM\OneToOne(targetEntity="Images", cascade={"persist"})
+		 */
+		protected $image;
 
     public function __construct()
     {
-        $image = new Images();
-    }
+			$image = new Images();
+      $this->posts = new ArrayCollection();
+		}
 
     /**
      * Get id
@@ -284,5 +294,63 @@ class Item
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set orders
+     *
+     * @param \AppBundle\Entity\Orders $orders
+     *
+     * @return Item
+     */
+    public function setOrders(\AppBundle\Entity\Orders $orders = null)
+    {
+        $this->orders = $orders;
+
+        return $this;
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \AppBundle\Entity\Orders
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+
+    /**
+     * Add post
+     *
+     * @param \AppBundle\Entity\Posts $post
+     *
+     * @return Item
+     */
+    public function addPost(\AppBundle\Entity\Posts $post)
+    {
+        $this->posts[] = $post;
+
+        return $this;
+    }
+
+    /**
+     * Remove post
+     *
+     * @param \AppBundle\Entity\Posts $post
+     */
+    public function removePost(\AppBundle\Entity\Posts $post)
+    {
+        $this->posts->removeElement($post);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }

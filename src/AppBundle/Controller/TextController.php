@@ -13,9 +13,6 @@ use Twilio\Rest\Client;
 class TextController extends Controller
 {
 
-	/**
-	 *  @Route("/text/{to}/{msg}", name="text")
-	 */
 	public function textAction($to, $msg)
 	{
 
