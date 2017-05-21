@@ -35,12 +35,12 @@ class Posts
     private $item;
 
 		/**
-		 * @ORM\Column(name="count", type="datetime")
+		 * @ORM\Column(name="count", type="integer", nullable=true)
 		 */
 		private $count;
 
 		/**
-		 * @ORM\Column(name="updatedAt", type="datetime")
+		 * @ORM\Column(name="updatedAt", type="datetime", nullable=true)
 		 */
 		private $updatedAt;
 
@@ -62,7 +62,7 @@ class Posts
     /**
      * Set count
      *
-     * @param \DateTime $count
+     * @param integer $count
      *
      * @return Posts
      */
@@ -76,7 +76,7 @@ class Posts
     /**
      * Get count
      *
-     * @return \DateTime
+     * @return integer
      */
     public function getCount()
     {

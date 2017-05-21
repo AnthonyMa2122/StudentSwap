@@ -237,42 +237,46 @@ class ItemController extends Controller
 				foreach ($returned as $re)
 				{
 					$compare = $re->getId();
-					if ($request->request->get($compare) !== null && $compare === $it->getId()) 
+					if ($found == false && $request->request->get($compare) !== null && $compare === $it->getId()) 
 					{
-						$find = $items;
+						$find = $it;
 						$found = true;
-						break;
 					}
 				}
 			}
 
-			/*
+			$findUser = $this->getDoctrine ()->getRepository ( 'AppBundle:User' )->find ( $this->getUser()->getId());
+
 			if ($find !== null)
 			{
-				$order->setUser($find->getId());
-				$userItem = null;
-				foreach ($items as $it)
-				{
-					if ($it->getId() == $request->request->get($i))
-					{
-						$userItem = $possibleItems;
-						break;
-					}
-				}
-				if ($userItem != null)
-				{
-					$order->setItem($userItem);
-					$em->persist($order);
-				}
-				break;
+				$order->setUser($findUser->getId());
+				$order->setItem($find);
+				$order->setCount(0);
+				$em->persist($order);
 			}
 
-			$em->flush ();
-			*/
-
-			$txt = new TextController ();
-			// $txt->textAction('14156598475','hello');
+			try
+			{
+				$em->flush ();
+			} 
+			catch (\Exception $e)
+			{
+				return $this->render ( 'default/listings.html.twig', array (
+						'items' => $items,
+						'forms' => $form->createView () ) 
+				);
+			}
 			
+			try
+			{
+				$findUser = $this->getDoctrine ()->getRepository ( 'AppBundle:User' )->find ( $find->getUserId());
+				$txt = new TextController ();
+				$txt->textAction('1'.$findUser->getPhoneNumber(),'Hello, someone is interesting in your product.');
+			}
+			catch (\Exception $e)
+			{
+			}
+
 			return $this->render ( 'default/home.html.twig' );
 		}
 		
