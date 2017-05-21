@@ -23,7 +23,7 @@ class Orders
 
     /**
      * @var int
-     * @ORM\OneToOne(targetEntity="User", cascade={"persist"})
+     * @ORM\Column(type="integer")
      */
     private $user;
 
@@ -34,12 +34,12 @@ class Orders
     private $item;
 
 		/**
-		 * @ORM\Column(name="count", type="datetime")
+		 * @ORM\Column(name="count", type="integer", nullable=true)
 		 */
 		private $count;
 
 		/**
-		 * @ORM\Column(name="updatedAt", type="datetime")
+		 * @ORM\Column(name="updatedAt", type="datetime", nullable=true)
 		 */
 		private $updatedAt;
 
@@ -55,9 +55,33 @@ class Orders
     }
 
     /**
+     * Set user
+     *
+     * @param integer $user
+     *
+     * @return Orders
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return integer
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
      * Set count
      *
-     * @param \DateTime $count
+     * @param integer $count
      *
      * @return Orders
      */
@@ -71,7 +95,7 @@ class Orders
     /**
      * Get count
      *
-     * @return \DateTime
+     * @return integer
      */
     public function getCount()
     {
@@ -100,30 +124,6 @@ class Orders
     public function getUpdatedAt()
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * Set user
-     *
-     * @param \AppBundle\Entity\User $user
-     *
-     * @return Orders
-     */
-    public function setUser(\AppBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \AppBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 
     /**

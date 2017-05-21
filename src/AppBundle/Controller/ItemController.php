@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Controller;
 use AppBundle\Entity\Item;
+use AppBundle\Entity\Orders;
 use AppBundle\Entity\Posts;
 use AppBundle\Form\ItemType;
 use AppBundle\Form\PostsType;
@@ -214,17 +215,59 @@ class ItemController extends Controller
         if ($form->isSubmitted () && $form->isValid ())
         {
 
-            $a = $form->getData ()->getItem ();
-            $i = 0;
-            foreach ( $a as $b )
+            $user = $this->getUser();
+            if (!is_object($user) || !$user instanceof UserInterface)
             {
-                if ($a->get ( $i ) == null)
-                    $i ++;
+                throw new AccessDeniedException('This user does not have access to this section.');
+            }
+            $order = new Orders();
+            $em = $this->getDoctrine()->getManager();
+            $returned = $form->getData ()->getItem ();
+            $find;
+            $found = false;
+            $compare;
+            foreach ($items as $it)
+            {
+                $userId = $user->getId();
+                foreach ($returned as $re)
+                {
+                    $compare = $re->getId();
+                    if ($found == false && $request->request->get($compare) !== null && $compare === $it->getId())
+                    {
+                        $find = $it;
+                        $found = true;
+                    }
+                }
+            }
+            $findUser = $this->getDoctrine ()->getRepository ( 'AppBundle:User' )->find ( $this->getUser()->getId());
+            if ($find !== null)
+            {
+                $order->setUser($findUser->getId());
+                $order->setItem($find);
+                $order->setCount(0);
+                $em->persist($order);
+            }
+            try
+            {
+                $em->flush ();
+            }
+            catch (\Exception $e)
+            {
+                return $this->render ( 'default/listings.html.twig', array (
+                        'items' => $items,
+                        'forms' => $form->createView () )
+                );
             }
 
-            $txt = new TextController ();
-            // $txt->textAction('14156598475','hello');
-
+            try
+            {
+                $findUser = $this->getDoctrine ()->getRepository ( 'AppBundle:User' )->find ( $find->getUserId());
+                $txt = new TextController ();
+                $txt->textAction('1'.$findUser->getPhoneNumber(),'Hello, someone is interesting in your product.');
+            }
+            catch (\Exception $e)
+            {
+            }
             return $this->render ( 'default/home.html.twig' );
         }
 

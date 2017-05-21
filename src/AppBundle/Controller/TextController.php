@@ -28,8 +28,6 @@ class TextController extends Controller
 				)
 		);
 
-    return new Response("<p>Message sent.</p>");
-
 	}
 
 	/**
