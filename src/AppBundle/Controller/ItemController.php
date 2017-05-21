@@ -195,7 +195,12 @@ class ItemController extends Controller
 					->setParameter ( 'searchTerm', "%" . $searchTerm . "%" )
 					->getQuery ()->getResult ();
 		}
-		
+
+		if($search == null)
+        {
+            $search = $repository->createQueryBuilder ( 'item' )
+                    ->getQuery ()->getResult ();
+        }
 		return self::listItems ( $search, $request );
 	}
 	
