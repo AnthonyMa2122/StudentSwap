@@ -23,16 +23,16 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
                 <div class="email">
-                    <label class="email" for="username">{{ 'security.login.username'|trans }}</label>
-                    <input class="box" type="text" placeholder="Enter Email(E.g. 'john@mail.sfsu.edu')" name="uname" required>
+                    <label class="email" for="username">Email</label>
+                    <input class="box" type="text" placeholder="Enter Email(E.g. 'john@mail.sfsu.edu')" name="_username" required>
                 </div>
                 <br>
                 <div class="psw">
-                    <label class="psw">{{ 'security.login.password'|trans }}</label>
-                    <input class="box" type="password" placeholder="Enter Password" name="psw" required>
+                    <label class="psw">Password</label>
+                    <input class="box" type="password" placeholder="Enter Password" name="_password" required>
                 </div>
                 <br>
-                <input class="text-center" type="checkbox" checked="checked" /> {{ 'security.login.remember_me'|trans }}
+                <input class="text-center" id="remember_me" name="_remember_me" type="checkbox" checked="checked" /> Keep me logged in
                 <br>
                 <button class="text-center" type="submit" value="{{ 'security.login.submit'|trans }}">Login</button><br>
             </div>
