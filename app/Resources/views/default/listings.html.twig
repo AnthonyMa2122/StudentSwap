@@ -2,9 +2,8 @@
 {% block listings %}
   <br>
   <br>
-  <br>
-  <br>
-  <h1 class="text-center">Listings</h1>
+  <div class="container">
+  <h1 class="text-center">Listings ({{ forms.vars.value.item|length }} items found) </h1>
   <br>
   <!-- Left-aligned media object -->
   {{ form_start(forms) }}
@@ -17,13 +16,15 @@
                 </a>
             </div>
             <div class="media-body">
+                <p><b>Category:</b> {{ form.category }}</p>
                 <p><b>Description:</b> {{ form.description }}</p>
-                <p>Price: {{ form.price }}</p>
-                <p><button id={{form.id}} name={{form.id}} href="#" type="submit" class="btn btn-info" role="button">BUY form<span class="glyphicon glyphicon-book"></span></button></p>
+                <p><b>Price:</b> {{ form.price }}</p>
+                <p><button id={{form.id}} name={{form.id}} href="#" type="submit" class="btn btn-info" role="button">BUY form <span class="glyphicon glyphicon-book"></span></button></p>
             </div>
         </div>
         <hr>
     {% endfor %}
   {{ form_end(forms) }}
+  </div>
 
 {% endblock %}

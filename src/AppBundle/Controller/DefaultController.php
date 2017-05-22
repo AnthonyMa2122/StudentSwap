@@ -1,53 +1,30 @@
 <?php
-
 namespace AppBundle\Controller;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use AppBundle\Entity\Item;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\HttpFoundation\Request;
-
-
 class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/home.html.twig');
-    }
+        $repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 
-    /**
-     * @Route("/signin", name="signin")
-     */
-    public function loginAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/signin.html.twig');
-    }
+        $book = $repository->findOneBy(array('category' => 'book'));
+        $tech = $repository->findOneBy(array('category' => 'tech'));
+        $clothes = $repository->findOneBy(array('category' => 'clothes'));
+        $service = $repository->findOneBy(array('category' => 'service'));
+        $other = $repository->findOneBy(array('category' => 'other'));
 
-    /**
-     * @Route("/signup", name="signup")
-     */
-    public function registerAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/register.html.twig');
-    }
-
-    /**
-     * @Route("/homeLoggedIn", name="homeLoggedIn")
-     */
-    public function homeLoggedInAction()
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/homeLoggedIn.html.twig');
+        return $this->render ( 'default/home.html.twig', array (
+            'book' => $book, 'tech' => $tech, 'clothes' => $clothes, 'service' => $service, 'other' => $other
+        ) );
     }
 
     /**
@@ -58,7 +35,6 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/terms.html.twig');
     }
-
     /**
      * @Route("/disclaimer", name="disclaimer")
      */
@@ -67,7 +43,6 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/disclaimer.html.twig');
     }
-
     /**
      * @Route("/infoPrivacy", name="infoPrivacy")
      */
@@ -76,7 +51,6 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/infoPrivacy.html.twig');
     }
-
     /**
      * @Route("/dashboard", name="dashboard")
      */
@@ -85,7 +59,6 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/dashboard.html.twig');
     }
-
     /**
      * @Route("/greg", name="greg")
      */
@@ -93,7 +66,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutgreg.html.twig');
     }
-
     /**
      * @Route("/alex", name="alex")
      */
@@ -101,7 +73,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutalex.html.twig');
     }
-
     /**
      * @Route("/anthony", name="anthony")
      */
@@ -109,7 +80,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutanthony.html.twig');
     }
-
     /**
      * @Route("/robin", name="robin")
      */
@@ -117,7 +87,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutrobin.html.twig');
     }
-
     /**
      * @Route("/avery", name="avery")
      */
@@ -125,7 +94,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutavery.html.twig');
     }
-
     /**
      * @Route("/leanna", name="leanna")
      */
@@ -133,7 +101,6 @@ class DefaultController extends Controller
     {
         return $this->render('default/aboutleanna.html.twig');
     }
-
     /**
      * @Route("/elric", name="elric")
      */

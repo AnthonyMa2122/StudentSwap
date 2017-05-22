@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block home %}
+    <br>
     <div id="contact" class="container">
         <!--CAROUSEL-->
-        <div class="container">
 
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <!-- User Logged In -->
@@ -34,23 +34,45 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
 
+                {#{% for item in items %}#}
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" alt="Chania" width="345"
-                             height="345">
+                        <img src={{ asset( book.imageUrl ) }} width="300" height="345">
+                        <p>{{ book.title }}</p>
                     </div>
 
                     <div class="item">
-                        <img src="https://s-media-cache-ak0.pinimg.com/564x/2a/63/18/2a6318292b3963368a5be80f113016f2.jpg"
-                             alt="Chania" width="345" height="345">
+                        <img src={{ asset( tech.imageUrl ) }} width="300" height="345">
+                        <p>{{ tech.title }}</p>
                     </div>
 
                     <div class="item">
-                        <img src="http://www.gametribute.com/wp-content/uploads/2016/03/Xbox-One.jpg" alt="Flower"
-                             width="345" height="345">
+                        <img src={{ asset( clothes.imageUrl ) }} width="300" height="345">
+                        <p>{{ clothes.title }}</p>
+                    </div>
+
+                    <div class="item">
+                        <img src={{ asset( service.imageUrl ) }} width="300" height="345">
+                        <p>{{ service.title }}</p>
+                    </div>
+
+                    <div class="item">
+                        <img src={{ asset( other.imageUrl ) }} width="300" height="345">
+                        <p>{{ other.title }}</p>
                     </div>
                 </div>
+
+
+                    {#<tr class="w3-hover-grey">#}
+                        {#<td>Selling</td>#}
+                        {#<td><img class="w3-image" src={{ asset( item.imageUrl ) }}#}
+                            {#alt="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg"></td>#}
+                        {#<td>{{ item.title }}</td>#}
+                        {#<td>{{ item.image.updatedAt }}</td>#}
+                        {#<td>{{ item.price }}</td>#}
+                    {#</tr>#}
+                {#{% endfor %}#}
 
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -63,5 +85,4 @@
                 </a>
             </div>
         </div>
-    </div>
 {% endblock %}

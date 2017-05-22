@@ -4,17 +4,18 @@
     <!--REGISTER-->
     <br>
     <br>
-    <br>
-    <br>
-    <h1 class="registerform">My Account</h1>
-    <div class="registercontainer">
-        <form action="/action_page.php" style="border:1px solid #ccc">
+    <form action="" style="border:1px solid #ccc">
+    <div class="container">
+    <h1 class="text-center">My Account</h1>
+
+
             <div class="registercontainerform">
                 <div class="name">
                     <label class="name"><b>Change Name:</b></label>
-                    <label class="first"><b>First</b></label>
+                    <br>
+                    <label class="first"><b>First:</b></label>
                     <input class="box" type="text" placeholder="Update First Name" name="email">
-                    <label class="last"><b>Last</b></label>
+                    <label class="last"><b>Last:</b></label>
                     <input class="box" type="text" placeholder="Update Last Name" name="email">
                 </div>
                 <br>
@@ -34,8 +35,8 @@
                 </div>
                 <br>
                 <div class="clearfix">
-                    <button type="button" class="signupbtn">
-                        <a href={{ path('homeLoggedIn') }}>Update</a>
+                    <button type="submit" class="signupbtn">
+                        <a href={{ path('dashboard') }}>Update</a>
                     </button>
                 </div>
             </div>
