@@ -5,25 +5,29 @@
     <div class="container">
         <h1 class="text-center">Listings ({{ forms.vars.value.item|length }} items found) </h1>
         <br>
-        <form class="searchbar" role="search" id="nav-search-form" method="get"
-              action="{{ path('listings') }}">
-            <select class="selectpicker form-control" name="sortFilter">
-                <option value="none">Sort By</option>
-                <option value="pricehigh">Price: High to Low</option>
-                <option value="pricelow">Price: Low to High</option>
-                <option value="title">Title</option>
-                <option value="condition">Condition</option>
-            </select>
-        </form>
+        <div>
+            <form class="searchbar" role="search" id="nav-search-form" method="get"
+                  action="{{ path('listings') }}">
+                <select class="selectpicker form-control" name="sortFilter">
+                    <option value="none">Sort By</option>
+                    <option value="pricehigh">Price: High to Low</option>
+                    <option value="pricelow">Price: Low to High</option>
+                    <option value="title">Title</option>
+                    <option value="condition">Condition</option>
+                </select>
+            </form>
+        </div>
 
         <!-- Left-aligned media object -->
         {{ form_start(forms) }}
 
-        {{ app.request.query.get("sortFilter") }}
+        <div>
+            {{ app.request.query.get("sortFilter") }}
 
-        {% if app.request.query.get("sortFilter") == "none" %}
-            hello
-        {% endif %}
+            {% if app.request.query.get("sortFilter") == "none" %}
+                hello
+            {% endif %}
+        </div>
 
         {% for form in forms.vars.value.item | sortbyfield('price') %}
             <div class="media">
