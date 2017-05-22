@@ -29,19 +29,19 @@
                 {{ form_errors(form.phoneNumber) }}
             </div>
             <br>
-            <div class="psw">
-                {{ form_label(form.plainPassword, 'Update Password:', {'label_attr': {'class': 'psw'}}) }}
-                {{ form_widget(form.plainPassword.first, {'attr': {'class':'box','type': 'password', 'placeholder': 'Update Password' }}) }}
-                {{ form_errors(form.plainPassword) }}
-            </div>
-            <br>
-            <div class="rpsw">
-                {{ form_label(form.plainPassword, 'Repeat New Password:', {'label_attr': {'class': 'rpsw'}}) }}
-                {{ form_widget(form.plainPassword.second, {'attr': {'class':'box','type': 'password', 'placeholder': 'Repeat New Password' }}) }}
-            </div>
-            <br>
+            {#<div class="psw">#}
+                {#{{ form_label(form.plainPassword, 'Update Password:', {'label_attr': {'class': 'psw'}}) }}#}
+                {#{{ form_widget(form.plainPassword.first, {'attr': {'class':'box','type': 'password', 'placeholder': 'Update Password' }}) }}#}
+                {#{{ form_errors(form.plainPassword) }}#}
+            {#</div>#}
+            {#<br>#}
+            {#<div class="rpsw">#}
+                {#{{ form_label(form.plainPassword, 'Repeat New Password:', {'label_attr': {'class': 'rpsw'}}) }}#}
+                {#{{ form_widget(form.plainPassword.second, {'attr': {'class':'box','type': 'password', 'placeholder': 'Repeat New Password' }}) }}#}
+            {#</div>#}
+            {#<br>#}
             <div class="clearfix">
-                <input type="submit" class="signupbtn" value="{{ 'profile.edit.submit'|trans }}"></input>
+                <input type="submit" class="signupbtn" value="{{ 'profile.edit.submit'|trans }}" />
             </div>
         </div>
     </div>
