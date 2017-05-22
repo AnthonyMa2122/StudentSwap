@@ -80,6 +80,9 @@ fos_user:
     from_email:
         address: "noreply@email.com"
         sender_name: "noreply"
+    profile:
+        form:
+            type: AppBundle\Form\ProfileType
 
 vich_uploader:
     db_driver: orm # or mongodb or propel or phpcr
