@@ -1,8 +1,7 @@
 /* Sets parameters for the input */
 .registercontainer input[type=text], input[type=password] {
-    width: 25%;
-    padding: 12px 5px;
-    margin: 4px 0;
+    padding: 15px 20px;
+    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -10,9 +9,19 @@
     border-radius: 4px;
 }
 
+.email input.box {
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
 
 /* Set a style for all buttons */
-.registercontainer button {
+.registercontainer .btn  {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -29,7 +38,7 @@
 }
 
 /* Float signup buttons and add an equal width */
-.registercontainer .cancelbtn, .registercontainer .signupbtn {
+.registercontainer .cancelbtn, .registercontainer .btn btn-info {
     float: left;
     width: 25%;
 }
@@ -48,7 +57,7 @@
 
 /* Change styles for signup button on extra small screens */
 @media screen and (max-width: 300px) {
-    .registercontainer .cancelbtn, .registercontainer .signupbtn {
+    .registercontainer .cancelbtn, .registercontainer .btn btn-info {
         width: 100%;
     }
 }
@@ -63,27 +72,25 @@
 }
 
 .phone {
-    margin-left: 3.5%;
+    margin-left: 2%;
 }
 
 .registercontainer .email {
-    margin-left: 3.75%;
+    margin-left: 2%;
 }
 
 .registercontainer .psw {
-    margin-left: 2.25%;
+    margin-left: 4%;
 }
 
-.registercontainer .psw input.box, .rpsw input.box {
+.registercontainer .psw input.box, .rpsw input.box, .email input.box {
     border-radius: 3px;
 }
 
 .rpsw {
-    margin-left: -0.25%;
+    margin-left: 4%;
 }
-.rpsw input.box {
-    width: 24.5%;
-}
+
 
 .registercontainer label.checkbox {
     margin-left: 42%;
@@ -103,4 +110,31 @@ h1.registerform {
 
 .requiredfield {
     margin-left: 12%;
+}
+.first {
+    margin-left: 1%;
+}
+.last {
+    margin-left: 2%;
+}
+label.first, label.last {
+    padding-right: 15%;
+}
+label.phone {
+    padding-right: 12.5%;
+}
+label.email {
+    padding-right: 13%;
+}
+label.pw {
+    padding-right: 9.6%;
+}
+label.rpw {
+    padding-right: 3%;
+}
+p.terms {
+    margin-left: 25%;
+}
+.registercontainer .clearfix {
+    margin-left: 25%;
 }
