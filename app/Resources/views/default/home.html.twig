@@ -34,13 +34,13 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
 
-                {% for item in items %}
+                {#{% for item in items %}#}
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src={{ asset( item.imageUrl ) }}  width="345"
+                        <img src={{ asset( items[0].imageUrl ) }}  width="345"
                              height="345">
-                        <p>{{ item.title }}</p>
+                        <p>{{ items[0].title }}</p>
                     </div>
 
                     <div class="item">
