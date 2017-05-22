@@ -19,7 +19,8 @@ class ProfileType extends AbstractType
         $builder->add('firstName')
             ->add('lastName')
             ->add('phoneNumber')
-            ->remove('username');
+            ->remove('username')
+            ->remove('email');
     }
     public function getParent()
     {
