@@ -1,30 +1,51 @@
 {% extends 'base.html.twig' %}
 {% block listings %}
-  <br>
-  <br>
-  <div class="container">
-  <h1 class="text-center">Listings ({{ forms.vars.value.item|length }} items found) </h1>
-  <br>
-  <!-- Left-aligned media object -->
-  {{ form_start(forms) }}
-    {% for form in forms.vars.value.item | sortbyfield('price') %}
-        <div class="media">
-            <div class="media-left">
-                <a href="#"><h3 class="media-heading">{{ form.title }}</h3></a>
-                <a href="#"><img src= {{ asset(form.imageUrl) }}
-                                 class="media-object" style="width:157px">
-                </a>
+    <br>
+    <br>
+    <div class="container">
+        <h1 class="text-center">Listings ({{ forms.vars.value.item|length }} items found) </h1>
+        <br>
+        <form class="searchbar" role="search" id="nav-search-form" method="get"
+              action="{{ path('listings') }}">
+            <select class="selectpicker form-control" name="sortFilter">
+                <option value="none">Sort By</option>
+                <option value="pricehigh">Price: High to Low</option>
+                <option value="pricelow">Price: Low to High</option>
+                <option value="title">Title</option>
+                <option value="condition">Condition</option>
+            </select>
+        </form>
+
+        <!-- Left-aligned media object -->
+        {{ form_start(forms) }}
+
+        {{ app.request.query.get("sortFilter") }}
+
+        {% if app.request.query.get("sortFilter") == "none" %}
+            hello
+        {% endif %}
+
+        {% for form in forms.vars.value.item | sortbyfield('price') %}
+            <div class="media">
+                <div class="media-left">
+                    <a href="#"><h3 class="media-heading">{{ form.title }}</h3></a>
+                    <a href="#"><img src= {{ asset(form.imageUrl) }}
+                                     class="media-object" style="width:157px">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p><b>Category:</b> {{ form.category }}</p>
+                    <p><b>Description:</b> {{ form.description }}</p>
+                    <p><b>Price:</b> {{ form.price }}</p>
+                    <p>
+                        <button id={{ form.id }} name={{ form.id }} href="#" type="submit" class="btn btn-info"
+                                role="button">BUY form <span class="glyphicon glyphicon-book"></span></button>
+                    </p>
+                </div>
             </div>
-            <div class="media-body">
-                <p><b>Category:</b> {{ form.category }}</p>
-                <p><b>Description:</b> {{ form.description }}</p>
-                <p><b>Price:</b> {{ form.price }}</p>
-                <p><button id={{form.id}} name={{form.id}} href="#" type="submit" class="btn btn-info" role="button">BUY form <span class="glyphicon glyphicon-book"></span></button></p>
-            </div>
-        </div>
-        <hr>
-    {% endfor %}
-  {{ form_end(forms) }}
-  </div>
+            <hr>
+        {% endfor %}
+        {{ form_end(forms) }}
+    </div>
 
 {% endblock %}
