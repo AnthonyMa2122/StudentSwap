@@ -53,7 +53,6 @@ class CreatePostController extends Controller
                     'N/A' => 'n/a')
             ))
             ->add('image', ImagesType::class, array('label' => 'Upload Image'))
-            ->add('submit', SubmitType::class, array('label' => 'Submit'))
             ->getForm();
 
         $form->handleRequest($request);

@@ -40,6 +40,12 @@ button.cancelbtn {
     background-color: #f44336;
 }
 
+button.submitbtn {
+    width: 25%;
+    margin-left: 37.5%;
+
+}
+
 /* Float signup buttons and add an equal width */
 .postContainer .cancelbtn,  .postContainer .signupbtn{
     float: left;

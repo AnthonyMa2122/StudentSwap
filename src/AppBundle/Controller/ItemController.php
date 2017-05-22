@@ -252,7 +252,7 @@ class ItemController extends Controller
             {
                 $findUser = $this->getDoctrine ()->getRepository ( 'AppBundle:User' )->find ( $find->getUserId());
                 $txt = new TextController ();
-                $txt->textAction('1'.$findUser->getPhoneNumber(),'Hello, someone is interesting in your product.');
+                //$txt->textAction('1'.$findUser->getPhoneNumber(),'Hello, someone is interesting in your product.');
             }
             catch (\Exception $e)
             {
