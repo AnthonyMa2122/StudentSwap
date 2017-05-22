@@ -1,0 +1,48 @@
+{% extends 'FOSUserBundle::layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{#<p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>#}
+{#<p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>#}
+{% block fos_user_content %}
+    <br>
+    <br>
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    <div class="container">
+        <h1 class="text-center">My Account</h1>
+        <div class="registercontainerform">
+            <div class="name">
+                <label class="name"><b>Change Name:</b></label>
+                <br>
+                {{ form_label(form.firstName, 'First: ', {'label_attr': {'class': 'first'}}) }}
+                {{ form_widget(form.firstName, {'attr': {'class':'box', 'type':'text', 'placeholder': 'Update First Name'}}) }}
+                {{ form_errors(form.firstName) }}
+
+                {{ form_label(form.firstName, 'Last Name: ', {'label_attr': {'class': 'last'}}) }}
+                {{ form_widget(form.lastName, {'attr': {'class':'box','type': 'text', 'placeholder': 'Update Last Name'}}) }}
+                {{ form_errors(form.lastName) }}
+            </div>
+            <br>
+            <div class="phone">
+                {{ form_label(form.phoneNumber, 'Change Phone:', {'label_attr': {'class': 'phone'}}) }}
+                {{ form_widget(form.phoneNumber, {'attr': {'class':'box','type': 'text', 'placeholder': 'Update Phone #(xxxxxxxxxx)'}}) }}
+                {{ form_errors(form.phoneNumber) }}
+            </div>
+            <br>
+            <div class="psw">
+                {{ form_label(form.plainPassword, 'Update Password:', {'label_attr': {'class': 'psw'}}) }}
+                {{ form_widget(form.plainPassword.first, {'attr': {'class':'box','type': 'password', 'placeholder': 'Update Password' }}) }}
+                {{ form_errors(form.plainPassword) }}
+            </div>
+            <br>
+            <div class="rpsw">
+                {{ form_label(form.plainPassword, 'Repeat New Password:', {'label_attr': {'class': 'rpsw'}}) }}
+                {{ form_widget(form.plainPassword.second, {'attr': {'class':'box','type': 'password', 'placeholder': 'Repeat New Password' }}) }}
+            </div>
+            <br>
+            <div class="clearfix">
+                <input type="submit" class="signupbtn" value="{{ 'profile.edit.submit'|trans }}"></input>
+            </div>
+        </div>
+    </div>
+{% endblock %}
