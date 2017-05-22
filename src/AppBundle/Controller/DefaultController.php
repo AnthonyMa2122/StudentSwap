@@ -12,10 +12,15 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/home.html.twig');
+        $repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
+
+        $items = $repository->findAll ();
+
+        return $this->render ( 'default/home.html.twig', array (
+            'items' => $items
+        ) );
     }
 
     /**

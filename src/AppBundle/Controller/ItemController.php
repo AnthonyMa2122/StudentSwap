@@ -195,7 +195,7 @@ class ItemController extends Controller
         $repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 
         $items = $repository->findAll ();
-        return self::listItems ( $items, $request );
+
     }
 
     public function listItems($items, $request)
