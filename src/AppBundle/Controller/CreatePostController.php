@@ -42,7 +42,7 @@ class CreatePostController extends Controller
                     'Book' => "book",
                     'Tech' => "tech",
                     'Clothes' => "clothes",
-                    'Services' => "services",
+                    'Service' => "service",
                     'Other' => "other")
             ))
             ->add('condition', ChoiceType::class, array(
@@ -67,7 +67,7 @@ class CreatePostController extends Controller
 
             $item->setUserId($user);
             //$item->setDateCreated(new DateTime());
-            $item->setImageUrl('fake');
+            //$item->setImageUrl('fake');
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
