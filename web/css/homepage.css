@@ -190,6 +190,7 @@ form.searchbar input[type=text] {
 
 form.searchbar select, form.searchbar input, form.searchbar button {
     float: left;
+
 }
 
 form.searchbar select {

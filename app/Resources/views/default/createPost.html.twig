@@ -3,10 +3,10 @@
     <br>
     <br>
     <br>
-    <br>
+    <div class="container">
     <h1 class="createpost">Create Post</h1>
     <p class="info">Please fill out the form below to post an item:</p>
-    <div class="container">
+    <br>
     <div class="postContainer">
         {{ form_start(form) }}
         <div class="postContainerform">
@@ -21,7 +21,6 @@
                 {#<input class="box" type="text" placeholder="Enter Title" name="title" required>#}
             </div>
             </div>
-            <br>
             <div class="form-group">
             <div class="form-inline">
             {#<label class="description" for="comment">Description:</label>#}
@@ -35,7 +34,6 @@
             </div>
             </div>
             </div>
-                <br>
                 <div class="form-group">
                 <div class="price">
                 {{ form_label(form.description, 'Price: ',
@@ -47,6 +45,8 @@
                 </div>
 
                 <br>
+            <hr>
+            <br>
                 <div class="form-group">
                 <div class="category">
                 {#<label class="category" for="sel1">Category:</label>#}
@@ -55,7 +55,6 @@
                 </div>
                 </div>
                 <br>
-                <br>
                 <div class="form-group">
                 <div class="condition">
                 {#<label class="condition" for="sel1">Condition:</label>#}
@@ -63,7 +62,6 @@
                 {{ form_widget(form.condition, {'attr': {'class': 'form-control'}} ) }}
                 </div>
                 </div>
-                <br>
                 <br>
                 <div class="fileinput">
                     {{ form_label(form.image, 'Upload Image: ', {'label_attr': {'class': 'fileinput'}}) }}

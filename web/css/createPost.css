@@ -83,7 +83,7 @@ label.description {
     margin-left: -5.5%;
 }
 .description {
-    margin-left: 11.4%;
+    margin-left: 31%;
     width: 110%;
 }
 
@@ -92,25 +92,29 @@ label.description {
     width: 50%;
 }
 label.condition {
-    margin-left: -16.5%;
+    margin-left: -39.5%;
 
 }
 label.category {
-    margin-left: -15.5%;
+    margin-left: -39.5%;
 }
 
 .condition {
-    margin-left: 11.5%;
+    margin-left: 31%;
 }
 
 .category {
-    margin-left: 11.5%;
+    margin-left: 31%;
 }
 
 label.fileinput {
-    margin-left: -22.5%;
+    margin-left: -39.5%;
+    padding-right: 20%;
 }
 
 .fileinput {
-    margin-left: 11.5%;
+    margin-left: 31%;
+}
+label.title, label.price {
+    padding-right: 20%;
 }
