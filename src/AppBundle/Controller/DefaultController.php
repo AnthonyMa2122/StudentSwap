@@ -16,10 +16,14 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 
-        $items = $repository->findOneBy(array('category' => 'book'));
+        $book = $repository->findOneBy(array('category' => 'book'));
+        $tech = $repository->findOneBy(array('category' => 'tech'));
+        $clothes = $repository->findOneBy(array('category' => 'clothes'));
+        $service = $repository->findOneBy(array('category' => 'service'));
+        $other = $repository->findOneBy(array('category' => 'other'));
 
         return $this->render ( 'default/home.html.twig', array (
-            'items' => $items
+            'book' => $book, 'tech' => $tech, 'clothes' => $clothes, 'service' => $service, 'other' => $other
         ) );
     }
 
