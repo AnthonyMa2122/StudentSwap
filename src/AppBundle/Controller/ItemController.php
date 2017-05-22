@@ -44,8 +44,9 @@ class ItemController extends Controller
 	/**
 	 * @Route("/openOrders", name="openOrders")
 	 */
-	public function openOrdersAction()
+	public function openOrdersAction(Request $request)
 	{
+
 		$user = $this->getUser ();
 		if (! is_object ( $user ) || ! $user instanceof UserInterface)
 		{
@@ -66,12 +67,13 @@ class ItemController extends Controller
 		return $this->render ( 'default/openOrders.html.twig', array (
 				'items' => $items 
 		) );
+
 	}
 	
 	/**
 	 * @Route("/books", name="books")
 	 */
-	public function booksAction()
+	public function booksAction(Request $request)
 	{
 		$repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 		
@@ -79,31 +81,29 @@ class ItemController extends Controller
 		
 		$books = $query->getResult ();
 		
-		return $this->render ( 'default/books.html.twig', array (
-				'books' => $books 
-		) );
+		return self::listItems ( $books, $request );
+
 	}
 	
 	/**
 	 * @Route("/clothes", name="clothes")
 	 */
-	public function clothesAction()
+	public function clothesAction(Request $request)
 	{
 		$repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 		
 		$query = $repository->createQueryBuilder ( 'item' )->where ( 'item.category = :category' )->setParameter ( 'category', 'clothes' )->getQuery ();
 		
 		$clothes = $query->getResult ();
-		
-		return $this->render ( 'default/clothes.html.twig', array (
-				'clothes' => $clothes 
-		) );
+
+		return self::listItems ( $clothes, $request );
+
 	}
 	
 	/**
 	 * @Route("/tech", name="tech")
 	 */
-	public function techAction()
+	public function techAction(Request $request)
 	{
 		$repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 		
@@ -111,15 +111,14 @@ class ItemController extends Controller
 		
 		$techs = $query->getResult ();
 		
-		return $this->render ( 'default/tech.html.twig', array (
-				'techs' => $techs 
-		) );
+		return self::listItems ( $techs, $request );
+
 	}
 	
 	/**
 	 * @Route("/service", name="service")
 	 */
-	public function serviceAction()
+	public function serviceAction(Request $request)
 	{
 		$repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 		
@@ -127,15 +126,14 @@ class ItemController extends Controller
 		
 		$service = $query->getResult ();
 		
-		return $this->render ( 'default/services.html.twig', array (
-				'service' => $service 
-		) );
+		return self::listItems ( $service, $request );
+
 	}
 	
 	/**
 	 * @Route("/other", name="other")
 	 */
-	public function otherAction()
+	public function otherAction(Request $request)
 	{
 		$repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 		
@@ -143,9 +141,8 @@ class ItemController extends Controller
 		
 		$other = $query->getResult ();
 		
-		return $this->render ( 'default/other.html.twig', array (
-				'other' => $other 
-		) );
+		return self::listItems ( $other, $request );
+
 	}
 	
 	/**
@@ -285,4 +282,5 @@ class ItemController extends Controller
 				'forms' => $form->createView () 
 		) );
 	}
+
 }
