@@ -7,7 +7,7 @@
   <br>
   <!-- Left-aligned media object -->
   {{ form_start(forms) }}
-    {% for form in forms.vars.value.item %}
+    {% for form in forms.vars.value.item | sortbyfield('price') %}
         <div class="media">
             <div class="media-left">
                 <a href="#"><h3 class="media-heading">{{ form.title }}</h3></a>
