@@ -21,7 +21,7 @@
                 {% for item in items %}
                     <tr class="w3-hover-grey">
                         <td>Selling</td>
-                        <td><img src={{ asset( item.imageUrl ) }} class="thumbnail"
+                        <td><img style=“width:100%;max-width:400px” src={{ asset( item.imageUrl ) }}
                                  alt="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg"></td>
                         <td>{{ item.title }}</td>
                         <td>{{ item.image.updatedAt }}</td>
