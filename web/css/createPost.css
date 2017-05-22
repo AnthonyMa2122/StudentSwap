@@ -1,6 +1,7 @@
 /* Sets parameters for the input */
-.postContainer input[type=text], input[type=password], textarea.box {
-    padding: 15px 20px;
+.postContainer input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -15,10 +16,10 @@
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 100px;
+    margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 25%;
+    width: 100%;
 }
 .postContainer button:hover {
     opacity: 0.8;
@@ -29,19 +30,18 @@
 .postContainer .container {
     padding: 16px;
 }
-
-.postContainer .clearfix {
-    margin-left: 22%;
+button.cancelbtn {
+    margin-left: 37.5%;
 }
 
 /* Extra styles for the cancel button */
-.postContainer .cancelbtn {
+button.cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
 }
 
 /* Float signup buttons and add an equal width */
-.postContainer .cancelbtn, .postContainer .signupbtn {
+.postContainer .cancelbtn,  .postContainer .signupbtn{
     float: left;
     width: 25%;
 }
@@ -59,12 +59,9 @@
         width: 100%;
     }
 }
-h1.createpost {
-    margin-left: 47%;
-}
-p.info {
-    margin-left: 43%;
-}
+
+
+/*
 .title {
     margin-left: 2%;
 }
@@ -118,3 +115,4 @@ label.fileinput {
 label.title, label.price {
     padding-right: 20%;
 }
+*/

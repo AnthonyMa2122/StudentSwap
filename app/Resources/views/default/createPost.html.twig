@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block post %}
     <br>
-    <br>
-    <br>
-    <div class="container">
-    <h1 class="createpost">Create Post</h1>
-    <p class="info">Please fill out the form below to post an item:</p>
-    <br>
     <div class="postContainer">
+    <div class="container">
+    <h1 class="createpost" style="text-align: center">Create Post</h1>
+    <p class="info" style="text-align: center">Please fill out the form below to post an item:</p>
+    <br>
+
         {{ form_start(form) }}
-        <div class="postContainerform">
+        <div class="postContainerform" >
             <div class="form-group">
             <div class="title">
                 {{ form_label(form.title, 'Title: ', {'label_attr': {'class': 'title'}}) }}
                 {{ form_widget(form.title,
-                {'attr': {'class': 'box', 'type': 'text','placeholder': "Enter Title"} },
+                {'attr': { 'type': 'text','placeholder': "Enter Title"} },
                 {'required': 'true'}) }}
                 {#<label class="title"><b>Title:</b></label>#}
                 {#{{ form_widget(form.title) }}#}
@@ -22,16 +21,15 @@
             </div>
             </div>
             <div class="form-group">
-            <div class="form-inline">
-            {#<label class="description" for="comment">Description:</label>#}
+                <div class="description">
+            {#<label class="description"><b>Description:</b></label>#}
             {{ form_label(form.description, 'Description: ',
             {'label_attr': {'class': 'description'}}) }}
-            <div class="description">
+
                 {{ form_widget(form.description,
-                {'attr': {'class': 'box','rows': '5','placeholder': "Enter Description"} },
+                {'attr': {'type': 'text','placeholder': "Enter Description"} },
                 {'required': 'true'}) }}
-                {#<textarea class="box" rows="5" id="comment" placeholder="Enter Description" >  </textarea>#}
-            </div>
+                {#<input class="box" type="text" placeholder="Enter Description" required>#}
             </div>
             </div>
                 <div class="form-group">
@@ -39,7 +37,7 @@
                 {{ form_label(form.description, 'Price: ',
                 {'label_attr': {'class': 'price'}}) }}
                 {{ form_widget(form.price,
-                {'attr': {'class': 'box', 'type': 'text','placeholder': "Enter Price"} },
+                {'attr': {'type': 'text','placeholder': "Enter Price"} },
                 {'required': 'true'}) }}
                 </div>
                 </div>
@@ -47,36 +45,44 @@
                 <br>
             <hr>
             <br>
-                <div class="form-group">
-                <div class="category">
+            <div class="category" style="align-content: center">
+
+
                 {#<label class="category" for="sel1">Category:</label>#}
                 {{ form_label(form.category, 'Category: ', {'label_attr': {'class': 'category'}}) }}
                 {{ form_widget(form.category, {'attr': {'class': 'form-control'}} ) }}
+
                 </div>
-                </div>
-                <br>
-                <div class="form-group">
-                <div class="condition">
+            <br>
+            <br>
+            <div class="condition">
+
+
                 {#<label class="condition" for="sel1">Condition:</label>#}
                 {{ form_label(form.condition, 'Condition: ', {'label_attr': {'class': 'condition'}}) }}
                 {{ form_widget(form.condition, {'attr': {'class': 'form-control'}} ) }}
+
                 </div>
-                </div>
-                <br>
+            <br>
+            <br>
                 <div class="fileinput">
                     {{ form_label(form.image, 'Upload Image: ', {'label_attr': {'class': 'fileinput'}}) }}
                     <br>
-                    {{ form_widget(form.image) }}
+                    {{ form_widget(form.image, {'attr': {'class': 'form-control'}} ) }}
                 </div>
                 <br>
                 <br>
             </div>
-        {#{{ form_widget(form.submit, 'Submit', {'label_attr': {'class': 'signupbtn'}}) }}#}
+
+    <br>
         <div class="clearfix">
             <button type="button" class="cancelbtn">
                 <a href={{ path('homepage') }}>Cancel</a>
             </button>
         </div>
+    </div>
+        <br>
+        <br>
 
         {{ form_end(form) }}
     </div>

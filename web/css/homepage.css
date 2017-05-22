@@ -9,7 +9,8 @@
 
 /*WELCOME*/
 .container {
-    padding: 80px 100px;
+    padding: 80px 120px;
+    margin-top: 8%;
 }
 
 .person {
@@ -208,7 +209,6 @@ form.searchbar button {
 
 footer {
     font-size: 0.80em;
-    margin-left: 17%;
     text-align: center;
     clear: both;
     padding-top: 90px;

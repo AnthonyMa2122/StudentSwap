@@ -1,12 +1,11 @@
 /* Adds a border to the form */
 form.login {
     border: 3px solid #f1f1f1;
-    text-align: center;
 }
 
 /* Sets parameters for the text boxes */
-.loginContainer input[type=text], .loginContainer input[type=password] {
-    width: 60%;
+input[type=text], input[type=password] {
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -15,6 +14,7 @@ form.login {
 }
 
 /* Aligns the labels */
+/*
 h1.loginform {
     margin-left: 16%;
 }
@@ -25,43 +25,42 @@ h1.loginform {
 .loginContainer .psw {
     margin-left: -7%;
 }
+*/
 
-/* Edits password input box */
-.loginContainer .psw input.box {
-    width: 60%;
-    border-radius: 3px;
-}
+
 
 /* Styles the buttons */
-.loginContainer button {
-    background-color: #333;
-    color: white;
+form.login button {
+    background-color: #2d2d30;
+    color: #f1f1f1;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
+    border-color: #f1f1f1;
+    transition: .2s;
 }
 
-.loginContainer button:hover {
-    opacity: 0.8;
+form.login button:hover, form.login button:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
 }
 
-.loginContainer .registerbtn {
+form.login .registerbtn {
     width: auto;
     padding: 10px 18px;
     float: left;
-    background-color: #4CAF50;
+    background-color: green;
 }
 
 
-.loginContainer .container {
-    padding: 19px;
-    width: 50%;
-    margin-left: 33%;
+.container {
+    padding: 16px;
 }
 
-.loginContainer span.psw {
+span.psw {
     float: right;
     padding-top: 16px;
 }

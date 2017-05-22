@@ -1,50 +1,41 @@
 /* Sets parameters for the input */
-.registercontainer input[type=text], input[type=password] {
-    padding: 15px 20px;
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    text-align: center;
-    border-radius: 4px;
 }
 
-.email input.box {
-    box-sizing: border-box;
-    border-radius: 4px;
-    text-align: center;
-    padding: 15px 20px;
+.email input.box{
+    width: 100%;
+    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }
-
 
 /* Set a style for all buttons */
-.registercontainer .btn  {
+.clearfix .signupbtn {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 100px;
+    margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 25%;
-}
-
-/* Extra styles for the cancel button */
-.registercontainer .cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
+    width: 100%;
 }
 
 /* Float signup buttons and add an equal width */
-.registercontainer .cancelbtn, .registercontainer .btn btn-info {
+.signupbtn {
     float: left;
-    width: 25%;
+    width: 100%;
 }
 
 /* Add padding to container elements */
-.registercontainer .container {
+.container {
     padding: 16px;
 }
 
@@ -57,12 +48,13 @@
 
 /* Change styles for signup button on extra small screens */
 @media screen and (max-width: 300px) {
-    .registercontainer .cancelbtn, .registercontainer .btn btn-info {
+    .signupbtn {
         width: 100%;
     }
 }
 
 /* Aligns the labels and input boxes*/
+/*
 .registercontainer .registercontainerform {
     margin-left: 20%;
 }
@@ -138,3 +130,4 @@ p.terms {
 .registercontainer .clearfix {
     margin-left: 25%;
 }
+*/
