@@ -16,7 +16,7 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine ()->getRepository ( 'AppBundle:Item' );
 
-        $items = $repository->findAll ();
+        $items = $repository->findOneBy(array('category' => 'book'));
 
         return $this->render ( 'default/home.html.twig', array (
             'items' => $items

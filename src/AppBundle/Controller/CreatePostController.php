@@ -82,7 +82,7 @@ class CreatePostController extends Controller
                 return $this->render('default/createPost.html.twig', array('form' => $form->createView()));
             }
 
-            return $this->render('default/home.html.twig');
+            return $this->redirectToRoute('homepage');
         }
 
 
