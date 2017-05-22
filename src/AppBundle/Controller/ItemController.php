@@ -252,6 +252,7 @@ class ItemController extends Controller
             {
                 return $this->render ( 'default/listings.html.twig', array (
                         'items' => $items,
+                        'filter' => $_GET['sortFilter'],
                         'forms' => $form->createView () )
                 );
             }
@@ -270,6 +271,7 @@ class ItemController extends Controller
 
         return $this->render ( 'default/listings.html.twig', array (
             'items' => $items,
+            'filter' => $_GET['sortFilter'],
             'forms' => $form->createView ()
         ) );
     }
